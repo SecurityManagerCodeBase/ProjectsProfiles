@@ -1,7 +1,0 @@
-Callback on VMStart.
-#################################################
-SecurityManager Changed:
-SESecurityManagerImpl.java, installSecurityManager, 373
-
-#################################################
-Agent OnUnload, agent exits.
