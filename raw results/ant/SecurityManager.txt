@@ -1,0 +1,242 @@
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTestRunner.java
+344:                perm.setSecurityManager();
+535:                perm.restoreSecurityManager();
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/taskdefs/ExecuteJava.java
+215:                perm.setSecurityManager();
+227:                perm.restoreSecurityManager();
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/types/Permissions.java
+42: * is active (after calling setSecurityManager() but before calling restoreSecurityManager()).
+51:    private SecurityManager origSm = null;
+94:     * subject to these Permissions. Note that setting the SecurityManager too early may
+99:    public synchronized void setSecurityManager() throws BuildException {
+100:        origSm = System.getSecurityManager();
+102:        System.setSecurityManager(new MySM());
+172:    public synchronized void restoreSecurityManager() {
+174:        System.setSecurityManager(origSm);
+178:     * This inner class implements the actual SecurityManager that can be used by tasks
+181:    private class MySM extends SecurityManager {
+188:         * Overridden from java.lang.SecurityManager
+202:         * Overridden from java.lang.SecurityManager
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/Main.java
+731:            SecurityManager oldsm = null;
+732:            oldsm = System.getSecurityManager();
+734:                //SecurityManager can not be installed here for backwards
+737:                //System.setSecurityManager(new NoExitSecurityManager());
+816:                    System.setSecurityManager(oldsm);
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/ExitException.java
+23: * @see org.apache.tools.ant.util.optional.NoExitSecurityManager
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/util/optional/NoExitSecurityManager.java
+31:public class NoExitSecurityManager extends SecurityManager {
+34:     * Override SecurityManager#checkExit.
+43:     * Override SecurityManager#checkPermission.
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/tests/junit/org/apache/tools/ant/taskdefs/optional/TraXLiaisonTest.java
+85:            System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+90:            System.setSecurityManager(null);
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/XMLResultAggregatorTest.java
+81:        System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/tests/junit/org/apache/tools/ant/types/PermissionsTest.java
+76:        perms.setSecurityManager();
+80:            perms.restoreSecurityManager();
+86:        perms.setSecurityManager();
+91:            perms.restoreSecurityManager();
+97:        perms.setSecurityManager();
+105:            perms.restoreSecurityManager();
+111:        perms.setSecurityManager();
+118:            perms.restoreSecurityManager();
+124:        perms.setSecurityManager();
+131:            perms.restoreSecurityManager();
+137:        perms.setSecurityManager();
+148:            perms.restoreSecurityManager();
+
+
+
+./SecurityManager.java
+2:344:                perm.setSecurityManager();
+3:535:                perm.restoreSecurityManager();
+8:215:                perm.setSecurityManager();
+9:227:                perm.restoreSecurityManager();
+14:42: * is active (after calling setSecurityManager() but before calling restoreSecurityManager()).
+15:51:    private SecurityManager origSm = null;
+16:94:     * subject to these Permissions. Note that setting the SecurityManager too early may
+17:99:    public synchronized void setSecurityManager() throws BuildException {
+18:100:        origSm = System.getSecurityManager();
+19:102:        System.setSecurityManager(new MySM());
+20:172:    public synchronized void restoreSecurityManager() {
+21:174:        System.setSecurityManager(origSm);
+22:178:     * This inner class implements the actual SecurityManager that can be used by tasks
+23:181:    private class MySM extends SecurityManager {
+24:188:         * Overridden from java.lang.SecurityManager
+25:202:         * Overridden from java.lang.SecurityManager
+30:731:            SecurityManager oldsm = null;
+31:732:            oldsm = System.getSecurityManager();
+32:734:                //SecurityManager can not be installed here for backwards
+33:737:                //System.setSecurityManager(new NoExitSecurityManager());
+34:816:                    System.setSecurityManager(oldsm);
+39:23: * @see org.apache.tools.ant.util.optional.NoExitSecurityManager
+43:./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/util/optional/NoExitSecurityManager.java
+44:31:public class NoExitSecurityManager extends SecurityManager {
+45:34:     * Override SecurityManager#checkExit.
+46:43:     * Override SecurityManager#checkPermission.
+51:85:            System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+52:90:            System.setSecurityManager(null);
+57:81:        System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+62:76:        perms.setSecurityManager();
+63:80:            perms.restoreSecurityManager();
+64:86:        perms.setSecurityManager();
+65:91:            perms.restoreSecurityManager();
+66:97:        perms.setSecurityManager();
+67:105:            perms.restoreSecurityManager();
+68:111:        perms.setSecurityManager();
+69:118:            perms.restoreSecurityManager();
+70:124:        perms.setSecurityManager();
+71:131:            perms.restoreSecurityManager();
+72:137:        perms.setSecurityManager();
+73:148:            perms.restoreSecurityManager();
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/taskdefs/optional/junit/JUnitTestRunner.java
+344:                perm.setSecurityManager();
+535:                perm.restoreSecurityManager();
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/taskdefs/ExecuteJava.java
+215:                perm.setSecurityManager();
+227:                perm.restoreSecurityManager();
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/types/Permissions.java
+42: * is active (after calling setSecurityManager() but before calling restoreSecurityManager()).
+51:    private SecurityManager origSm = null;
+94:     * subject to these Permissions. Note that setting the SecurityManager too early may
+99:    public synchronized void setSecurityManager() throws BuildException {
+100:        origSm = System.getSecurityManager();
+102:        System.setSecurityManager(new MySM());
+172:    public synchronized void restoreSecurityManager() {
+174:        System.setSecurityManager(origSm);
+178:     * This inner class implements the actual SecurityManager that can be used by tasks
+181:    private class MySM extends SecurityManager {
+188:         * Overridden from java.lang.SecurityManager
+202:         * Overridden from java.lang.SecurityManager
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/Main.java
+731:            SecurityManager oldsm = null;
+732:            oldsm = System.getSecurityManager();
+734:                //SecurityManager can not be installed here for backwards
+737:                //System.setSecurityManager(new NoExitSecurityManager());
+816:                    System.setSecurityManager(oldsm);
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/ExitException.java
+23: * @see org.apache.tools.ant.util.optional.NoExitSecurityManager
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/util/optional/NoExitSecurityManager.java
+31:public class NoExitSecurityManager extends SecurityManager {
+34:     * Override SecurityManager#checkExit.
+43:     * Override SecurityManager#checkPermission.
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/tests/junit/org/apache/tools/ant/taskdefs/optional/TraXLiaisonTest.java
+85:            System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+90:            System.setSecurityManager(null);
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/tests/junit/org/apache/tools/ant/taskdefs/optional/junit/XMLResultAggregatorTest.java
+81:        System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+
+
+
+./ant-1.8.4/src/apache-ant-1.8.4/src/tests/junit/org/apache/tools/ant/types/PermissionsTest.java
+76:        perms.setSecurityManager();
+80:            perms.restoreSecurityManager();
+86:        perms.setSecurityManager();
+91:            perms.restoreSecurityManager();
+97:        perms.setSecurityManager();
+105:            perms.restoreSecurityManager();
+111:        perms.setSecurityManager();
+118:            perms.restoreSecurityManager();
+124:        perms.setSecurityManager();
+131:            perms.restoreSecurityManager();
+137:        perms.setSecurityManager();
+148:            perms.restoreSecurityManager();
+
+
+
+./SecurityManager.java
+2:344:                perm.setSecurityManager();
+3:535:                perm.restoreSecurityManager();
+8:215:                perm.setSecurityManager();
+9:227:                perm.restoreSecurityManager();
+14:42: * is active (after calling setSecurityManager() but before calling restoreSecurityManager()).
+15:51:    private SecurityManager origSm = null;
+16:94:     * subject to these Permissions. Note that setting the SecurityManager too early may
+17:99:    public synchronized void setSecurityManager() throws BuildException {
+18:100:        origSm = System.getSecurityManager();
+19:102:        System.setSecurityManager(new MySM());
+20:172:    public synchronized void restoreSecurityManager() {
+21:174:        System.setSecurityManager(origSm);
+22:178:     * This inner class implements the actual SecurityManager that can be used by tasks
+23:181:    private class MySM extends SecurityManager {
+24:188:         * Overridden from java.lang.SecurityManager
+25:202:         * Overridden from java.lang.SecurityManager
+30:731:            SecurityManager oldsm = null;
+31:732:            oldsm = System.getSecurityManager();
+32:734:                //SecurityManager can not be installed here for backwards
+33:737:                //System.setSecurityManager(new NoExitSecurityManager());
+34:816:                    System.setSecurityManager(oldsm);
+39:23: * @see org.apache.tools.ant.util.optional.NoExitSecurityManager
+43:./ant-1.8.4/src/apache-ant-1.8.4/src/main/org/apache/tools/ant/util/optional/NoExitSecurityManager.java
+44:31:public class NoExitSecurityManager extends SecurityManager {
+45:34:     * Override SecurityManager#checkExit.
+46:43:     * Override SecurityManager#checkPermission.
+51:85:            System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+52:90:            System.setSecurityManager(null);
+57:81:        System.setSecurityManager(new SecurityManager() {public void checkPermission(Permission perm) {}});
+62:76:        perms.setSecurityManager();
+63:80:            perms.restoreSecurityManager();
+64:86:        perms.setSecurityManager();
+65:91:            perms.restoreSecurityManager();
+66:97:        perms.setSecurityManager();
+67:105:            perms.restoreSecurityManager();
+68:111:        perms.setSecurityManager();
+69:118:            perms.restoreSecurityManager();
+70:124:        perms.setSecurityManager();
+71:131:            perms.restoreSecurityManager();
+72:137:        perms.setSecurityManager();
+73:148:            perms.restoreSecurityManager();
+
+
+

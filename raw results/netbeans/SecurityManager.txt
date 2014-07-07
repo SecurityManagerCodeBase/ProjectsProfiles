@@ -1,0 +1,519 @@
+./netbeans-6.9.1/src/java.editor/test/unit/data/org/netbeans/modules/java/editor/completion/data/OverridePrivateMethod.java
+3:public class Test extends SecurityManager {
+
+
+
+./netbeans-6.9.1/src/dlight.util/src/org/netbeans/modules/dlight/util/DLightExecutorService.java
+139:            SecurityManager s = System.getSecurityManager();
+
+
+
+./netbeans-6.9.1/src/lib.profiler/src/org/netbeans/lib/profiler/server/ProfilerInterface.java
+1172:               || name.equals("com.sun.enterprise.J2EESecurityManager") // NOI18N
+
+
+
+./netbeans-6.9.1/src/core.osgi/src/org/netbeans/core/osgi/Activator.java
+112:        System.setProperty("TopSecurityManager.disable", "true");
+
+
+
+./netbeans-6.9.1/src/apisupport.harness/jnlp-src/org/netbeans/modules/apisupport/jnlplauncher/Main.java
+101:            System.setSecurityManager(new SecurityManager());
+
+
+
+./netbeans-6.9.1/src/mobility.project/src/org/netbeans/modules/mobility/project/ui/customizer/CustomizerSign.java
+109:        bOpenSecurityManager = new javax.swing.JButton();
+146:        org.openide.awt.Mnemonics.setLocalizedText(bOpenSecurityManager, org.openide.util.NbBundle.getMessage(CustomizerSign.class, "LBL_Sign_OpenSecurityManager")); // NOI18N
+147:        bOpenSecurityManager.addActionListener(new java.awt.event.ActionListener() {
+149:                bOpenSecurityManagerActionPerformed(evt);
+158:        jPanel1.add(bOpenSecurityManager, gridBagConstraints);
+159:        bOpenSecurityManager.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(CustomizerSign.class, "ACSD_CustSign_OpenManager")); // NOI18N
+300:    private void bOpenSecurityManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bOpenSecurityManagerActionPerformed
+301:        SecurityManagerPanel.showSecurityManager((KeyStoreRepository.KeyStoreBean) cKeystore.getSelectedItem(), (KeyStoreRepository.KeyStoreBean.KeyAliasBean) cAlias.getSelectedItem());
+303:    }//GEN-LAST:event_bOpenSecurityManagerActionPerformed
+327:        bOpenSecurityManager.setEnabled(!useDefault);
+437:    private javax.swing.JButton bOpenSecurityManager;
+
+
+
+./netbeans-6.9.1/src/mobility.project/src/org/netbeans/modules/mobility/project/ui/security/SecurityManagerAction.java
+47:public final class SecurityManagerAction implements ActionListener {
+50:        SecurityManagerPanel.showSecurityManager(null, null);
+
+
+
+./netbeans-6.9.1/src/mobility.project/src/org/netbeans/modules/mobility/project/ui/security/SecurityManagerPanel.java
+46: * SecurityManagerPanel.java
+73:public class SecurityManagerPanel extends JPanel implements ListSelectionListener, ActionListener {
+75:    private static SoftReference<SecurityManagerPanel> pRef;
+84:    public static void showSecurityManager(final KeyStoreRepository.KeyStoreBean keystore, final KeyStoreRepository.KeyStoreBean.KeyAliasBean keyAlias) {
+86:        SecurityManagerPanel panel;
+88:            panel = new SecurityManagerPanel();
+89:            pRef = new SoftReference<SecurityManagerPanel>(panel);
+100:    /** Creates new form SecurityManagerPanel */
+101:    private SecurityManagerPanel() {
+142:        return DialogDisplayer.getDefault().createDialog(new DialogDescriptor(this, NbBundle.getMessage(SecurityManagerPanel.class, "TITLE_SecurityManager"), true, new Object[]{NotifyDescriptor.CLOSED_OPTION}, NotifyDescriptor.CLOSED_OPTION, DialogDescriptor.DEFAULT_ALIGN, new HelpCtx(SecurityManagerPanel.class), null)); // NOI18N
+235:        org.openide.awt.Mnemonics.setLocalizedText(jLabelKestores, NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_Keystores")); // NOI18N
+246:        lKeystores.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_Keystores")); // NOI18N
+256:        org.openide.awt.Mnemonics.setLocalizedText(bAddKeystore, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_Add")); // NOI18N
+265:        bAddKeystore.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_AddKeystore")); // NOI18N
+267:        org.openide.awt.Mnemonics.setLocalizedText(bRemoveKeystore, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_Remove")); // NOI18N
+276:        bRemoveKeystore.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_RemoveKeystore")); // NOI18N
+285:        org.openide.awt.Mnemonics.setLocalizedText(lKeystoreFile2, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_KeystoreFile")); // NOI18N
+302:        tKeystoreFile2.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_KeystoreFile")); // NOI18N
+304:        org.openide.awt.Mnemonics.setLocalizedText(bUnlockKeystore, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_UnlockKeystore")); // NOI18N
+318:        bUnlockKeystore.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_UnlockKeystore")); // NOI18N
+327:        org.openide.awt.Mnemonics.setLocalizedText(lKeystoreFile, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_KeystoreFile")); // NOI18N
+340:        tKeystoreFile.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_KeystoreFile2")); // NOI18N
+348:        org.openide.awt.Mnemonics.setLocalizedText(lKeys2, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_Keys")); // NOI18N
+359:        lKeys.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_Keys")); // NOI18N
+371:        org.openide.awt.Mnemonics.setLocalizedText(bCreateKey, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_NewKey")); // NOI18N
+379:        bCreateKey.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_New")); // NOI18N
+381:        org.openide.awt.Mnemonics.setLocalizedText(bExportKey, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_ExportKey")); // NOI18N
+389:        bExportKey.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_Export")); // NOI18N
+391:        org.openide.awt.Mnemonics.setLocalizedText(bDeleteKey, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_DeleteKey")); // NOI18N
+400:        bDeleteKey.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_Delete")); // NOI18N
+402:        org.openide.awt.Mnemonics.setLocalizedText(bUnlockKey, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_UnlockKey")); // NOI18N
+410:        bUnlockKey.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_UnlockKeystore2")); // NOI18N
+412:        org.openide.awt.Mnemonics.setLocalizedText(cDetails, org.openide.util.NbBundle.getMessage(SecurityManagerPanel.class, "LBL_Manager_ShowDetails")); // NOI18N
+420:        cDetails.getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager_Details")); // NOI18N
+435:        getAccessibleContext().setAccessibleName(NbBundle.getMessage(SecurityManagerPanel.class, "ACSN_Manager"));
+436:        getAccessibleContext().setAccessibleDescription(NbBundle.getMessage(SecurityManagerPanel.class, "ACSD_Manager"));
+
+
+
+./netbeans-6.9.1/src/ide.kit/test/qa-functional/src/org/netbeans/test/ide/GeneralSanityTest.java
+66:        CountingSecurityManager.initWrites();
+96:        CountingSecurityManager.assertCounts(msg, 0);
+98:        CountingSecurityManager.initialize("non-existent", CountingSecurityManager.Mode.CHECK_READ, null);
+
+
+
+./netbeans-6.9.1/src/ide.kit/test/qa-functional/src/org/netbeans/test/ide/ReadAccessTest.java
+90:        CountingSecurityManager.initialize(null, CountingSecurityManager.Mode.CHECK_READ, allowedFiles);
+98:        CountingSecurityManager.initialize("none", CountingSecurityManager.Mode.CHECK_READ, null);
+152:            assertTrue("Security manager is on", CountingSecurityManager.isEnabled());
+153:            CountingSecurityManager.assertCounts("No reads during 2nd startup", 0);
+
+
+
+./netbeans-6.9.1/src/ide.kit/test/qa-functional/src/org/netbeans/test/ide/CountingSecurityManager.java
+73:final class CountingSecurityManager extends SecurityManager implements Callable<Integer> {
+80:    private static SecurityManager man;
+85:        InputStream is = CountingSecurityManager.class.getResourceAsStream("allowed-file-writes.txt");
+98:        CountingSecurityManager.initialize(null, Mode.CHECK_WRITE, allowedFiles);
+116:        if (System.getSecurityManager() instanceof CountingSecurityManager) {
+119:            System.setSecurityManager(new CountingSecurityManager());
+127:        CountingSecurityManager.prefix = prefix;
+128:        CountingSecurityManager.mode = mode;
+131:        Logger.getLogger("org.netbeans.TopSecurityManager").setLevel(Level.OFF);
+132:        System.setProperty("org.netbeans.TopSecurityManager.level", "3000");
+138:        System.getSecurityManager().checkMemberAccess(null, maxCount);
+152:        return System.getSecurityManager() instanceof Callable<?>;
+156:        int c = (Integer)((Callable<?>)System.getSecurityManager()).call();
+157:        Assert.assertEquals(msg + "\n" + System.getSecurityManager().toString(), expectedCnt, c);
+182:        if (p instanceof RuntimePermission && "setSecurityManager".equals(p.getName())) {
+185:                Class<?> manClass = Class.forName("org.netbeans.TopSecurityManager", false, l);
+186:                man = (SecurityManager) manClass.newInstance();
+238:            okAccess.load(CountingSecurityManager.class.getResourceAsStream(res));
+357:                if (stackTraceElement.getClassName().contains("CountingSecurityManager")) {
+
+
+
+./netbeans-6.9.1/src/java.kit/test/qa-functional/src/org/netbeans/test/ide/IDECommitValidationTest.java
+75:        CountingSecurityManager.initWrites();
+
+
+
+./netbeans-6.9.1/src/java.kit/test/qa-functional/src/org/netbeans/test/ide/IDEValidation.java
+180:        CountingSecurityManager.assertCounts(msg, 0);
+182:        CountingSecurityManager.initialize("non-existent", CountingSecurityManager.Mode.CHECK_READ, null);
+1418:        CountingSecurityManager.assertReflection(0, "allowed-reflection.txt");
+
+
+
+./netbeans-6.9.1/src/o.n.core/test/unit/src/org/netbeans/core/NbClipboardIsUsedBySwingComponentsTest.java
+76:        if (System.getSecurityManager () == null) {
+79:            Object clazz = org.netbeans.TopSecurityManager.class;
+80:            SecurityManager m = new org.netbeans.TopSecurityManager ();
+81:            System.setSecurityManager (m);
+85:            org.netbeans.TopSecurityManager.makeSwingUseSpecialClipboard (this.clip);
+
+
+
+./netbeans-6.9.1/src/o.n.core/test/unit/src/org/netbeans/core/NbClipboardIsUsedByAlreadyInitializedComponentsTest.java
+73:        assertNotNull("There is a manager already", System.getSecurityManager());
+82:     * after SecurityManager hack is started */
+
+
+
+./netbeans-6.9.1/src/o.n.core/src/org/netbeans/core/NbLifecycleManager.java
+52:import org.netbeans.TopSecurityManager;
+135:                        TopSecurityManager.exit(0);
+140:                        TopSecurityManager.exit(0);
+
+
+
+./netbeans-6.9.1/src/o.n.core/src/org/netbeans/core/GuiRunLevel.java
+56:import org.netbeans.TopSecurityManager;
+113:        if (!Boolean.getBoolean("TopSecurityManager.disable")) {
+115:            TopSecurityManager.install();
+117:                TopSecurityManager.makeSwingUseSpecialClipboard(Lookup.getDefault().lookup(org.openide.util.datatransfer.ExClipboard.class));
+232:            org.netbeans.TopSecurityManager.exit(5);
+
+
+
+./netbeans-6.9.1/src/masterfs/test/unit/src/org/netbeans/modules/masterfs/SlowRefreshSuspendableTest.java
+98:        System.setSecurityManager(new FileChangedManager());
+
+
+
+./netbeans-6.9.1/src/masterfs/test/unit/src/org/netbeans/modules/masterfs/SlowRefreshAndPriorityIOTest.java
+99:        System.setSecurityManager(new FileChangedManager());
+
+
+
+./netbeans-6.9.1/src/masterfs/test/unit/src/org/netbeans/modules/masterfs/SlowRefreshIncrementalTest.java
+95:        System.setSecurityManager(new FileChangedManager());
+
+
+
+./netbeans-6.9.1/src/masterfs/test/unit/src/org/netbeans/modules/masterfs/filebasedfs/fileobjects/StatFilesTest.java
+88:        System.setSecurityManager(monitor);
+
+
+
+./netbeans-6.9.1/src/masterfs/test/unit/src/org/netbeans/modules/masterfs/SlowRefreshPreferrableTest.java
+89:        System.setSecurityManager(new FileChangedManager());
+
+
+
+./netbeans-6.9.1/src/masterfs/test/unit/src/org/netbeans/modules/masterfs/SlowRefreshInterruptibleTest.java
+89:        System.setSecurityManager(new FileChangedManager());
+
+
+
+./netbeans-6.9.1/src/masterfs/src/org/netbeans/modules/masterfs/filebasedfs/utils/FileChangedManager.java
+60:@org.openide.util.lookup.ServiceProvider(service=java.lang.SecurityManager.class)
+61:public class FileChangedManager extends SecurityManager {
+83:            Lookup.getDefault().lookup(SecurityManager.class);
+
+
+
+./netbeans-6.9.1/src/javacard.project/test/unit/src/org/openide/util/test/RestrictThreadCreation.java
+114:        System.setSecurityManager(new SecurityManager() {
+
+
+
+./netbeans-6.9.1/src/openide.execution/test/unit/src/org/openide/execution/NbClassLoaderTest.java
+93:        System.setSecurityManager(new MySecurityManager());
+136:            if (auto == null) throw new IllegalStateException("Could not load data/foo.xml; try uncommenting se.printStackTrace() in MySecurityManager.checkPermission");
+153:    private static final class MySecurityManager extends SecurityManager {
+170:            // Do not honor file read checks. TopSecurityManager actually leaves
+180:            while (i < cs.length && cs[i] == MySecurityManager.class) i++;
+182:                if (cs[i] == MySecurityManager.class) {
+
+
+
+./netbeans-6.9.1/src/openide.filesystems/test/unit/src/org/openide/filesystems/test/StatFiles.java
+58:public class StatFiles extends SecurityManager {
+66:    private SecurityManager defaultSecurityManager;
+73:        if (defaultSecurityManager == null) {
+74:            defaultSecurityManager = System.getSecurityManager();
+76:        System.setSecurityManager(this);
+80:        if (defaultSecurityManager == null) {
+81:            System.setSecurityManager(defaultSecurityManager);
+
+
+
+./netbeans-6.9.1/src/openide.filesystems/test/unit/src/org/openide/filesystems/TestBaseHid.java
+90:    private static SecurityManager defaultSecurityManager;
+91:    /** If not null, file accesses are counted through custom SecurityManager. */
+107:        // If not null, file accesses are counted through custom SecurityManager.
+109:            if(defaultSecurityManager == null) {
+110:                defaultSecurityManager = System.getSecurityManager();
+112:            System.setSecurityManager(accessMonitor);
+118:        // restore SecurityManager if previously changed
+120:            System.setSecurityManager(defaultSecurityManager);
+
+
+
+./netbeans-6.9.1/src/spellchecker/src/org/netbeans/modules/spellchecker/options/CheckBoxRenderrer.java
+75:        if (System.getSecurityManager () != null) {
+
+
+
+./netbeans-6.9.1/src/java.source/test/unit/src/org/netbeans/api/java/source/TreePathHandleTest.java
+202:                SecurityManager old = System.getSecurityManager();
+204:                System.setSecurityManager(new SecMan());
+208:                System.setSecurityManager(old);
+306:    private static final class SecMan extends SecurityManager {
+
+
+
+./netbeans-6.9.1/src/openide.util/test/unit/src/org/openide/util/test/RestrictThreadCreation.java
+101:        System.setSecurityManager(new SecurityManager() {
+
+
+
+./netbeans-6.9.1/src/openide.util/test/unit/src/org/openide/xml/XMLUtilReflectionTest.java
+73:        CountingSecurityManager.initialize();
+81:        CountingSecurityManager.assertMembers(4);
+90:        CountingSecurityManager.assertMembers(0);
+107:        CountingSecurityManager.assertMembers(4);
+116:        CountingSecurityManager.assertMembers(0);
+123:    static final class CountingSecurityManager extends SecurityManager {
+125:            if (System.getSecurityManager() instanceof CountingSecurityManager) {
+128:                System.setSecurityManager(new CountingSecurityManager());
+
+
+
+./netbeans-6.9.1/src/java.api.common/test/unit/src/org/netbeans/modules/java/api/common/queries/SourceLevelQueryImplTest.java
+84:        System.setSecurityManager(new SecurityManager() {
+
+
+
+./netbeans-6.9.1/src/web.struts/test/qa-functional/src/org/netbeans/modules/web/struts/EndToEndTest.java
+106:                "testCreateLoginAction","testCreateSecurityManager","testCreateForward","testCreateShopPage",
+119:    .addTest("testCreateSecurityManager")
+280:    /** Create SecurityManager class.  */
+281:    public void testCreateSecurityManager() throws IOException {
+290:        nfnlso.setObjectName("SecurityManager");
+293:        EditorOperator editorOper = new EditorOperator("SecurityManager.java");
+296:        String sourceCode = properties.getProperty("SecurityManager");
+
+
+
+./netbeans-6.9.1/src/java.navigation/src/org/netbeans/modules/java/stackanalyzer/AnalyserCellRenderer.java
+84:        if (System.getSecurityManager() != null) {
+
+
+
+./netbeans-6.9.1/src/o.n.bootstrap/test/unit/src/org/netbeans/JarClassLoaderTest.java
+228:        BlockingSecurityManager.initialize(jar.toString(), readSemaphore);
+275:    private static class BlockingSecurityManager extends SecurityManager {
+280:            BlockingSecurityManager.path = path;
+281:            BlockingSecurityManager.sync = sync;
+282:            if (System.getSecurityManager() instanceof BlockingSecurityManager) {
+285:                System.setSecurityManager(new BlockingSecurityManager());
+
+
+
+./netbeans-6.9.1/src/o.n.bootstrap/test/unit/src/org/netbeans/TopSecurityManagerTest.java
+51:public class TopSecurityManagerTest extends TestCase {
+53:    public TopSecurityManagerTest(String testName) {
+55:        System.err.println("TopSecurityManagerTest: " + testName);
+61:        TopSecurityManager.uninstall();
+66:        TopSecurityManager.install();
+67:        TopSecurityManager.install();
+70:        TopSecurityManager.install();
+72:            System.setSecurityManager(new SecMan());
+86:            TopSecurityManager.install();
+103:            TopSecurityManager.install();
+117:    private static final class SecMan extends SecurityManager {
+
+
+
+./netbeans-6.9.1/src/o.n.bootstrap/test/unit/src/org/netbeans/StampsTest.java
+186:        CountingSecurityManager.initialize(install.getPath());
+190:        CountingSecurityManager.assertCounts("Just two accesses installation", 2);
+199:        CountingSecurityManager.initialize(new File(userdir, "var").getPath());
+202:        CountingSecurityManager.assertCounts("Just four accesses to cache", 4);
+
+
+
+./netbeans-6.9.1/src/o.n.bootstrap/test/unit/src/org/netbeans/StampsExtraTest.java
+107:        CountingSecurityManager.initialize(install.getPath());
+111:        CountingSecurityManager.assertCounts("Just few accesses to installation", 6);
+
+
+
+./netbeans-6.9.1/src/o.n.bootstrap/test/unit/src/org/netbeans/CountingSecurityManager.java
+55:final class CountingSecurityManager extends SecurityManager {
+62:        if (System.getSecurityManager() instanceof CountingSecurityManager) {
+65:            System.setSecurityManager(new CountingSecurityManager());
+70:        CountingSecurityManager.prefix = prefix;
+
+
+
+./netbeans-6.9.1/src/o.n.bootstrap/src/org/netbeans/TopSecurityManager.java
+73:public class TopSecurityManager extends SecurityManager {
+75:    private static final Logger LOG = Logger.getLogger(TopSecurityManager.class.getName());
+87:    private static SecurityManager fsSecManager;
+89:    private static final List<SecurityManager> delegates = new ArrayList<SecurityManager>();
+93:     * @throws SecurityException without RuntimePermission "TopSecurityManager.register"
+95:    public static void register(SecurityManager sm) throws SecurityException {
+98:                AccessController.checkPermission(new RuntimePermission("TopSecurityManager.register")); // NOI18N
+113:                for (Lookup.Item<SecurityManager> item : Lookup.getDefault().lookupResult(SecurityManager.class).allItems()) {
+125:     * @throws SecurityException without RuntimePermission "TopSecurityManager.unregister"
+127:    public static void unregister(SecurityManager sm) throws SecurityException {
+129:            AccessController.checkPermission(new RuntimePermission("TopSecurityManager.unregister")); // NOI18N
+139:    * constructs new TopSecurityManager
+141:    public TopSecurityManager () {
+153:                ((SecurityManager)it.next()).checkExit(status);
+160:    SecurityManager getSecurityManager() {
+170:        SecurityManager s = getSecurityManager();
+177:        SecurityManager s = getSecurityManager();
+184:        SecurityManager s = getSecurityManager();
+211:            for (SecurityManager sm : delegates) {
+234:        for (; (i < classes.length) && (classes[i] == TopSecurityManager.class); i++);
+249:                if (c != TopSecurityManager.class &&
+267:                if (c != TopSecurityManager.class &&
+378:        checkSetSecurityManager(perm);
+387:                synchronized (TopSecurityManager.class) {
+407:        checkSetSecurityManager(perm);
+440:            System.setSecurityManager(new TopSecurityManager());
+447:        System.setSecurityManager(null);
+450:    /** Prohibits to set another SecurityManager */
+451:    private void checkSetSecurityManager(Permission perm) {
+453:            if (perm.getName().equals("setSecurityManager")) { // NOI18N - hardcoded in java.lang
+457:                    if (arr[i].getName().equals("org.netbeans.TopSecurityManager")) { // NOI18N
+595:            synchronized (TopSecurityManager.class) {
+596:                if (! (System.getSecurityManager() instanceof TopSecurityManager)) {
+597:                    LOG.warning("Our manager has to be active: " + System.getSecurityManager());
+619:            if (! (forb instanceof TopSecurityManager) ) {
+620:                System.err.println("Cannot install our clipboard to swing components, TopSecurityManager is not the security manager: " + forb); // NOI18N
+670:        TopSecurityManager tsm;
+681:        public PrivilegedCheck(int action, TopSecurityManager tsm) {
+703:        static void checkExit(int status, TopSecurityManager tsm) {
+709:        static void checkConnect(String host, int port, TopSecurityManager tsm) {
+
+
+
+./netbeans-6.9.1/src/properties.based.dataobjects/test/unit/src/org/openide/util/test/RestrictThreadCreation.java
+114:        System.setSecurityManager(new SecurityManager() {
+
+
+
+./netbeans-6.9.1/src/nbbuild/test/unit/src/org/netbeans/nbbuild/PublicPackagesInProjectizedXMLTest.java
+258:        if (! (System.getSecurityManager () instanceof MySecMan)) {
+264:            System.setSecurityManager (new MySecMan ());
+267:        MySecMan sec = (MySecMan)System.getSecurityManager();
+276:        // of the SecurityManager stuff, would be cleaner I think.
+338:    private static class MySecMan extends SecurityManager {
+
+
+
+./netbeans-6.9.1/src/core.execution/src/org/netbeans/core/execution/Install.java
+75:import org.netbeans.TopSecurityManager;
+114:        TopSecurityManager.register(SecMan.DEFAULT);
+140:        TopSecurityManager.unregister(SecMan.DEFAULT);
+
+
+
+./netbeans-6.9.1/src/core.execution/src/org/netbeans/core/execution/SecMan.java
+55:public class SecMan extends SecurityManager {
+57:    public static SecurityManager DEFAULT = new SecMan();
+138:    /** mostly copied from TopSecurityManager */
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/layers/CachingPreventsFileTouchesTest.java
+68:        CountingSecurityManager.initialize(null, CountingSecurityManager.Mode.CHECK_READ, allowedFiles);
+76:        CountingSecurityManager.initialize("none", CountingSecurityManager.Mode.CHECK_READ, null);
+121:            if (CountingSecurityManager.isEnabled()) {
+122:                CountingSecurityManager.assertCounts("No reads during startup", 0);
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/layers/CountingSecurityManager.java
+68:final class CountingSecurityManager extends SecurityManager implements Callable<Integer> {
+75:    private static SecurityManager man;
+85:        if (System.getSecurityManager() instanceof CountingSecurityManager) {
+88:            System.setSecurityManager(new CountingSecurityManager());
+93:        CountingSecurityManager.prefix = prefix;
+94:        CountingSecurityManager.mode = mode;
+97:        Logger.getLogger("org.netbeans.TopSecurityManager").setLevel(Level.OFF);
+98:        System.setProperty("org.netbeans.TopSecurityManager.level", "3000");
+104:        System.getSecurityManager().checkMemberAccess(null, maxCount);
+118:        return System.getSecurityManager() instanceof Callable<?>;
+122:        int c = (Integer)((Callable<?>)System.getSecurityManager()).call();
+123:        Assert.assertEquals(msg + "\n" + System.getSecurityManager().toString(), expectedCnt, c);
+148:        if (p instanceof RuntimePermission && "setSecurityManager".equals(p.getName())) {
+151:                Class<?> manClass = Class.forName("org.netbeans.TopSecurityManager", false, l);
+152:                man = (SecurityManager) manClass.newInstance();
+204:            okAccess.load(CountingSecurityManager.class.getResourceAsStream(res));
+323:                if (stackTraceElement.getClassName().contains("CountingSecurityManager")) {
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/InstalledFileLocatorImplDirTest.java
+127:        IsDirCntSecurityManager.initialize();
+156:        IsDirCntSecurityManager.assertCounts("Excessive File.isDirectory() calls!", 3, 20);
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/CLILookupHelpTest.java
+86:        System.setSecurityManager(new NoExit());
+201:    private static final class NoExit extends SecurityManager {
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/ModuleListTest.java
+213:        CountingSecurityManager.initialize(new File(fs.getRootDirectory(), "Modules").getPath());
+239:        CountingSecurityManager.assertCounts("Do not access the module config files", 0);
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/IsDirCntSecurityManager.java
+52:public class IsDirCntSecurityManager extends SecurityManager {
+57:        if (!(System.getSecurityManager() instanceof IsDirCntSecurityManager)) {
+58:            System.setSecurityManager(new IsDirCntSecurityManager());
+77:            if (stack[i].getClassName().equals(IsDirCntSecurityManager.class.getName())) {
+
+
+
+./netbeans-6.9.1/src/core.startup/test/unit/src/org/netbeans/core/startup/CountingSecurityManager.java
+55:final class CountingSecurityManager extends SecurityManager {
+62:        if (System.getSecurityManager() instanceof CountingSecurityManager) {
+65:            System.setSecurityManager(new CountingSecurityManager());
+70:        CountingSecurityManager.prefix = prefix;
+
+
+
+./netbeans-6.9.1/src/core.startup/src/org/netbeans/core/startup/TopThreadGroup.java
+47:import org.netbeans.TopSecurityManager;
+123:            TopSecurityManager.exit(2);
+
+
+
+./netbeans-6.9.1/src/core.startup/src/org/netbeans/core/startup/CLIOptions.java
+322:            org.netbeans.TopSecurityManager.exit (6);
+328:                org.netbeans.TopSecurityManager.exit (7);
+
+
+
+./netbeans-6.9.1/src/core.startup/src/org/netbeans/core/startup/ModuleLifecycleManager.java
+49:import org.netbeans.TopSecurityManager;
+92:                TopSecurityManager.exit(0);
+98:        if (!TopSecurityManager.class.getClassLoader().getClass().getName().endsWith(".Launcher$AppClassLoader")) {
+
+
+
+./netbeans-6.9.1/src/core.startup/src/org/netbeans/core/startup/TopLogging.java
+87:import org.netbeans.TopSecurityManager;
+468:        TopSecurityManager.exit(exit);
+
+
+
+./netbeans-6.9.1/src/core.startup/src/org/netbeans/core/startup/StartLog.java
+53:import org.netbeans.TopSecurityManager;
+142:                TopSecurityManager.exit(1);
+
+
+
+./netbeans-6.9.1/src/openide.loaders/test/unit/src/org/openide/loaders/XMLDataObjectTest.java
+115:        CountingSecurityManager.initialize();
+128:        CountingSecurityManager.assertMembers(1);
+172:        CountingSecurityManager.assertMembers(0);
+211:        CountingSecurityManager.assertMembers(0);
+280:        CountingSecurityManager.assertMembers(1);
+304:        CountingSecurityManager.assertMembers(0);
+498:    static final class CountingSecurityManager extends SecurityManager {
+500:            if (System.getSecurityManager() instanceof CountingSecurityManager) {
+503:                System.setSecurityManager(new CountingSecurityManager());
+
+
+

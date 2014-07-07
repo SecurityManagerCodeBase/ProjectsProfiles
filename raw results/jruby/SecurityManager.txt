@@ -1,0 +1,10 @@
+./jruby-1.5.2/src/jruby-1.5.2/src/org/jruby/runtime/callback/InvocationCallbackFactory.java
+104:        SecurityManager sm = System.getSecurityManager();
+
+
+
+./jruby-1.5.2/src/jruby-1.5.2/src/org/jruby/Ruby.java
+3869:            SecurityManager sm = System.getSecurityManager();
+
+
+

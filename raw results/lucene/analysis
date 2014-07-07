@@ -1,0 +1,1 @@
+In TestSecurityManager which extends the system's sm, there is a checkExit method that inspects the stack trace and checks who is calling System.exit() and similar methods during running of JVM.

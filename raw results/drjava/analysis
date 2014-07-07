@@ -1,0 +1,1 @@
+There are two functions enableSecurityManager and disableSecurityManager but it seems that there are no implementations within the GlobalModel.java that defines it. The MainJVM.java calls those methods with commenting.

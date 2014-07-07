@@ -1,0 +1,8 @@
+./openjms-0.7.7-beta-1/src/openjms-0.7.7-beta-1/modules/net/src/test/java/org/exolab/jms/net/socket/SocketManagedConnectionFactoryTestCase.java
+126:        SecurityManager manager = new SecurityManager() {
+135:        SecurityManager original = System.getSecurityManager();
+136:        System.setSecurityManager(manager);
+140:            System.setSecurityManager(original);
+
+
+

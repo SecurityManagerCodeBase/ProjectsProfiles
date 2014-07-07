@@ -1,0 +1,15 @@
+./galleon-2.3.0/src/src/org/lnicholls/galleon/server/Server.java
+41:import java.rmi.RMISecurityManager;
+85:		//System.setSecurityManager(new CustomSecurityManager());
+205:				System.setSecurityManager (new RMISecurityManager() {
+871:		if (true || System.getSecurityManager() instanceof CustomSecurityManager)
+
+
+
+./galleon-2.3.0/src/src/org/lnicholls/galleon/util/CustomSecurityManager.java
+23:public class CustomSecurityManager extends SecurityManager {
+25:	public CustomSecurityManager()
+45:		     * SecurityManager.checkMemeberAccess [0]
+
+
+

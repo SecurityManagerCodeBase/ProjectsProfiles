@@ -1,0 +1,3 @@
+test cases: in JarCheckPermissionsGranted.java and JarCheckPermissionsDenied.java, given a set of permissions, check whether the default security manager grants or denies a permission
+It is worth analyzing because there is a ApplicationSecurityEnforcer class defined so that it can install a SecurityManager for an application and resolves whether the application runs in a development environment or from a jar file (in other words, it resolves code-base issues for the application) according to the documentation.
+Very valuable for deep analyzation

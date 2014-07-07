@@ -1,0 +1,75 @@
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xsltc/compiler/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xsltc/compiler/util/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xsltc/runtime/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xsltc/cmdline/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xsltc/dom/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xsltc/trax/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/xslt/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/lib/sql/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/lib/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xalan/extensions/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xml/serializer/ObjectFactory.java
+481:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xml/dtm/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xml/dtm/ref/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xml/utils/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+
+./xalan-2.7.1/src/xalan-j_2_7_1/src/org/apache/xpath/functions/ObjectFactory.java
+482:        SecurityManager security = System.getSecurityManager();
+
+
+

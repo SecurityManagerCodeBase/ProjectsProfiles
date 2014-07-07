@@ -1,0 +1,86 @@
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/ControllerFactory.java
+49:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+389:  public void setUpSecurity(ControllerSecurityManager security)
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/Controller.java
+67:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+119:  private ControllerSecurityManager security;
+880:  public ControllerSecurityManager getSecurity()
+888:  public void setSecurity(ControllerSecurityManager security)
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/security/ControllerSecurityManager.java
+41:public class ControllerSecurityManager implements XmlComponent
+58:  public ControllerSecurityManager()
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/xml/ControllerParser.java
+50:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+79:  private ControllerSecurityManager security;
+324:      security = new ControllerSecurityManager();
+
+
+
+./SecurityManager.java
+2:49:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+3:389:  public void setUpSecurity(ControllerSecurityManager security)
+8:67:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+9:119:  private ControllerSecurityManager security;
+10:880:  public ControllerSecurityManager getSecurity()
+11:888:  public void setSecurity(ControllerSecurityManager security)
+15:./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/security/ControllerSecurityManager.java
+16:41:public class ControllerSecurityManager implements XmlComponent
+17:58:  public ControllerSecurityManager()
+22:50:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+23:79:  private ControllerSecurityManager security;
+24:324:      security = new ControllerSecurityManager();
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/ControllerFactory.java
+49:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+389:  public void setUpSecurity(ControllerSecurityManager security)
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/Controller.java
+67:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+119:  private ControllerSecurityManager security;
+880:  public ControllerSecurityManager getSecurity()
+888:  public void setSecurity(ControllerSecurityManager security)
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/security/ControllerSecurityManager.java
+41:public class ControllerSecurityManager implements XmlComponent
+58:  public ControllerSecurityManager()
+
+
+
+./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/xml/ControllerParser.java
+50:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+79:  private ControllerSecurityManager security;
+324:      security = new ControllerSecurityManager();
+
+
+
+./SecurityManager.java
+2:49:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+3:389:  public void setUpSecurity(ControllerSecurityManager security)
+8:67:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+9:119:  private ControllerSecurityManager security;
+10:880:  public ControllerSecurityManager getSecurity()
+11:888:  public void setSecurity(ControllerSecurityManager security)
+15:./c_jdbc-2.0.2/src/c-jdbc-2.0.2-src/src/org/objectweb/cjdbc/controller/core/security/ControllerSecurityManager.java
+16:41:public class ControllerSecurityManager implements XmlComponent
+17:58:  public ControllerSecurityManager()
+22:50:import org.objectweb.cjdbc.controller.core.security.ControllerSecurityManager;
+23:79:  private ControllerSecurityManager security;
+24:324:      security = new ControllerSecurityManager();
+
+
+

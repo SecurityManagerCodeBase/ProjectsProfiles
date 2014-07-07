@@ -1,0 +1,25 @@
+./lucene-4.3.0/src/lucene-4.3.0/core/src/test/org/apache/lucene/index/TestBackwardsCompatibility.java
+84:  // However, you must first disable the Lucene TestSecurityManager,
+
+
+
+./lucene-4.3.0/src/lucene-4.3.0/core/src/java/org/apache/lucene/util/NamedThreadFactory.java
+44:    final SecurityManager s = System.getSecurityManager();
+
+
+
+./lucene-4.3.0/src/lucene-4.3.0/queryparser/src/java/org/apache/lucene/queryparser/flexible/messages/NLS.java
+188:    if (System.getSecurityManager() == null) {
+
+
+
+./lucene-4.3.0/src/lucene-4.3.0/test-framework/src/java/org/apache/lucene/util/TestSecurityManager.java
+24: * A {@link SecurityManager} that prevents tests calling {@link System#exit(int)}.
+28: * Use this with {@code -Djava.security.manager=org.apache.lucene.util.TestSecurityManager}.
+30:public final class TestSecurityManager extends SecurityManager {
+35:   * Creates a new TestSecurityManager. This ctor is called on JVM startup,
+36:   * when {@code -Djava.security.manager=org.apache.lucene.util.TestSecurityManager}
+39:  public TestSecurityManager() {
+
+
+

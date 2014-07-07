@@ -1,0 +1,85 @@
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/config/annotation/DefaultLifecycleProviderFactory.java
+149:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/config/annotation/LifecycleProviderFactory.java
+46:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/application/jsp/JspStateManagerImpl.java
+894:                    if (System.getSecurityManager() != null) 
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/spi/AnnotationProviderFactory.java
+52:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/spi/FacesConfigResourceProviderFactory.java
+52:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/spi/FaceletConfigResourceProviderFactory.java
+52:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/spi/impl/DefaultFacesConfigResourceProviderFactory.java
+58:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/spi/impl/DefaultFaceletConfigResourceProviderFactory.java
+58:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/spi/impl/DefaultAnnotationProviderFactory.java
+58:            if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/view/facelets/DefaultFaceletsStateManagementHelper.java
+373:                    if (System.getSecurityManager() != null) 
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/shared_impl/util/StateUtils.java
+523:                if (System.getSecurityManager() != null)
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/org/apache/myfaces/shared_impl/util/ClassLoaderUtils.java
+223:      if (System.getSecurityManager() != null) 
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/javax/faces/validator/_MessageUtils.java
+169:                    if (System.getSecurityManager() != null) {
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/javax/faces/validator/BeanValidator.java
+304:                    if (System.getSecurityManager() != null) 
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/javax/faces/convert/_MessageUtils.java
+164:                    if (System.getSecurityManager() != null) {
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/javax/faces/component/_ClassUtils.java
+373:        if (System.getSecurityManager() != null) {
+
+
+
+./myfaces_core-2.0.2/src/myfaces-core-2.0.2-src/src/javax/faces/FactoryFinder.java
+363:            if (System.getSecurityManager() != null) {                
+
+
+

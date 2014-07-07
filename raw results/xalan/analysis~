@@ -1,0 +1,1 @@
+SecurityManager security = System.getSecurityManager(); appears multiple times in ObjectFactory.java from different package. Their objective is to throw security exception if the calling thread is not allowed to access the class. Restrict the access to the package classes as specified in java.security policy.

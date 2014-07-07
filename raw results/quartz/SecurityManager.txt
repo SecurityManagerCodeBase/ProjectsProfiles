@@ -1,0 +1,6 @@
+./quartz-1.8.3/src/quartz-1.8.3/quartz/src/main/java/org/quartz/impl/QuartzServer.java
+175:        if (System.getSecurityManager() == null) {
+176:            System.setSecurityManager(new java.rmi.RMISecurityManager());
+
+
+

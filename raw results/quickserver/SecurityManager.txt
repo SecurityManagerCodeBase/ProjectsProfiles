@@ -1,0 +1,38 @@
+./quickserver-1.4.7/src/src/main/org/quickserver/util/xmlreader/QuickServerConfig.java
+94:	 * Sets the SecurityManager class
+97:	 * class that extends {@link java.lang.SecurityManager}.
+98:	 * @see #getSecurityManagerClass
+101:	public void setSecurityManagerClass(String securityManagerClass) {
+106:	 * Returns the SecurityManager class
+107:	 * @see #setSecurityManagerClass
+110:	public String getSecurityManagerClass() {
+240:		if(getSecurityManagerClass()!=null) {
+241:			sb.append(pad+"\t<security-manager-class>"+getSecurityManagerClass()+"</security-manager-class>\n");
+
+
+
+./quickserver-1.4.7/src/src/main/org/quickserver/net/server/QuickServer.java
+429:		if(getSecurityManagerClass()!=null) {
+430:			System.setSecurityManager(getSecurityManager());
+1494:		qs.setSecurityManagerClass(config.getSecurityManagerClass());
+2046:	 * Sets the SecurityManager class
+2048:	 * that extends {@link java.lang.SecurityManager}.
+2049:	 * @see #getSecurityManagerClass
+2052:	public void setSecurityManagerClass(String securityManagerClass) {
+2057:	 * Returns the SecurityManager class
+2058:	 * @see #setSecurityManagerClass
+2061:	public String getSecurityManagerClass() {
+2065:	public SecurityManager getSecurityManager() throws AppException {
+2066:		if(getSecurityManagerClass()==null)
+2068:		SecurityManager sm = null;
+2070:			sm = (SecurityManager) 
+2071:				getClass(getSecurityManagerClass(), true).newInstance();
+
+
+
+./quickserver-1.4.7/src/src/main/org/quickserver/security/AccessManager.java
+22: * This is a simple SecurityManager template.
+25:public class AccessManager extends SecurityManager {
+
+
+

@@ -1,0 +1,5 @@
+./nekohtml-1.9.14/src/nekohtml-1.9.14/src/org/cyberneko/html/ObjectFactory.java
+337:        SecurityManager security = System.getSecurityManager();
+
+
+

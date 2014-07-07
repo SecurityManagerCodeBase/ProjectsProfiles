@@ -1,0 +1,101 @@
+./freemind-0.9.0/src/freemind/plugins/script/ScriptingEngine.java
+42:import freemind.main.FreeMindSecurityManager;
+226:		final ScriptingSecurityManager scriptingSecurityManager = new ScriptingSecurityManager(
+228:		final FreeMindSecurityManager securityManager = (FreeMindSecurityManager) System
+229:				.getSecurityManager();
+244:						securityManager.setFinalSecurityManager(scriptingSecurityManager);
+252:							securityManager.setFinalSecurityManager(scriptingSecurityManager);
+
+
+
+./freemind-0.9.0/src/freemind/plugins/script/ScriptingSecurityManager.java
+22:/*$Id: ScriptingSecurityManager.java,v 1.1.2.5 2008/04/02 20:02:37 christianfoltin Exp $*/
+37:public class ScriptingSecurityManager extends SecurityManager {
+59:	public ScriptingSecurityManager(boolean pWithoutFileRestriction, boolean pWithoutNetworkRestriction,
+
+
+
+./freemind-0.9.0/src/freemind/freemind/main/FreeMindSecurityManager.java
+22:/*$Id: FreeMindSecurityManager.java,v 1.1.2.1 2008/03/14 21:15:22 christianfoltin Exp $*/
+41:public final class FreeMindSecurityManager extends SecurityManager {
+43:	private SecurityManager mFinalSecurityManager=null;
+45:	public FreeMindSecurityManager() {
+48:	 * @param pFinalSecurityManager set twice the same to remove it.
+51:	public void setFinalSecurityManager(SecurityManager pFinalSecurityManager) {
+52:		if(pFinalSecurityManager == mFinalSecurityManager) {
+53:			mFinalSecurityManager = null;
+56:		if(mFinalSecurityManager != null) {
+57:			throw new SecurityException("There is a SecurityManager installed already.");
+59:		mFinalSecurityManager = pFinalSecurityManager;
+62:		if(mFinalSecurityManager == null) return;
+63:		mFinalSecurityManager.checkAccept(pHost, pPort);
+66:		if(mFinalSecurityManager == null) return;
+67:		mFinalSecurityManager.checkAccess(pT);
+70:		if(mFinalSecurityManager == null) return;
+71:		mFinalSecurityManager.checkAccess(pG);
+74:		if(mFinalSecurityManager == null) return;
+75:		mFinalSecurityManager.checkAwtEventQueueAccess();
+78:		if(mFinalSecurityManager == null) return;
+79:		mFinalSecurityManager.checkConnect(pHost, pPort, pContext);
+82:		if(mFinalSecurityManager == null) return;
+83:		mFinalSecurityManager.checkConnect(pHost, pPort);
+86:		if(mFinalSecurityManager == null) return;
+87:		mFinalSecurityManager.checkCreateClassLoader();
+90:		if(mFinalSecurityManager == null) return;
+91:		mFinalSecurityManager.checkDelete(pFile);
+94:		if(mFinalSecurityManager == null) return;
+95:		mFinalSecurityManager.checkExec(pCmd);
+98:		if(mFinalSecurityManager == null) return;
+99:		mFinalSecurityManager.checkExit(pStatus);
+102:		if(mFinalSecurityManager == null) return;
+103:		mFinalSecurityManager.checkLink(pLib);
+106:		if(mFinalSecurityManager == null) return;
+107:		mFinalSecurityManager.checkListen(pPort);
+110:		if(mFinalSecurityManager == null) return;
+111:		mFinalSecurityManager.checkMemberAccess(arg0, arg1);
+114:		if(mFinalSecurityManager == null) return;
+115:		mFinalSecurityManager.checkMulticast(pMaddr, pTtl);
+118:		if(mFinalSecurityManager == null) return;
+119:		mFinalSecurityManager.checkMulticast(pMaddr);
+122:		if(mFinalSecurityManager == null) return;
+123:		mFinalSecurityManager.checkPackageAccess(pPkg);
+126:		if(mFinalSecurityManager == null) return;
+127:		mFinalSecurityManager.checkPackageDefinition(pPkg);
+130:		if(mFinalSecurityManager == null) return;
+131:		mFinalSecurityManager.checkPermission(pPerm, pContext);
+134:		if(mFinalSecurityManager == null) return;
+135:		mFinalSecurityManager.checkPermission(pPerm);
+138:		if(mFinalSecurityManager == null) return;
+139:		mFinalSecurityManager.checkPrintJobAccess();
+142:		if(mFinalSecurityManager == null) return;
+143:		mFinalSecurityManager.checkPropertiesAccess();
+146:		if(mFinalSecurityManager == null) return;
+147:		mFinalSecurityManager.checkPropertyAccess(pKey);
+150:		if(mFinalSecurityManager == null) return;
+151:		mFinalSecurityManager.checkRead(pFd);
+154:		if(mFinalSecurityManager == null) return;
+155:		mFinalSecurityManager.checkRead(pFile, pContext);
+158:		if(mFinalSecurityManager == null) return;
+159:		mFinalSecurityManager.checkRead(pFile);
+162:		if(mFinalSecurityManager == null) return;
+163:		mFinalSecurityManager.checkSecurityAccess(pTarget);
+166:		if(mFinalSecurityManager == null) return;
+167:		mFinalSecurityManager.checkSetFactory();
+170:		if(mFinalSecurityManager == null) return;
+171:		mFinalSecurityManager.checkSystemClipboardAccess();
+174:		if(mFinalSecurityManager == null) return true;
+175:		return mFinalSecurityManager.checkTopLevelWindow(pWindow);
+178:		if(mFinalSecurityManager == null) return;
+179:		mFinalSecurityManager.checkWrite(pFd);
+182:		if(mFinalSecurityManager == null) return;
+183:		mFinalSecurityManager.checkWrite(pFile);
+186:		if(mFinalSecurityManager == null) return super.getSecurityContext();
+187:		return mFinalSecurityManager.getSecurityContext();
+
+
+
+./freemind-0.9.0/src/freemind/freemind/main/FreeMind.java
+205:		System.setSecurityManager(new FreeMindSecurityManager());
+
+
+

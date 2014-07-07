@@ -1,0 +1,1 @@
+according to the comments in TestDFSShell.java, it uses SecurityManager to pause the copying of f1 and begin copying f2 in test cases.

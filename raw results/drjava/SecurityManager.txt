@@ -1,0 +1,24 @@
+./drjava-stable-20100913-r5387/src/drjava-stable-20100913-r5387/src/src/edu/rice/cs/drjava/model/repl/newjvm/MainJVM.java
+471://  public void enableSecurityManager() throws RemoteException {
+472://    _interpreterJVM().enableSecurityManager();
+476://  public void disableSecurityManager() throws RemoteException{
+477://    _interpreterJVM().disableSecurityManager();
+
+
+
+./drjava-stable-20100913-r5387/src/drjava-stable-20100913-r5387/src/src/edu/rice/cs/drjava/model/GlobalModel.java
+138://  public void enableSecurityManager();
+141://  public void disableSecurityManager();
+
+
+
+./SecurityManager.java
+2:471://  public void enableSecurityManager() throws RemoteException {
+3:472://    _interpreterJVM().enableSecurityManager();
+4:476://  public void disableSecurityManager() throws RemoteException{
+5:477://    _interpreterJVM().disableSecurityManager();
+10:138://  public void enableSecurityManager();
+11:141://  public void disableSecurityManager();
+
+
+

@@ -1,0 +1,20 @@
+./hsqldb-2.0.0/src/hsqldb-2.0.0/hsqldb/src/org/hsqldb/persist/LockFile.java
+587:     *         java.lang.SecurityManager#checkRead}</tt> method denies read
+589:     *         java.lang.SecurityManager#checkRead(java.lang.String)}</tt>
+592:     *         java.lang.SecurityManager#checkWrite(java.lang.String)}</tt>
+1022:     *        <tt>{@link java.lang.SecurityManager#checkRead}</tt> method denies
+1024:     *         java.lang.SecurityManager#checkRead(java.lang.String)}</tt>
+1028:     *         java.lang.SecurityManager#checkWrite(java.lang.String)}</tt>
+1066:     *         <tt>{@link java.lang.SecurityManager#checkRead}</tt> method
+1068:     *         java.lang.SecurityManager#checkWrite(java.lang.String)}</tt>
+1093:     *         <tt>{@link java.lang.SecurityManager#checkRead}</tt> method
+1144:     *         <tt>{@link java.lang.SecurityManager#checkRead}</tt> method
+1235:     *      java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)}</tt>
+1274:     *      java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)}</tt>
+1463:     *         java.lang.SecurityManager#checkRead}</tt> method denies
+2050:     * java.lang.SecurityManager#checkRead}</tt> method denies read access to a
+2052:     * java.lang.SecurityManager#checkRead(java.lang.String)}</tt>
+2055:     * java.lang.SecurityManager#checkWrite(java.lang.String)}</tt>
+
+
+

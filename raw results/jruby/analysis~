@@ -1,0 +1,22 @@
+In Ruby.java:
+line 3861,
+  // Note: this field and the following static initializer
+    // must be located be in this order!
+    private volatile static boolean securityRestricted = false;
+    static {
+        if (SafePropertyAccessor.isSecurityProtected("jruby.reflection")) {
+            // can't read non-standard properties
+            securityRestricted = true;
+        } else {
+            SecurityManager sm = System.getSecurityManager();
+            if (sm != null) {
+                try {
+                    sm.checkCreateClassLoader();
+                } catch (SecurityException se) {
+                    // can't create custom classloaders
+                    securityRestricted = true;
+                }
+            }
+        }
+    }
+    

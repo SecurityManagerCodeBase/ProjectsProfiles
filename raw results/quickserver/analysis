@@ -1,0 +1,2 @@
+In SecureStoreManager.java, there is a defined class that loads Key Managers, Trust Managers, SSLContext and other secure objects from QuickServer configuration passed.
+In QuickServer.java, basicall check whether the current sm is null or not, then create a new one.

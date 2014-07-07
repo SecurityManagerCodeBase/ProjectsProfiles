@@ -1,0 +1,1 @@
+In LockFile.java, some functions that deal with files will raise certain Security policy when se is not null and denies read/write

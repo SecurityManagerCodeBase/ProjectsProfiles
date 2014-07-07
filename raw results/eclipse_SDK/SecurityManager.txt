@@ -1,0 +1,1216 @@
+./eclipse_SDK-4.3/src/src/org/eclipse/core/runtime/internal/adaptor/ContextFinder.java
+21:	static final class Finder extends SecurityManager {
+89:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/core/runtime/internal/adaptor/EclipseStorageHook.java
+396:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/ui/texteditor/MarkerAnnotationPreferences.java
+193:	private static final class AccessChecker extends SecurityManager {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/browser/Mozilla.java
+1325:		rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_17_IID, result);
+1328:			rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_10_IID, result);
+1331:				rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_191_IID, result);
+1334:					rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_IID, result);
+1343:			nsIScriptSecurityManager securityManager = new nsIScriptSecurityManager (result[0]);
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/browser/WebSite.java
+26:	COMObject iInternetSecurityManager;
+82:	iInternetSecurityManager = new COMObject(new int[]{2, 0, 0, 1, 1, 3, 4, 8, 7, 3, 3}){
+147:	if (iInternetSecurityManager != null) {
+148:		iInternetSecurityManager.dispose();
+149:		iInternetSecurityManager = null;
+191:    if (COM.IsEqualGUID(guid, COM.IIDIInternetSecurityManager)) {
+192:        COM.MoveMemory(ppvObject, new int /*long*/[] {iInternetSecurityManager.getAddress()}, OS.PTR_SIZEOF);
+474:	if (COM.IsEqualGUID(guid, COM.IIDIInternetSecurityManager)) {
+475:		COM.MoveMemory(ppvObject, new int /*long*/[] {iInternetSecurityManager.getAddress()}, OS.PTR_SIZEOF);
+488:/* IInternetSecurityManager */
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/accessibility/Accessible.java
+5433:		if (COM.IsEqualGUID(guid, COM.IIDIInternetSecurityManager)) return "IIDIInternetSecurityManager";
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/internal/ole/win32/COM.java
+66:	public static final GUID IIDIInternetSecurityManager = IIDFromString("{79eac9ee-baf9-11ce-8c82-00aa004ba90b}"); //$NON-NLS-1$
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/internal/mozilla/nsIScriptSecurityManager.java
+30:public class nsIScriptSecurityManager extends nsIXPCSecurityManager {
+32:	static final int LAST_METHOD_ID = nsIXPCSecurityManager.LAST_METHOD_ID + ((IsXULRunner17 || IsXULRunner10) ? 27 : 26);
+58:	public nsIScriptSecurityManager(int /*long*/ address) {
+70:		return XPCOM.VtblCall(nsIXPCSecurityManager.LAST_METHOD_ID + (IsXULRunner17 ? 8 : (IsXULRunner10 ? 10 : 11)), getAddress(), _retval);
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/internal/mozilla/nsIXPCSecurityManager.java
+30:public class nsIXPCSecurityManager extends nsISupports {
+40:	public nsIXPCSecurityManager(int /*long*/ address) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/swt/internal/Compatibility.java
+262: *  if the current SecurityManager disallows program execution
+280: *  if the current SecurityManager disallows program execution
+304: *  if the current SecurityManager disallows program execution
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/launch/Equinox.java
+40:		SecurityManager sm = System.getSecurityManager();
+50:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/util/SecureAction.java
+72:		if (System.getSecurityManager() == null)
+90:		if (System.getSecurityManager() == null)
+105:		if (System.getSecurityManager() == null)
+122:		if (System.getSecurityManager() == null)
+146:		if (System.getSecurityManager() == null)
+168:		if (System.getSecurityManager() == null)
+185:		if (System.getSecurityManager() == null)
+207:		if (System.getSecurityManager() == null)
+223:		if (System.getSecurityManager() == null)
+245:		if (System.getSecurityManager() == null)
+261:		if (System.getSecurityManager() == null)
+277:		if (System.getSecurityManager() == null)
+293:		if (System.getSecurityManager() == null)
+311:			if (System.getSecurityManager() == null)
+347:		if (System.getSecurityManager() == null)
+371:		if (System.getSecurityManager() == null)
+395:		if (System.getSecurityManager() == null)
+412:		if (System.getSecurityManager() == null)
+435:		if (System.getSecurityManager() == null) {
+458:		if (System.getSecurityManager() == null) {
+477:		if (System.getSecurityManager() == null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/BundleContextImpl.java
+106:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/BundleResourceHandler.java
+284:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/AbstractBundle.java
+26:import org.eclipse.osgi.internal.permadmin.EquinoxSecurityManager;
+676:			if (System.getSecurityManager() != null) {
+1038:				SecurityManager sm = System.getSecurityManager();
+1039:				if (sm instanceof EquinoxSecurityManager) {
+1041:					 * If the FrameworkSecurityManager is active, we need to do checks the "right" way.
+1042:					 * We can exploit our knowledge that the security context of FrameworkSecurityManager
+1514:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/Framework.java
+28:import org.eclipse.osgi.internal.permadmin.EquinoxSecurityManager;
+179:		installSecurityManager();
+181:			Debug.println("SecurityManager: " + System.getSecurityManager()); //$NON-NLS-1$
+623:		if (System.getSecurityManager() instanceof EquinoxSecurityManager)
+624:			System.setSecurityManager(null);
+950:				if (System.getSecurityManager() != null) {
+1093:		if (System.getSecurityManager() == null) {
+1128:		if (System.getSecurityManager() == null) {
+1284:		SecurityManager sm = System.getSecurityManager();
+1309:	 * This is necessary for running from a JXE, otherwise the SecurityManager
+1312:	protected void installSecurityManager() {
+1315:			SecurityManager sm = System.getSecurityManager();
+1318:					sm = new SecurityManager(); // use the default one from java
+1320:					sm = new EquinoxSecurityManager(); // use an OSGi enabled manager that understands postponed conditions
+1325:						sm = (SecurityManager) clazz.newInstance();
+1339:					Debug.println("Setting SecurityManager to: " + sm); //$NON-NLS-1$
+1340:				System.setSecurityManager(sm);
+1395:		if (System.getSecurityManager() == null) {
+1503:		if (System.getSecurityManager() == null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/BundleHost.java
+63:			SecurityManager sm = System.getSecurityManager();
+113:		if (framework.isActive() && System.getSecurityManager() != null && framework.securityAdmin != null)
+677:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/InternalSystemBundle.java
+119:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/FrameworkProperties.java
+37:		SecurityManager sm = System.getSecurityManager();
+48:		SecurityManager sm = System.getSecurityManager();
+55:		SecurityManager sm = System.getSecurityManager();
+62:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/PackageAdminImpl.java
+636:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/EquinoxLauncher.java
+36:		if (System.getSecurityManager() == null)
+52:		if (System.getSecurityManager() != null && configuration.get(Constants.FRAMEWORK_SECURITY) != null)
+240:		if (System.getSecurityManager() == null)
+256:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/BundleFragment.java
+50:			SecurityManager sm = System.getSecurityManager();
+101:		if (framework.isActive() && System.getSecurityManager() != null && framework.securityAdmin != null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/core/FrameworkCommandProvider.java
+1085:				SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/framework/internal/protocol/MultiplexingFactory.java
+33:	// used to get access to the protected SecurityManager#getClassContext method
+34:	static class InternalSecurityManager extends SecurityManager {
+40:	private static InternalSecurityManager internalSecurityManager = new InternalSecurityManager();
+117:		Class<?>[] classStack = internalSecurityManager.getClassContext();
+120:			if (clazz == InternalSecurityManager.class || clazz == MultiplexingFactory.class || ignoredClasses.contains(clazz))
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/baseadaptor/BaseData.java
+104:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/util/NLS.java
+143:		if (System.getSecurityManager() == null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/composite/CompositeConfigurator.java
+109:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/baseadaptor/StateManager.java
+182:		systemState.setResolver(createResolver(System.getSecurityManager() != null));
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/baseadaptor/weaving/WovenClassImpl.java
+80:		SecurityManager sm = System.getSecurityManager();
+177:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/loader/BundleLoader.java
+564:		if (System.getSecurityManager() == null)
+841:		if (System.getSecurityManager() == null)
+892:		if (System.getSecurityManager() == null)
+1238:		if (System.getSecurityManager() == null)
+1248:	static final class ClassContext extends SecurityManager {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/loader/BundleLoaderProxy.java
+59:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/resolver/BundleDescriptionImpl.java
+1224:			SecurityManager sm = System.getSecurityManager();
+1246:			SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/signedcontent/SignedBundleHook.java
+280:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/permadmin/SecurityTable.java
+89:			EquinoxSecurityManager equinoxManager = securityAdmin.getSupportedSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/permadmin/EquinoxSecurityManager.java
+25:public class EquinoxSecurityManager extends SecurityManager {
+51:		EquinoxSecurityManager fsm;
+53:		CheckPermissionAction(EquinoxSecurityManager fsm, Permission perm, Object context) {
+93:	 * the SecurityManager.
+95:	 * @return the AccessControlContext currently being evaluated by the SecurityManager, or
+98:	 * rather than the SecurityManager.
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/permadmin/SecurityAdmin.java
+54:	private final EquinoxSecurityManager supportedSecurityManager;
+56:	private SecurityAdmin(EquinoxSecurityManager supportedSecurityManager, Framework framework, PermissionInfo[] impliedPermissionInfos, PermissionInfoCollection permAdminDefaults) {
+57:		this.supportedSecurityManager = supportedSecurityManager;
+64:	public SecurityAdmin(EquinoxSecurityManager supportedSecurityManager, Framework framework, PermissionStorage permissionStorage) throws IOException {
+65:		this.supportedSecurityManager = supportedSecurityManager;
+176:		SecurityManager sm = System.getSecurityManager();
+282:			sa = new SecurityAdmin(supportedSecurityManager, framework, impliedPermissionInfos, permAdminDefaults);
+416:	EquinoxSecurityManager getSupportedSecurityManager() {
+417:		return supportedSecurityManager != null ? supportedSecurityManager : getSupportedSystemSecurityManager();
+420:	static private EquinoxSecurityManager getSupportedSystemSecurityManager() {
+422:			EquinoxSecurityManager equinoxManager = (EquinoxSecurityManager) System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/permadmin/SecurityRow.java
+347:		return condition.isPostponed() && securityAdmin.getSupportedSecurityManager() != null;
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/serviceregistry/ServiceRegistry.java
+770:		if (System.getSecurityManager() == null) {
+1022:		SecurityManager sm = System.getSecurityManager();
+1035:		SecurityManager sm = System.getSecurityManager();
+1115:		if (System.getSecurityManager() == null) {
+1261:		if (System.getSecurityManager() == null) {
+1323:		if (System.getSecurityManager() == null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/ant/core/AntSecurityException.java
+15: * A security exception that is thrown by the AntSecurityManager if
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/ant/internal/core/AntSecurityManager.java
+28:public class AntSecurityManager extends SecurityManager {
+30:	private SecurityManager fSecurityManager= null;
+38:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread, boolean allowSettingProperties) {
+39:		fSecurityManager= securityManager;
+44:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread) {
+49:	 * @see java.lang.SecurityManager#checkExit(int)
+58:		if (fSecurityManager != null) {
+59:			fSecurityManager.checkExit(status);
+63:	 * @see java.lang.SecurityManager#checkAccept(java.lang.String, int)
+66:		if (fSecurityManager != null) {
+67:			fSecurityManager.checkAccept(host, port);
+72:	 * @see java.lang.SecurityManager#checkAccess(java.lang.Thread)
+75:		if (fSecurityManager != null) {
+76:			fSecurityManager.checkAccess(t);
+81:	 * @see java.lang.SecurityManager#checkAccess(java.lang.ThreadGroup)
+84:		if (fSecurityManager != null) {
+85:			fSecurityManager.checkAccess(g);
+90:	 * @see java.lang.SecurityManager#checkAwtEventQueueAccess()
+93:		if (fSecurityManager != null) {
+94:			fSecurityManager.checkAwtEventQueueAccess();
+99:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int, java.lang.Object)
+102:		if (fSecurityManager != null) {
+103:			fSecurityManager.checkConnect(host, port, context);
+108:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int)
+111:		if (fSecurityManager != null) {
+112:			fSecurityManager.checkConnect(host, port);
+117:	 * @see java.lang.SecurityManager#checkCreateClassLoader()
+120:		if (fSecurityManager != null) {
+121:			fSecurityManager.checkCreateClassLoader();
+126:	 * @see java.lang.SecurityManager#checkDelete(java.lang.String)
+129:		if (fSecurityManager != null) {
+130:			fSecurityManager.checkDelete(file);
+135:	 * @see java.lang.SecurityManager#checkExec(java.lang.String)
+138:		if (fSecurityManager != null) {
+139:			fSecurityManager.checkExec(cmd);
+144:	 * @see java.lang.SecurityManager#checkLink(java.lang.String)
+147:		if (fSecurityManager != null) {
+148:			fSecurityManager.checkLink(lib);
+153:	 * @see java.lang.SecurityManager#checkListen(int)
+156:		if (fSecurityManager != null) {
+157:			fSecurityManager.checkListen(port);
+162:	 * @see java.lang.SecurityManager#checkMemberAccess(java.lang.Class, int)
+165:		if (fSecurityManager != null) {
+166:			fSecurityManager.checkMemberAccess(clazz, which);
+171:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress, byte)
+175:		if (fSecurityManager != null) {
+185:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress)
+188:		if (fSecurityManager != null) {
+189:			fSecurityManager.checkMulticast(maddr);
+194:	 * @see java.lang.SecurityManager#checkPackageAccess(java.lang.String)
+197:		if (fSecurityManager != null) {
+198:			fSecurityManager.checkPackageAccess(pkg);
+203:	 * @see java.lang.SecurityManager#checkPackageDefinition(java.lang.String)
+206:		if (fSecurityManager != null) {
+207:			fSecurityManager.checkPackageDefinition(pkg);
+212:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission, java.lang.Object)
+215:		if (fSecurityManager != null) {
+216:			fSecurityManager.checkPermission(perm, context);
+221:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission)
+228:		if (fSecurityManager != null) {
+229:			fSecurityManager.checkPermission(perm);
+234:	 * @see java.lang.SecurityManager#checkPrintJobAccess()
+237:		if (fSecurityManager != null) {
+238:			fSecurityManager.checkPrintJobAccess();
+243:	 * @see java.lang.SecurityManager#checkPropertiesAccess()
+246:		if (fSecurityManager != null) {
+247:			fSecurityManager.checkPropertiesAccess();
+253:	 * @see java.lang.SecurityManager#checkPropertyAccess(java.lang.String)
+256:		if (fSecurityManager != null) {
+257:			fSecurityManager.checkPropertyAccess(key);
+262:	 * @see java.lang.SecurityManager#checkRead(java.io.FileDescriptor)
+265:		if (fSecurityManager != null) {
+266:			fSecurityManager.checkRead(fd);
+271:	 * @see java.lang.SecurityManager#checkRead(java.lang.String, java.lang.Object)
+274:		if (fSecurityManager != null) {
+275:			fSecurityManager.checkRead(file, context);
+280:	 * @see java.lang.SecurityManager#checkRead(java.lang.String)
+283:		if (fSecurityManager != null) {
+284:			fSecurityManager.checkRead(file);
+289:	 * @see java.lang.SecurityManager#checkSecurityAccess(java.lang.String)
+292:		if (fSecurityManager != null) {
+293:			fSecurityManager.checkSecurityAccess(target);
+298:	 * @see java.lang.SecurityManager#checkSetFactory()
+301:		if (fSecurityManager != null) {
+302:			fSecurityManager.checkSetFactory();
+307:	 * @see java.lang.SecurityManager#checkSystemClipboardAccess()
+310:		if (fSecurityManager != null) {
+311:			fSecurityManager.checkSystemClipboardAccess();
+316:	 * @see java.lang.SecurityManager#checkTopLevelWindow(java.lang.Object)
+319:		if (fSecurityManager != null) {
+320:			return fSecurityManager.checkTopLevelWindow(window);
+326:	 * @see java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)
+329:		if (fSecurityManager != null) {
+330:			fSecurityManager.checkWrite(fd);
+335:	 * @see java.lang.SecurityManager#checkWrite(java.lang.String)
+338:		if (fSecurityManager != null) {
+339:			fSecurityManager.checkWrite(file);
+344:	 * @see java.lang.SecurityManager#getInCheck()
+348:		if (fSecurityManager != null) {
+349:			return fSecurityManager.getInCheck();
+355:	 * @see java.lang.SecurityManager#getSecurityContext()
+358:		if (fSecurityManager != null) {
+359:			return fSecurityManager.getSecurityContext();
+365:	 * @see java.lang.SecurityManager#getThreadGroup()
+368:		if (fSecurityManager != null) {
+369:			fSecurityManager.getThreadGroup();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/ant/internal/ui/model/AntModel.java
+53:import org.eclipse.ant.internal.core.AntSecurityManager;
+357:                SecurityManager origSM= System.getSecurityManager();
+361:                    System.setSecurityManager(new AntSecurityManager(origSM, Thread.currentThread(), false));
+369:                    System.setSecurityManager(origSM);
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/log/internal/ExtendedLogReaderServiceFactory.java
+108:		if (System.getSecurityManager() != null) {
+170:		if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/log/internal/ExtendedLogServiceFactory.java
+69:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/http/registry/internal/HttpRegistryManager.java
+165:		if (System.getSecurityManager() != null) {
+345:		if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/http/registry/internal/HttpContextManager.java
+99:						if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/http/jetty/JettyConfigurator.java
+59:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/jsp/jasper/JspServlet.java
+117:			// If a SecurityManager is set we need to override the permissions collection set in Jasper's JSPRuntimeContext
+118:			if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/event/EventAdminImpl.java
+119:		SecurityManager sm = System.getSecurityManager();
+146:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/app/Activator.java
+165:		if (System.getSecurityManager() == null)
+178:		if (System.getSecurityManager() == null)
+189:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/app/EclipseScheduledApplication.java
+146:			SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/util/security/SecurityUtil.java
+69:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/util/security/PrivilegedRunner.java
+97:			if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/jsp/jasper/JSPContextFinder.java
+24:	static final class Finder extends SecurityManager {
+90:		if (System.getSecurityManager() == null)
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/ds/SCRCommandProvider.java
+447:		if (System.getSecurityManager() != null && !ref.component.bc.getBundle().hasPermission(new ServicePermission(ref.interfaceName, ServicePermission.GET))) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/ds/Reference.java
+121:		if (System.getSecurityManager() != null && !scp.bc.getBundle().hasPermission(new ServicePermission(interfaceName, ServicePermission.GET))) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/equinox/internal/ds/Resolver.java
+531:				if (scp.serviceComponent.provides != null && System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/eclipse/jdt/internal/ui/javaeditor/JavaEditor.java
+4243:	private static final class AccessChecker extends SecurityManager {
+
+
+
+./eclipse_SDK-4.3/src/src/org/osgi/service/condpermadmin/Condition.java
+95:	 *        times. The SecurityManager treats this Dictionary as an opaque
+
+
+
+./eclipse_SDK-4.3/src/src/org/osgi/service/application/ApplicationHandle.java
+212:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/osgi/service/application/ApplicationDescriptor.java
+300:		SecurityManager sm = System.getSecurityManager();
+421:		SecurityManager sm = System.getSecurityManager();
+441:		SecurityManager sm = System.getSecurityManager();
+472:		SecurityManager sm = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/lucene/messages/NLS.java
+195:    if (System.getSecurityManager() == null) {
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/lucene/util/NamedThreadFactory.java
+43:    final SecurityManager s = System.getSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/jasper/compiler/JspRuntimeContext.java
+125:        if( System.getSecurityManager() != null ) {
+303:     * Get the SecurityManager Policy CodeSource for this web
+327:     * Get the SecurityManager PermissionCollection for this
+530:     * Method used to initialize SecurityManager data.
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/jasper/Constants.java
+288:        (System.getSecurityManager() != null);
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/jasper/servlet/JasperLoader.java
+99:    private SecurityManager securityManager;
+110:	this.securityManager = System.getSecurityManager();
+166:        // (.5) Permission to access this class when using a SecurityManager
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/jasper/security/SecurityUtil.java
+75:     * Return the <code>SecurityManager</code> only if Security is enabled AND
+
+
+
+./eclipse_SDK-4.3/src/src/org/apache/jasper/security/SecurityClassLoad.java
+66: * Java SecurityManager so that the defineClassInPackage
+79:        if( System.getSecurityManager() == null ){
+
+
+
+./eclipse_SDK-4.3/src/src/com/ibm/icu/util/ULocale.java
+652:     * @see SecurityManager#checkPermission(java.security.Permission)
+730:     * @see SecurityManager#checkPermission(java.security.Permission)
+4136:            if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/com/ibm/icu/impl/ICUConfig.java
+57:        if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/com/ibm/icu/impl/ICUData.java
+30:        if (System.getSecurityManager() != null) {
+45:        if (System.getSecurityManager() != null) {
+63:        if (System.getSecurityManager() != null) {
+
+
+
+./eclipse_SDK-4.3/src/src/lib/antsupportlibsrc/org/eclipse/ant/internal/core/ant/InternalAntRunner.java
+57:import org.eclipse.ant.internal.core.AntSecurityManager;
+560:		SecurityManager originalSM= System.getSecurityManager();
+660:			System.setSecurityManager(new AntSecurityManager(originalSM, Thread.currentThread()));
+689:			if (System.getSecurityManager() instanceof AntSecurityManager) {
+690:				System.setSecurityManager(originalSM);
+
+
+
+./eclipse_SDK-4.3/src/src/lib/remotesrc/org/eclipse/ant/internal/launching/remote/AntSecurityException.java
+14: * A security exception that is thrown by the AntSecurityManager if
+
+
+
+./eclipse_SDK-4.3/src/src/lib/remotesrc/org/eclipse/ant/internal/launching/remote/InternalAntRunner.java
+322:		SecurityManager originalSM= System.getSecurityManager();
+413:			System.setSecurityManager(new AntSecurityManager(originalSM, Thread.currentThread()));
+433:			if (System.getSecurityManager() instanceof AntSecurityManager) {
+434:				System.setSecurityManager(originalSM);
+
+
+
+./eclipse_SDK-4.3/src/src/lib/remotesrc/org/eclipse/ant/internal/launching/remote/AntSecurityManager.java
+27:public class AntSecurityManager extends SecurityManager {
+29:	private SecurityManager fSecurityManager= null;
+37:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread, boolean allowSettingProperties) {
+38:		fSecurityManager= securityManager;
+43:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread) {
+48:	 * @see java.lang.SecurityManager#checkExit(int)
+56:		if (fSecurityManager != null) {
+57:			fSecurityManager.checkExit(status);
+61:	 * @see java.lang.SecurityManager#checkAccept(java.lang.String, int)
+64:		if (fSecurityManager != null) {
+65:			fSecurityManager.checkAccept(host, port);
+70:	 * @see java.lang.SecurityManager#checkAccess(java.lang.Thread)
+73:		if (fSecurityManager != null) {
+74:			fSecurityManager.checkAccess(t);
+79:	 * @see java.lang.SecurityManager#checkAccess(java.lang.ThreadGroup)
+82:		if (fSecurityManager != null) {
+83:			fSecurityManager.checkAccess(g);
+88:	 * @see java.lang.SecurityManager#checkAwtEventQueueAccess()
+91:		if (fSecurityManager != null) {
+92:			fSecurityManager.checkAwtEventQueueAccess();
+97:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int, java.lang.Object)
+100:		if (fSecurityManager != null) {
+101:			fSecurityManager.checkConnect(host, port, context);
+106:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int)
+109:		if (fSecurityManager != null) {
+110:			fSecurityManager.checkConnect(host, port);
+115:	 * @see java.lang.SecurityManager#checkCreateClassLoader()
+118:		if (fSecurityManager != null) {
+119:			fSecurityManager.checkCreateClassLoader();
+124:	 * @see java.lang.SecurityManager#checkDelete(java.lang.String)
+127:		if (fSecurityManager != null) {
+128:			fSecurityManager.checkDelete(file);
+133:	 * @see java.lang.SecurityManager#checkExec(java.lang.String)
+136:		if (fSecurityManager != null) {
+137:			fSecurityManager.checkExec(cmd);
+142:	 * @see java.lang.SecurityManager#checkLink(java.lang.String)
+145:		if (fSecurityManager != null) {
+146:			fSecurityManager.checkLink(lib);
+151:	 * @see java.lang.SecurityManager#checkListen(int)
+154:		if (fSecurityManager != null) {
+155:			fSecurityManager.checkListen(port);
+160:	 * @see java.lang.SecurityManager#checkMemberAccess(java.lang.Class, int)
+163:		if (fSecurityManager != null) {
+164:			fSecurityManager.checkMemberAccess(clazz, which);
+169:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress, byte)
+173:		if (fSecurityManager != null) {
+183:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress)
+186:		if (fSecurityManager != null) {
+187:			fSecurityManager.checkMulticast(maddr);
+192:	 * @see java.lang.SecurityManager#checkPackageAccess(java.lang.String)
+195:		if (fSecurityManager != null) {
+196:			fSecurityManager.checkPackageAccess(pkg);
+201:	 * @see java.lang.SecurityManager#checkPackageDefinition(java.lang.String)
+204:		if (fSecurityManager != null) {
+205:			fSecurityManager.checkPackageDefinition(pkg);
+210:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission, java.lang.Object)
+213:		if (fSecurityManager != null) {
+214:			fSecurityManager.checkPermission(perm, context);
+219:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission)
+226:		if (fSecurityManager != null) {
+227:			fSecurityManager.checkPermission(perm);
+232:	 * @see java.lang.SecurityManager#checkPrintJobAccess()
+235:		if (fSecurityManager != null) {
+236:			fSecurityManager.checkPrintJobAccess();
+241:	 * @see java.lang.SecurityManager#checkPropertiesAccess()
+244:		if (fSecurityManager != null) {
+245:			fSecurityManager.checkPropertiesAccess();
+251:	 * @see java.lang.SecurityManager#checkPropertyAccess(java.lang.String)
+254:		if (fSecurityManager != null) {
+255:			fSecurityManager.checkPropertyAccess(key);
+260:	 * @see java.lang.SecurityManager#checkRead(java.io.FileDescriptor)
+263:		if (fSecurityManager != null) {
+264:			fSecurityManager.checkRead(fd);
+269:	 * @see java.lang.SecurityManager#checkRead(java.lang.String, java.lang.Object)
+272:		if (fSecurityManager != null) {
+273:			fSecurityManager.checkRead(file, context);
+278:	 * @see java.lang.SecurityManager#checkRead(java.lang.String)
+281:		if (fSecurityManager != null) {
+282:			fSecurityManager.checkRead(file);
+287:	 * @see java.lang.SecurityManager#checkSecurityAccess(java.lang.String)
+290:		if (fSecurityManager != null) {
+291:			fSecurityManager.checkSecurityAccess(target);
+296:	 * @see java.lang.SecurityManager#checkSetFactory()
+299:		if (fSecurityManager != null) {
+300:			fSecurityManager.checkSetFactory();
+305:	 * @see java.lang.SecurityManager#checkSystemClipboardAccess()
+308:		if (fSecurityManager != null) {
+309:			fSecurityManager.checkSystemClipboardAccess();
+314:	 * @see java.lang.SecurityManager#checkTopLevelWindow(java.lang.Object)
+317:		if (fSecurityManager != null) {
+318:			return fSecurityManager.checkTopLevelWindow(window);
+324:	 * @see java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)
+327:		if (fSecurityManager != null) {
+328:			fSecurityManager.checkWrite(fd);
+333:	 * @see java.lang.SecurityManager#checkWrite(java.lang.String)
+336:		if (fSecurityManager != null) {
+337:			fSecurityManager.checkWrite(file);
+342:	 * @see java.lang.SecurityManager#getInCheck()
+346:		if (fSecurityManager != null) {
+347:			return fSecurityManager.getInCheck();
+353:	 * @see java.lang.SecurityManager#getSecurityContext()
+356:		if (fSecurityManager != null) {
+357:			return fSecurityManager.getSecurityContext();
+363:	 * @see java.lang.SecurityManager#getThreadGroup()
+366:		if (fSecurityManager != null) {
+367:			fSecurityManager.getThreadGroup();
+
+
+
+./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/taskdefs/optional/junit/JUnitTestRunner.java
+344:                perm.setSecurityManager();
+535:                perm.restoreSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/taskdefs/ExecuteJava.java
+215:                perm.setSecurityManager();
+227:                perm.restoreSecurityManager();
+
+
+
+./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/types/Permissions.java
+42: * is active (after calling setSecurityManager() but before calling restoreSecurityManager()).
+51:    private SecurityManager origSm = null;
+94:     * subject to these Permissions. Note that setting the SecurityManager too early may
+99:    public synchronized void setSecurityManager() throws BuildException {
+100:        origSm = System.getSecurityManager();
+102:        System.setSecurityManager(new MySM());
+172:    public synchronized void restoreSecurityManager() {
+174:        System.setSecurityManager(origSm);
+178:     * This inner class implements the actual SecurityManager that can be used by tasks
+181:    private class MySM extends SecurityManager {
+188:         * Overridden from java.lang.SecurityManager
+202:         * Overridden from java.lang.SecurityManager
+
+
+
+./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/Main.java
+731:            SecurityManager oldsm = null;
+732:            oldsm = System.getSecurityManager();
+734:                //SecurityManager can not be installed here for backwards
+737:                //System.setSecurityManager(new NoExitSecurityManager());
+816:                    System.setSecurityManager(oldsm);
+
+
+
+./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/ExitException.java
+23: * @see org.apache.tools.ant.util.optional.NoExitSecurityManager
+
+
+
+./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/util/optional/NoExitSecurityManager.java
+31:public class NoExitSecurityManager extends SecurityManager {
+34:     * Override SecurityManager#checkExit.
+43:     * Override SecurityManager#checkPermission.
+
+
+
+./SecurityManager.java
+2:21:	static final class Finder extends SecurityManager {
+3:89:		if (System.getSecurityManager() == null)
+8:396:		if (System.getSecurityManager() == null)
+13:193:	private static final class AccessChecker extends SecurityManager {
+18:1325:		rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_17_IID, result);
+19:1328:			rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_10_IID, result);
+20:1331:				rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_191_IID, result);
+21:1334:					rc = serviceManager.GetServiceByContractID (aContractID, nsIScriptSecurityManager.NS_ISCRIPTSECURITYMANAGER_IID, result);
+22:1343:			nsIScriptSecurityManager securityManager = new nsIScriptSecurityManager (result[0]);
+27:26:	COMObject iInternetSecurityManager;
+28:82:	iInternetSecurityManager = new COMObject(new int[]{2, 0, 0, 1, 1, 3, 4, 8, 7, 3, 3}){
+29:147:	if (iInternetSecurityManager != null) {
+30:148:		iInternetSecurityManager.dispose();
+31:149:		iInternetSecurityManager = null;
+32:191:    if (COM.IsEqualGUID(guid, COM.IIDIInternetSecurityManager)) {
+33:192:        COM.MoveMemory(ppvObject, new int /*long*/[] {iInternetSecurityManager.getAddress()}, OS.PTR_SIZEOF);
+34:474:	if (COM.IsEqualGUID(guid, COM.IIDIInternetSecurityManager)) {
+35:475:		COM.MoveMemory(ppvObject, new int /*long*/[] {iInternetSecurityManager.getAddress()}, OS.PTR_SIZEOF);
+36:488:/* IInternetSecurityManager */
+41:5433:		if (COM.IsEqualGUID(guid, COM.IIDIInternetSecurityManager)) return "IIDIInternetSecurityManager";
+46:66:	public static final GUID IIDIInternetSecurityManager = IIDFromString("{79eac9ee-baf9-11ce-8c82-00aa004ba90b}"); //$NON-NLS-1$
+50:./eclipse_SDK-4.3/src/src/org/eclipse/swt/internal/mozilla/nsIScriptSecurityManager.java
+51:30:public class nsIScriptSecurityManager extends nsIXPCSecurityManager {
+52:32:	static final int LAST_METHOD_ID = nsIXPCSecurityManager.LAST_METHOD_ID + ((IsXULRunner17 || IsXULRunner10) ? 27 : 26);
+53:58:	public nsIScriptSecurityManager(int /*long*/ address) {
+54:70:		return XPCOM.VtblCall(nsIXPCSecurityManager.LAST_METHOD_ID + (IsXULRunner17 ? 8 : (IsXULRunner10 ? 10 : 11)), getAddress(), _retval);
+58:./eclipse_SDK-4.3/src/src/org/eclipse/swt/internal/mozilla/nsIXPCSecurityManager.java
+59:30:public class nsIXPCSecurityManager extends nsISupports {
+60:40:	public nsIXPCSecurityManager(int /*long*/ address) {
+65:262: *  if the current SecurityManager disallows program execution
+66:280: *  if the current SecurityManager disallows program execution
+67:304: *  if the current SecurityManager disallows program execution
+72:40:		SecurityManager sm = System.getSecurityManager();
+73:50:		if (System.getSecurityManager() == null)
+78:72:		if (System.getSecurityManager() == null)
+79:90:		if (System.getSecurityManager() == null)
+80:105:		if (System.getSecurityManager() == null)
+81:122:		if (System.getSecurityManager() == null)
+82:146:		if (System.getSecurityManager() == null)
+83:168:		if (System.getSecurityManager() == null)
+84:185:		if (System.getSecurityManager() == null)
+85:207:		if (System.getSecurityManager() == null)
+86:223:		if (System.getSecurityManager() == null)
+87:245:		if (System.getSecurityManager() == null)
+88:261:		if (System.getSecurityManager() == null)
+89:277:		if (System.getSecurityManager() == null)
+90:293:		if (System.getSecurityManager() == null)
+91:311:			if (System.getSecurityManager() == null)
+92:347:		if (System.getSecurityManager() == null)
+93:371:		if (System.getSecurityManager() == null)
+94:395:		if (System.getSecurityManager() == null)
+95:412:		if (System.getSecurityManager() == null)
+96:435:		if (System.getSecurityManager() == null) {
+97:458:		if (System.getSecurityManager() == null) {
+98:477:		if (System.getSecurityManager() == null) {
+103:106:		SecurityManager sm = System.getSecurityManager();
+108:284:		SecurityManager sm = System.getSecurityManager();
+113:26:import org.eclipse.osgi.internal.permadmin.EquinoxSecurityManager;
+114:676:			if (System.getSecurityManager() != null) {
+115:1038:				SecurityManager sm = System.getSecurityManager();
+116:1039:				if (sm instanceof EquinoxSecurityManager) {
+117:1041:					 * If the FrameworkSecurityManager is active, we need to do checks the "right" way.
+118:1042:					 * We can exploit our knowledge that the security context of FrameworkSecurityManager
+119:1514:		SecurityManager sm = System.getSecurityManager();
+124:28:import org.eclipse.osgi.internal.permadmin.EquinoxSecurityManager;
+125:179:		installSecurityManager();
+126:181:			Debug.println("SecurityManager: " + System.getSecurityManager()); //$NON-NLS-1$
+127:623:		if (System.getSecurityManager() instanceof EquinoxSecurityManager)
+128:624:			System.setSecurityManager(null);
+129:950:				if (System.getSecurityManager() != null) {
+130:1093:		if (System.getSecurityManager() == null) {
+131:1128:		if (System.getSecurityManager() == null) {
+132:1284:		SecurityManager sm = System.getSecurityManager();
+133:1309:	 * This is necessary for running from a JXE, otherwise the SecurityManager
+134:1312:	protected void installSecurityManager() {
+135:1315:			SecurityManager sm = System.getSecurityManager();
+136:1318:					sm = new SecurityManager(); // use the default one from java
+137:1320:					sm = new EquinoxSecurityManager(); // use an OSGi enabled manager that understands postponed conditions
+138:1325:						sm = (SecurityManager) clazz.newInstance();
+139:1339:					Debug.println("Setting SecurityManager to: " + sm); //$NON-NLS-1$
+140:1340:				System.setSecurityManager(sm);
+141:1395:		if (System.getSecurityManager() == null) {
+142:1503:		if (System.getSecurityManager() == null) {
+147:63:			SecurityManager sm = System.getSecurityManager();
+148:113:		if (framework.isActive() && System.getSecurityManager() != null && framework.securityAdmin != null)
+149:677:		SecurityManager sm = System.getSecurityManager();
+154:119:		SecurityManager sm = System.getSecurityManager();
+159:37:		SecurityManager sm = System.getSecurityManager();
+160:48:		SecurityManager sm = System.getSecurityManager();
+161:55:		SecurityManager sm = System.getSecurityManager();
+162:62:		SecurityManager sm = System.getSecurityManager();
+167:636:		if (System.getSecurityManager() == null)
+172:36:		if (System.getSecurityManager() == null)
+173:52:		if (System.getSecurityManager() != null && configuration.get(Constants.FRAMEWORK_SECURITY) != null)
+174:240:		if (System.getSecurityManager() == null)
+175:256:		SecurityManager sm = System.getSecurityManager();
+180:50:			SecurityManager sm = System.getSecurityManager();
+181:101:		if (framework.isActive() && System.getSecurityManager() != null && framework.securityAdmin != null)
+186:1085:				SecurityManager sm = System.getSecurityManager();
+191:33:	// used to get access to the protected SecurityManager#getClassContext method
+192:34:	static class InternalSecurityManager extends SecurityManager {
+193:40:	private static InternalSecurityManager internalSecurityManager = new InternalSecurityManager();
+194:117:		Class<?>[] classStack = internalSecurityManager.getClassContext();
+195:120:			if (clazz == InternalSecurityManager.class || clazz == MultiplexingFactory.class || ignoredClasses.contains(clazz))
+200:104:		if (System.getSecurityManager() == null)
+205:143:		if (System.getSecurityManager() == null) {
+210:109:		SecurityManager sm = System.getSecurityManager();
+215:182:		systemState.setResolver(createResolver(System.getSecurityManager() != null));
+220:80:		SecurityManager sm = System.getSecurityManager();
+221:177:		SecurityManager sm = System.getSecurityManager();
+226:564:		if (System.getSecurityManager() == null)
+227:841:		if (System.getSecurityManager() == null)
+228:892:		if (System.getSecurityManager() == null)
+229:1238:		if (System.getSecurityManager() == null)
+230:1248:	static final class ClassContext extends SecurityManager {
+235:59:		if (System.getSecurityManager() == null)
+240:1224:			SecurityManager sm = System.getSecurityManager();
+241:1246:			SecurityManager sm = System.getSecurityManager();
+246:280:		if (System.getSecurityManager() == null)
+251:89:			EquinoxSecurityManager equinoxManager = securityAdmin.getSupportedSecurityManager();
+255:./eclipse_SDK-4.3/src/src/org/eclipse/osgi/internal/permadmin/EquinoxSecurityManager.java
+256:25:public class EquinoxSecurityManager extends SecurityManager {
+257:51:		EquinoxSecurityManager fsm;
+258:53:		CheckPermissionAction(EquinoxSecurityManager fsm, Permission perm, Object context) {
+259:93:	 * the SecurityManager.
+260:95:	 * @return the AccessControlContext currently being evaluated by the SecurityManager, or
+261:98:	 * rather than the SecurityManager.
+266:54:	private final EquinoxSecurityManager supportedSecurityManager;
+267:56:	private SecurityAdmin(EquinoxSecurityManager supportedSecurityManager, Framework framework, PermissionInfo[] impliedPermissionInfos, PermissionInfoCollection permAdminDefaults) {
+268:57:		this.supportedSecurityManager = supportedSecurityManager;
+269:64:	public SecurityAdmin(EquinoxSecurityManager supportedSecurityManager, Framework framework, PermissionStorage permissionStorage) throws IOException {
+270:65:		this.supportedSecurityManager = supportedSecurityManager;
+271:176:		SecurityManager sm = System.getSecurityManager();
+272:282:			sa = new SecurityAdmin(supportedSecurityManager, framework, impliedPermissionInfos, permAdminDefaults);
+273:416:	EquinoxSecurityManager getSupportedSecurityManager() {
+274:417:		return supportedSecurityManager != null ? supportedSecurityManager : getSupportedSystemSecurityManager();
+275:420:	static private EquinoxSecurityManager getSupportedSystemSecurityManager() {
+276:422:			EquinoxSecurityManager equinoxManager = (EquinoxSecurityManager) System.getSecurityManager();
+281:347:		return condition.isPostponed() && securityAdmin.getSupportedSecurityManager() != null;
+286:770:		if (System.getSecurityManager() == null) {
+287:1022:		SecurityManager sm = System.getSecurityManager();
+288:1035:		SecurityManager sm = System.getSecurityManager();
+289:1115:		if (System.getSecurityManager() == null) {
+290:1261:		if (System.getSecurityManager() == null) {
+291:1323:		if (System.getSecurityManager() == null) {
+296:15: * A security exception that is thrown by the AntSecurityManager if
+300:./eclipse_SDK-4.3/src/src/org/eclipse/ant/internal/core/AntSecurityManager.java
+301:28:public class AntSecurityManager extends SecurityManager {
+302:30:	private SecurityManager fSecurityManager= null;
+303:38:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread, boolean allowSettingProperties) {
+304:39:		fSecurityManager= securityManager;
+305:44:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread) {
+306:49:	 * @see java.lang.SecurityManager#checkExit(int)
+307:58:		if (fSecurityManager != null) {
+308:59:			fSecurityManager.checkExit(status);
+309:63:	 * @see java.lang.SecurityManager#checkAccept(java.lang.String, int)
+310:66:		if (fSecurityManager != null) {
+311:67:			fSecurityManager.checkAccept(host, port);
+312:72:	 * @see java.lang.SecurityManager#checkAccess(java.lang.Thread)
+313:75:		if (fSecurityManager != null) {
+314:76:			fSecurityManager.checkAccess(t);
+315:81:	 * @see java.lang.SecurityManager#checkAccess(java.lang.ThreadGroup)
+316:84:		if (fSecurityManager != null) {
+317:85:			fSecurityManager.checkAccess(g);
+318:90:	 * @see java.lang.SecurityManager#checkAwtEventQueueAccess()
+319:93:		if (fSecurityManager != null) {
+320:94:			fSecurityManager.checkAwtEventQueueAccess();
+321:99:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int, java.lang.Object)
+322:102:		if (fSecurityManager != null) {
+323:103:			fSecurityManager.checkConnect(host, port, context);
+324:108:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int)
+325:111:		if (fSecurityManager != null) {
+326:112:			fSecurityManager.checkConnect(host, port);
+327:117:	 * @see java.lang.SecurityManager#checkCreateClassLoader()
+328:120:		if (fSecurityManager != null) {
+329:121:			fSecurityManager.checkCreateClassLoader();
+330:126:	 * @see java.lang.SecurityManager#checkDelete(java.lang.String)
+331:129:		if (fSecurityManager != null) {
+332:130:			fSecurityManager.checkDelete(file);
+333:135:	 * @see java.lang.SecurityManager#checkExec(java.lang.String)
+334:138:		if (fSecurityManager != null) {
+335:139:			fSecurityManager.checkExec(cmd);
+336:144:	 * @see java.lang.SecurityManager#checkLink(java.lang.String)
+337:147:		if (fSecurityManager != null) {
+338:148:			fSecurityManager.checkLink(lib);
+339:153:	 * @see java.lang.SecurityManager#checkListen(int)
+340:156:		if (fSecurityManager != null) {
+341:157:			fSecurityManager.checkListen(port);
+342:162:	 * @see java.lang.SecurityManager#checkMemberAccess(java.lang.Class, int)
+343:165:		if (fSecurityManager != null) {
+344:166:			fSecurityManager.checkMemberAccess(clazz, which);
+345:171:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress, byte)
+346:175:		if (fSecurityManager != null) {
+347:185:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress)
+348:188:		if (fSecurityManager != null) {
+349:189:			fSecurityManager.checkMulticast(maddr);
+350:194:	 * @see java.lang.SecurityManager#checkPackageAccess(java.lang.String)
+351:197:		if (fSecurityManager != null) {
+352:198:			fSecurityManager.checkPackageAccess(pkg);
+353:203:	 * @see java.lang.SecurityManager#checkPackageDefinition(java.lang.String)
+354:206:		if (fSecurityManager != null) {
+355:207:			fSecurityManager.checkPackageDefinition(pkg);
+356:212:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission, java.lang.Object)
+357:215:		if (fSecurityManager != null) {
+358:216:			fSecurityManager.checkPermission(perm, context);
+359:221:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission)
+360:228:		if (fSecurityManager != null) {
+361:229:			fSecurityManager.checkPermission(perm);
+362:234:	 * @see java.lang.SecurityManager#checkPrintJobAccess()
+363:237:		if (fSecurityManager != null) {
+364:238:			fSecurityManager.checkPrintJobAccess();
+365:243:	 * @see java.lang.SecurityManager#checkPropertiesAccess()
+366:246:		if (fSecurityManager != null) {
+367:247:			fSecurityManager.checkPropertiesAccess();
+368:253:	 * @see java.lang.SecurityManager#checkPropertyAccess(java.lang.String)
+369:256:		if (fSecurityManager != null) {
+370:257:			fSecurityManager.checkPropertyAccess(key);
+371:262:	 * @see java.lang.SecurityManager#checkRead(java.io.FileDescriptor)
+372:265:		if (fSecurityManager != null) {
+373:266:			fSecurityManager.checkRead(fd);
+374:271:	 * @see java.lang.SecurityManager#checkRead(java.lang.String, java.lang.Object)
+375:274:		if (fSecurityManager != null) {
+376:275:			fSecurityManager.checkRead(file, context);
+377:280:	 * @see java.lang.SecurityManager#checkRead(java.lang.String)
+378:283:		if (fSecurityManager != null) {
+379:284:			fSecurityManager.checkRead(file);
+380:289:	 * @see java.lang.SecurityManager#checkSecurityAccess(java.lang.String)
+381:292:		if (fSecurityManager != null) {
+382:293:			fSecurityManager.checkSecurityAccess(target);
+383:298:	 * @see java.lang.SecurityManager#checkSetFactory()
+384:301:		if (fSecurityManager != null) {
+385:302:			fSecurityManager.checkSetFactory();
+386:307:	 * @see java.lang.SecurityManager#checkSystemClipboardAccess()
+387:310:		if (fSecurityManager != null) {
+388:311:			fSecurityManager.checkSystemClipboardAccess();
+389:316:	 * @see java.lang.SecurityManager#checkTopLevelWindow(java.lang.Object)
+390:319:		if (fSecurityManager != null) {
+391:320:			return fSecurityManager.checkTopLevelWindow(window);
+392:326:	 * @see java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)
+393:329:		if (fSecurityManager != null) {
+394:330:			fSecurityManager.checkWrite(fd);
+395:335:	 * @see java.lang.SecurityManager#checkWrite(java.lang.String)
+396:338:		if (fSecurityManager != null) {
+397:339:			fSecurityManager.checkWrite(file);
+398:344:	 * @see java.lang.SecurityManager#getInCheck()
+399:348:		if (fSecurityManager != null) {
+400:349:			return fSecurityManager.getInCheck();
+401:355:	 * @see java.lang.SecurityManager#getSecurityContext()
+402:358:		if (fSecurityManager != null) {
+403:359:			return fSecurityManager.getSecurityContext();
+404:365:	 * @see java.lang.SecurityManager#getThreadGroup()
+405:368:		if (fSecurityManager != null) {
+406:369:			fSecurityManager.getThreadGroup();
+411:53:import org.eclipse.ant.internal.core.AntSecurityManager;
+412:357:                SecurityManager origSM= System.getSecurityManager();
+413:361:                    System.setSecurityManager(new AntSecurityManager(origSM, Thread.currentThread(), false));
+414:369:                    System.setSecurityManager(origSM);
+419:108:		if (System.getSecurityManager() != null) {
+420:170:		if (System.getSecurityManager() != null) {
+425:69:		SecurityManager sm = System.getSecurityManager();
+430:165:		if (System.getSecurityManager() != null) {
+431:345:		if (System.getSecurityManager() != null) {
+436:99:						if (System.getSecurityManager() != null) {
+441:59:		SecurityManager sm = System.getSecurityManager();
+446:117:			// If a SecurityManager is set we need to override the permissions collection set in Jasper's JSPRuntimeContext
+447:118:			if (System.getSecurityManager() != null) {
+452:119:		SecurityManager sm = System.getSecurityManager();
+453:146:		SecurityManager sm = System.getSecurityManager();
+458:165:		if (System.getSecurityManager() == null)
+459:178:		if (System.getSecurityManager() == null)
+460:189:		if (System.getSecurityManager() == null)
+465:146:			SecurityManager sm = System.getSecurityManager();
+470:69:		SecurityManager sm = System.getSecurityManager();
+475:97:			if (System.getSecurityManager() != null) {
+480:24:	static final class Finder extends SecurityManager {
+481:90:		if (System.getSecurityManager() == null)
+486:447:		if (System.getSecurityManager() != null && !ref.component.bc.getBundle().hasPermission(new ServicePermission(ref.interfaceName, ServicePermission.GET))) {
+491:121:		if (System.getSecurityManager() != null && !scp.bc.getBundle().hasPermission(new ServicePermission(interfaceName, ServicePermission.GET))) {
+496:531:				if (scp.serviceComponent.provides != null && System.getSecurityManager() != null) {
+501:4243:	private static final class AccessChecker extends SecurityManager {
+506:95:	 *        times. The SecurityManager treats this Dictionary as an opaque
+511:212:		SecurityManager sm = System.getSecurityManager();
+516:300:		SecurityManager sm = System.getSecurityManager();
+517:421:		SecurityManager sm = System.getSecurityManager();
+518:441:		SecurityManager sm = System.getSecurityManager();
+519:472:		SecurityManager sm = System.getSecurityManager();
+524:195:    if (System.getSecurityManager() == null) {
+529:43:    final SecurityManager s = System.getSecurityManager();
+534:125:        if( System.getSecurityManager() != null ) {
+535:303:     * Get the SecurityManager Policy CodeSource for this web
+536:327:     * Get the SecurityManager PermissionCollection for this
+537:530:     * Method used to initialize SecurityManager data.
+542:288:        (System.getSecurityManager() != null);
+547:99:    private SecurityManager securityManager;
+548:110:	this.securityManager = System.getSecurityManager();
+549:166:        // (.5) Permission to access this class when using a SecurityManager
+554:75:     * Return the <code>SecurityManager</code> only if Security is enabled AND
+559:66: * Java SecurityManager so that the defineClassInPackage
+560:79:        if( System.getSecurityManager() == null ){
+565:652:     * @see SecurityManager#checkPermission(java.security.Permission)
+566:730:     * @see SecurityManager#checkPermission(java.security.Permission)
+567:4136:            if (System.getSecurityManager() != null) {
+572:57:        if (System.getSecurityManager() != null) {
+577:30:        if (System.getSecurityManager() != null) {
+578:45:        if (System.getSecurityManager() != null) {
+579:63:        if (System.getSecurityManager() != null) {
+584:57:import org.eclipse.ant.internal.core.AntSecurityManager;
+585:560:		SecurityManager originalSM= System.getSecurityManager();
+586:660:			System.setSecurityManager(new AntSecurityManager(originalSM, Thread.currentThread()));
+587:689:			if (System.getSecurityManager() instanceof AntSecurityManager) {
+588:690:				System.setSecurityManager(originalSM);
+593:14: * A security exception that is thrown by the AntSecurityManager if
+598:322:		SecurityManager originalSM= System.getSecurityManager();
+599:413:			System.setSecurityManager(new AntSecurityManager(originalSM, Thread.currentThread()));
+600:433:			if (System.getSecurityManager() instanceof AntSecurityManager) {
+601:434:				System.setSecurityManager(originalSM);
+605:./eclipse_SDK-4.3/src/src/lib/remotesrc/org/eclipse/ant/internal/launching/remote/AntSecurityManager.java
+606:27:public class AntSecurityManager extends SecurityManager {
+607:29:	private SecurityManager fSecurityManager= null;
+608:37:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread, boolean allowSettingProperties) {
+609:38:		fSecurityManager= securityManager;
+610:43:	public AntSecurityManager(SecurityManager securityManager, Thread restrictedThread) {
+611:48:	 * @see java.lang.SecurityManager#checkExit(int)
+612:56:		if (fSecurityManager != null) {
+613:57:			fSecurityManager.checkExit(status);
+614:61:	 * @see java.lang.SecurityManager#checkAccept(java.lang.String, int)
+615:64:		if (fSecurityManager != null) {
+616:65:			fSecurityManager.checkAccept(host, port);
+617:70:	 * @see java.lang.SecurityManager#checkAccess(java.lang.Thread)
+618:73:		if (fSecurityManager != null) {
+619:74:			fSecurityManager.checkAccess(t);
+620:79:	 * @see java.lang.SecurityManager#checkAccess(java.lang.ThreadGroup)
+621:82:		if (fSecurityManager != null) {
+622:83:			fSecurityManager.checkAccess(g);
+623:88:	 * @see java.lang.SecurityManager#checkAwtEventQueueAccess()
+624:91:		if (fSecurityManager != null) {
+625:92:			fSecurityManager.checkAwtEventQueueAccess();
+626:97:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int, java.lang.Object)
+627:100:		if (fSecurityManager != null) {
+628:101:			fSecurityManager.checkConnect(host, port, context);
+629:106:	 * @see java.lang.SecurityManager#checkConnect(java.lang.String, int)
+630:109:		if (fSecurityManager != null) {
+631:110:			fSecurityManager.checkConnect(host, port);
+632:115:	 * @see java.lang.SecurityManager#checkCreateClassLoader()
+633:118:		if (fSecurityManager != null) {
+634:119:			fSecurityManager.checkCreateClassLoader();
+635:124:	 * @see java.lang.SecurityManager#checkDelete(java.lang.String)
+636:127:		if (fSecurityManager != null) {
+637:128:			fSecurityManager.checkDelete(file);
+638:133:	 * @see java.lang.SecurityManager#checkExec(java.lang.String)
+639:136:		if (fSecurityManager != null) {
+640:137:			fSecurityManager.checkExec(cmd);
+641:142:	 * @see java.lang.SecurityManager#checkLink(java.lang.String)
+642:145:		if (fSecurityManager != null) {
+643:146:			fSecurityManager.checkLink(lib);
+644:151:	 * @see java.lang.SecurityManager#checkListen(int)
+645:154:		if (fSecurityManager != null) {
+646:155:			fSecurityManager.checkListen(port);
+647:160:	 * @see java.lang.SecurityManager#checkMemberAccess(java.lang.Class, int)
+648:163:		if (fSecurityManager != null) {
+649:164:			fSecurityManager.checkMemberAccess(clazz, which);
+650:169:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress, byte)
+651:173:		if (fSecurityManager != null) {
+652:183:	 * @see java.lang.SecurityManager#checkMulticast(java.net.InetAddress)
+653:186:		if (fSecurityManager != null) {
+654:187:			fSecurityManager.checkMulticast(maddr);
+655:192:	 * @see java.lang.SecurityManager#checkPackageAccess(java.lang.String)
+656:195:		if (fSecurityManager != null) {
+657:196:			fSecurityManager.checkPackageAccess(pkg);
+658:201:	 * @see java.lang.SecurityManager#checkPackageDefinition(java.lang.String)
+659:204:		if (fSecurityManager != null) {
+660:205:			fSecurityManager.checkPackageDefinition(pkg);
+661:210:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission, java.lang.Object)
+662:213:		if (fSecurityManager != null) {
+663:214:			fSecurityManager.checkPermission(perm, context);
+664:219:	 * @see java.lang.SecurityManager#checkPermission(java.security.Permission)
+665:226:		if (fSecurityManager != null) {
+666:227:			fSecurityManager.checkPermission(perm);
+667:232:	 * @see java.lang.SecurityManager#checkPrintJobAccess()
+668:235:		if (fSecurityManager != null) {
+669:236:			fSecurityManager.checkPrintJobAccess();
+670:241:	 * @see java.lang.SecurityManager#checkPropertiesAccess()
+671:244:		if (fSecurityManager != null) {
+672:245:			fSecurityManager.checkPropertiesAccess();
+673:251:	 * @see java.lang.SecurityManager#checkPropertyAccess(java.lang.String)
+674:254:		if (fSecurityManager != null) {
+675:255:			fSecurityManager.checkPropertyAccess(key);
+676:260:	 * @see java.lang.SecurityManager#checkRead(java.io.FileDescriptor)
+677:263:		if (fSecurityManager != null) {
+678:264:			fSecurityManager.checkRead(fd);
+679:269:	 * @see java.lang.SecurityManager#checkRead(java.lang.String, java.lang.Object)
+680:272:		if (fSecurityManager != null) {
+681:273:			fSecurityManager.checkRead(file, context);
+682:278:	 * @see java.lang.SecurityManager#checkRead(java.lang.String)
+683:281:		if (fSecurityManager != null) {
+684:282:			fSecurityManager.checkRead(file);
+685:287:	 * @see java.lang.SecurityManager#checkSecurityAccess(java.lang.String)
+686:290:		if (fSecurityManager != null) {
+687:291:			fSecurityManager.checkSecurityAccess(target);
+688:296:	 * @see java.lang.SecurityManager#checkSetFactory()
+689:299:		if (fSecurityManager != null) {
+690:300:			fSecurityManager.checkSetFactory();
+691:305:	 * @see java.lang.SecurityManager#checkSystemClipboardAccess()
+692:308:		if (fSecurityManager != null) {
+693:309:			fSecurityManager.checkSystemClipboardAccess();
+694:314:	 * @see java.lang.SecurityManager#checkTopLevelWindow(java.lang.Object)
+695:317:		if (fSecurityManager != null) {
+696:318:			return fSecurityManager.checkTopLevelWindow(window);
+697:324:	 * @see java.lang.SecurityManager#checkWrite(java.io.FileDescriptor)
+698:327:		if (fSecurityManager != null) {
+699:328:			fSecurityManager.checkWrite(fd);
+700:333:	 * @see java.lang.SecurityManager#checkWrite(java.lang.String)
+701:336:		if (fSecurityManager != null) {
+702:337:			fSecurityManager.checkWrite(file);
+703:342:	 * @see java.lang.SecurityManager#getInCheck()
+704:346:		if (fSecurityManager != null) {
+705:347:			return fSecurityManager.getInCheck();
+706:353:	 * @see java.lang.SecurityManager#getSecurityContext()
+707:356:		if (fSecurityManager != null) {
+708:357:			return fSecurityManager.getSecurityContext();
+709:363:	 * @see java.lang.SecurityManager#getThreadGroup()
+710:366:		if (fSecurityManager != null) {
+711:367:			fSecurityManager.getThreadGroup();
+716:344:                perm.setSecurityManager();
+717:535:                perm.restoreSecurityManager();
+722:215:                perm.setSecurityManager();
+723:227:                perm.restoreSecurityManager();
+728:42: * is active (after calling setSecurityManager() but before calling restoreSecurityManager()).
+729:51:    private SecurityManager origSm = null;
+730:94:     * subject to these Permissions. Note that setting the SecurityManager too early may
+731:99:    public synchronized void setSecurityManager() throws BuildException {
+732:100:        origSm = System.getSecurityManager();
+733:102:        System.setSecurityManager(new MySM());
+734:172:    public synchronized void restoreSecurityManager() {
+735:174:        System.setSecurityManager(origSm);
+736:178:     * This inner class implements the actual SecurityManager that can be used by tasks
+737:181:    private class MySM extends SecurityManager {
+738:188:         * Overridden from java.lang.SecurityManager
+739:202:         * Overridden from java.lang.SecurityManager
+744:731:            SecurityManager oldsm = null;
+745:732:            oldsm = System.getSecurityManager();
+746:734:                //SecurityManager can not be installed here for backwards
+747:737:                //System.setSecurityManager(new NoExitSecurityManager());
+748:816:                    System.setSecurityManager(oldsm);
+753:23: * @see org.apache.tools.ant.util.optional.NoExitSecurityManager
+757:./eclipse_SDK-4.3/src/src/libsrc/org/apache/tools/ant/util/optional/NoExitSecurityManager.java
+758:31:public class NoExitSecurityManager extends SecurityManager {
+759:34:     * Override SecurityManager#checkExit.
+760:43:     * Override SecurityManager#checkPermission.
+
+
+

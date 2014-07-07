@@ -1,0 +1,32 @@
+./compiere-330/src/release_330/ad/src/org/compiere/plaf/CompiereBorders.java
+122:			if (System.getSecurityManager() != null)
+
+
+
+./analysis.java
+7:			if (System.getSecurityManager() != null)
+
+
+
+./SecurityManager.java
+2:122:			if (System.getSecurityManager() != null)
+7:7:			if (System.getSecurityManager() != null)
+
+
+
+./compiere-330/src/release_330/ad/src/org/compiere/plaf/CompiereBorders.java
+122:			if (System.getSecurityManager() != null)
+
+
+
+./analysis.java
+7:			if (System.getSecurityManager() != null)
+
+
+
+./SecurityManager.java
+2:122:			if (System.getSecurityManager() != null)
+7:7:			if (System.getSecurityManager() != null)
+
+
+

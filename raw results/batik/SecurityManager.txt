@@ -1,0 +1,262 @@
+./batik-1.7/src/batik-1.7/test-sources/org/apache/batik/util/ApplicationSecurityEnforcerTest.java
+37:        addTest(new CheckNoSecurityManagerOverride());
+48:    static class CheckNoSecurityManagerOverride extends AbstractTest {
+84:                SecurityManager sm = System.getSecurityManager();
+85:                if (sm == ase.lastSecurityManagerInstalled){
+89:                System.setSecurityManager(null);
+103:                SecurityManager sm = System.getSecurityManager();
+104:                if (sm == null && ase.lastSecurityManagerInstalled == null) {
+108:                System.setSecurityManager(null);
+
+
+
+./batik-1.7/src/batik-1.7/test-resources/org/apache/batik/bridge/JarCheckPermissionsDenied.java
+98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+196:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/test-resources/org/apache/batik/bridge/JarCheckPermissionsGranted.java
+98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+178:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/apps/svgbrowser/JSVGViewerFrame.java
+1225:                SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/apps/svgbrowser/WindowsAltFileSystemView.java
+44:// java.io.File.listRoots() does a SecurityManager.checkRead() which
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/swing/gvt/AbstractJGVTComponent.java
+1247:            SecurityManager securityManager;
+1248:            securityManager = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/util/BatikSecurityManager.java
+22: * This <tt>SecurityManager</tt> extension exposes the <tt>getClassContext</tt>
+27: * @version $Id: BatikSecurityManager.java 475477 2006-11-15 22:44:28Z cam $
+29:public class BatikSecurityManager extends SecurityManager {
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/util/ApplicationSecurityEnforcer.java
+30: * This class can install a <tt>SecurityManager</tt> for an application
+42:     * a SecurityManager installed at the time Squiggle tries
+109:     * Keeps track of the last SecurityManager installed
+111:    protected BatikSecurityManager lastSecurityManagerInstalled;
+149:     * Enforces security by installing a <tt>SecurityManager</tt>.
+151:     * a <tt>SecurityManager</tt> requires overriding an existing
+152:     * <tt>SecurityManager</tt>. In other words, this method will 
+153:     * not install a new <tt>SecurityManager</tt> if there is 
+157:        SecurityManager sm = System.getSecurityManager();
+159:        if (sm != null && sm != lastSecurityManagerInstalled) {
+161:            // an 'alien' SecurityManager with either null or 
+162:            // a new SecurityManager.
+172:            System.setSecurityManager(null);
+173:            installSecurityManager();
+176:                System.setSecurityManager(null);
+177:                lastSecurityManagerInstalled = null;
+200:     * Installs a SecurityManager on behalf of the application
+202:    public void installSecurityManager(){
+204:        BatikSecurityManager securityManager = new BatikSecurityManager();
+250:        System.setSecurityManager(securityManager);
+251:        lastSecurityManagerInstalled = securityManager;
+
+
+
+./batik-1.7/src/batik-1.7/samples/tests/resources/java/sources/com/untrusted/script/UntrustedScriptHandler.java
+103:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+104:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+235:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./SecurityManager.java
+2:37:        addTest(new CheckNoSecurityManagerOverride());
+3:48:    static class CheckNoSecurityManagerOverride extends AbstractTest {
+4:84:                SecurityManager sm = System.getSecurityManager();
+5:85:                if (sm == ase.lastSecurityManagerInstalled){
+6:89:                System.setSecurityManager(null);
+7:103:                SecurityManager sm = System.getSecurityManager();
+8:104:                if (sm == null && ase.lastSecurityManagerInstalled == null) {
+9:108:                System.setSecurityManager(null);
+14:98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+15:99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+16:196:                    SecurityManager sm = System.getSecurityManager();
+21:98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+22:99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+23:178:                    SecurityManager sm = System.getSecurityManager();
+28:1225:                SecurityManager sm = System.getSecurityManager();
+33:44:// java.io.File.listRoots() does a SecurityManager.checkRead() which
+38:1247:            SecurityManager securityManager;
+39:1248:            securityManager = System.getSecurityManager();
+43:./batik-1.7/src/batik-1.7/sources/org/apache/batik/util/BatikSecurityManager.java
+44:22: * This <tt>SecurityManager</tt> extension exposes the <tt>getClassContext</tt>
+45:27: * @version $Id: BatikSecurityManager.java 475477 2006-11-15 22:44:28Z cam $
+46:29:public class BatikSecurityManager extends SecurityManager {
+51:30: * This class can install a <tt>SecurityManager</tt> for an application
+52:42:     * a SecurityManager installed at the time Squiggle tries
+53:109:     * Keeps track of the last SecurityManager installed
+54:111:    protected BatikSecurityManager lastSecurityManagerInstalled;
+55:149:     * Enforces security by installing a <tt>SecurityManager</tt>.
+56:151:     * a <tt>SecurityManager</tt> requires overriding an existing
+57:152:     * <tt>SecurityManager</tt>. In other words, this method will 
+58:153:     * not install a new <tt>SecurityManager</tt> if there is 
+59:157:        SecurityManager sm = System.getSecurityManager();
+60:159:        if (sm != null && sm != lastSecurityManagerInstalled) {
+61:161:            // an 'alien' SecurityManager with either null or 
+62:162:            // a new SecurityManager.
+63:172:            System.setSecurityManager(null);
+64:173:            installSecurityManager();
+65:176:                System.setSecurityManager(null);
+66:177:                lastSecurityManagerInstalled = null;
+67:200:     * Installs a SecurityManager on behalf of the application
+68:202:    public void installSecurityManager(){
+69:204:        BatikSecurityManager securityManager = new BatikSecurityManager();
+70:250:        System.setSecurityManager(securityManager);
+71:251:        lastSecurityManagerInstalled = securityManager;
+76:103:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+77:104:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+78:235:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/test-sources/org/apache/batik/util/ApplicationSecurityEnforcerTest.java
+37:        addTest(new CheckNoSecurityManagerOverride());
+48:    static class CheckNoSecurityManagerOverride extends AbstractTest {
+84:                SecurityManager sm = System.getSecurityManager();
+85:                if (sm == ase.lastSecurityManagerInstalled){
+89:                System.setSecurityManager(null);
+103:                SecurityManager sm = System.getSecurityManager();
+104:                if (sm == null && ase.lastSecurityManagerInstalled == null) {
+108:                System.setSecurityManager(null);
+
+
+
+./batik-1.7/src/batik-1.7/test-resources/org/apache/batik/bridge/JarCheckPermissionsDenied.java
+98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+196:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/test-resources/org/apache/batik/bridge/JarCheckPermissionsGranted.java
+98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+178:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/apps/svgbrowser/JSVGViewerFrame.java
+1225:                SecurityManager sm = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/apps/svgbrowser/WindowsAltFileSystemView.java
+44:// java.io.File.listRoots() does a SecurityManager.checkRead() which
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/swing/gvt/AbstractJGVTComponent.java
+1247:            SecurityManager securityManager;
+1248:            securityManager = System.getSecurityManager();
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/util/BatikSecurityManager.java
+22: * This <tt>SecurityManager</tt> extension exposes the <tt>getClassContext</tt>
+27: * @version $Id: BatikSecurityManager.java 475477 2006-11-15 22:44:28Z cam $
+29:public class BatikSecurityManager extends SecurityManager {
+
+
+
+./batik-1.7/src/batik-1.7/sources/org/apache/batik/util/ApplicationSecurityEnforcer.java
+30: * This class can install a <tt>SecurityManager</tt> for an application
+42:     * a SecurityManager installed at the time Squiggle tries
+109:     * Keeps track of the last SecurityManager installed
+111:    protected BatikSecurityManager lastSecurityManagerInstalled;
+149:     * Enforces security by installing a <tt>SecurityManager</tt>.
+151:     * a <tt>SecurityManager</tt> requires overriding an existing
+152:     * <tt>SecurityManager</tt>. In other words, this method will 
+153:     * not install a new <tt>SecurityManager</tt> if there is 
+157:        SecurityManager sm = System.getSecurityManager();
+159:        if (sm != null && sm != lastSecurityManagerInstalled) {
+161:            // an 'alien' SecurityManager with either null or 
+162:            // a new SecurityManager.
+172:            System.setSecurityManager(null);
+173:            installSecurityManager();
+176:                System.setSecurityManager(null);
+177:                lastSecurityManagerInstalled = null;
+200:     * Installs a SecurityManager on behalf of the application
+202:    public void installSecurityManager(){
+204:        BatikSecurityManager securityManager = new BatikSecurityManager();
+250:        System.setSecurityManager(securityManager);
+251:        lastSecurityManagerInstalled = securityManager;
+
+
+
+./batik-1.7/src/batik-1.7/samples/tests/resources/java/sources/com/untrusted/script/UntrustedScriptHandler.java
+103:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+104:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+235:                    SecurityManager sm = System.getSecurityManager();
+
+
+
+./SecurityManager.java
+2:37:        addTest(new CheckNoSecurityManagerOverride());
+3:48:    static class CheckNoSecurityManagerOverride extends AbstractTest {
+4:84:                SecurityManager sm = System.getSecurityManager();
+5:85:                if (sm == ase.lastSecurityManagerInstalled){
+6:89:                System.setSecurityManager(null);
+7:103:                SecurityManager sm = System.getSecurityManager();
+8:104:                if (sm == null && ase.lastSecurityManagerInstalled == null) {
+9:108:                System.setSecurityManager(null);
+14:98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+15:99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+16:196:                    SecurityManager sm = System.getSecurityManager();
+21:98:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+22:99:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+23:178:                    SecurityManager sm = System.getSecurityManager();
+28:1225:                SecurityManager sm = System.getSecurityManager();
+33:44:// java.io.File.listRoots() does a SecurityManager.checkRead() which
+38:1247:            SecurityManager securityManager;
+39:1248:            securityManager = System.getSecurityManager();
+43:./batik-1.7/src/batik-1.7/sources/org/apache/batik/util/BatikSecurityManager.java
+44:22: * This <tt>SecurityManager</tt> extension exposes the <tt>getClassContext</tt>
+45:27: * @version $Id: BatikSecurityManager.java 475477 2006-11-15 22:44:28Z cam $
+46:29:public class BatikSecurityManager extends SecurityManager {
+51:30: * This class can install a <tt>SecurityManager</tt> for an application
+52:42:     * a SecurityManager installed at the time Squiggle tries
+53:109:     * Keeps track of the last SecurityManager installed
+54:111:    protected BatikSecurityManager lastSecurityManagerInstalled;
+55:149:     * Enforces security by installing a <tt>SecurityManager</tt>.
+56:151:     * a <tt>SecurityManager</tt> requires overriding an existing
+57:152:     * <tt>SecurityManager</tt>. In other words, this method will 
+58:153:     * not install a new <tt>SecurityManager</tt> if there is 
+59:157:        SecurityManager sm = System.getSecurityManager();
+60:159:        if (sm != null && sm != lastSecurityManagerInstalled) {
+61:161:            // an 'alien' SecurityManager with either null or 
+62:162:            // a new SecurityManager.
+63:172:            System.setSecurityManager(null);
+64:173:            installSecurityManager();
+65:176:                System.setSecurityManager(null);
+66:177:                lastSecurityManagerInstalled = null;
+67:200:     * Installs a SecurityManager on behalf of the application
+68:202:    public void installSecurityManager(){
+69:204:        BatikSecurityManager securityManager = new BatikSecurityManager();
+70:250:        System.setSecurityManager(securityManager);
+71:251:        lastSecurityManagerInstalled = securityManager;
+76:103:        {"RuntimePermission setSecurityManager", new RuntimePermission("setSecurityManager")}, 
+77:104:        {"RuntimePermission createSecurityManager", new RuntimePermission("createSecurityManager")}, 
+78:235:                    SecurityManager sm = System.getSecurityManager();
+
+
+

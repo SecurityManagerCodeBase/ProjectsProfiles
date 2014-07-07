@@ -1,0 +1,5 @@
+./hibernate-4.2.2/src/hibernate-release-4.2.2.Final/project/hibernate-core/src/main/java/org/hibernate/secure/internal/JACCPermissions.java
+117:		if ( System.getSecurityManager() == null ) {
+
+
+

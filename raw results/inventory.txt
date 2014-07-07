@@ -1,0 +1,29 @@
+./ant/SecurityManager.txt
+./azureus/SecurityManager.txt
+./batik/SecurityManager.txt
+./c_jdbc/SecurityManager.txt
+./compiere/SecurityManager.txt
+./derby/SecurityManager.txt
+./drjava/SecurityManager.txt
+./eclipse_SDK/SecurityManager.txt // super big
+./freemind/SecurityManager.txt
+./galleon/SecurityManager.txt   // simple one
+./hadoop/SecurityManager.txt
+ ./hibernate/SecurityManager.txt
+./hsqldb/SecurityManager.txt
+./jboss/SecurityManager.txt   // too big
+./jruby/SecurityManager.txt
+./lucene/SecurityManager.txt
+./myfaces_core/SecurityManager.txt
+./nekohtml/SecurityManager.txt // use se to check certain behavior
+./netbeans/SecurityManager.txt  // too big
+./openjms/SecurityManager.// use se to check certain behavior
+./quartz/SecurityManager.txt
+./quickserver/SecurityManager.txt
+./springframework/SecurityManager.txt
+./struts/SecurityManager.txt
+./tapestry/SecurityManager.txt 
+./tomcat/SecurityManager.txt
+./weka/SecurityManager.txt
+./xalan/SecurityManager.txt
+./xerces/SecurityManager.txt

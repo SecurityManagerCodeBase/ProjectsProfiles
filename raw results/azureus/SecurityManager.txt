@@ -1,0 +1,994 @@
+./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/security/SESecurityManager.java
+40:SESecurityManager 
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/security/SEPublicKey.java
+36:		 * import via SESecurityManager.decodePublicKey
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/Utilities.java
+202:	public SESecurityManager
+203:	getSecurityManager();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/resourceuploader/ResourceUploaderURLImpl.java
+35:import org.gudy.azureus2.core3.security.SESecurityManager;
+144:						SESecurityManager.setPasswordHandler( url, this );
+224:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+258:						SESecurityManager.setPasswordHandler( url, null );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/UtilitiesImpl.java
+51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+504:	public SESecurityManager
+505:	getSecurityManager()
+507:		return( new SESecurityManagerImpl( core ));
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/resourcedownloader/ResourceDownloaderURLImpl.java
+252:						SESecurityManager.setPasswordHandler( url, this );
+313:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+347:						SESecurityManager.setPasswordHandler( url, null );
+529:						SESecurityManager.setPasswordHandler( url, this );
+928:									if ( SESecurityManager.installServerCertificates( url ) != null ){
+992:						SESecurityManager.setPasswordHandler( url, null );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/security/SESecurityManagerImpl.java
+55:SESecurityManagerImpl 
+56:	implements org.gudy.azureus2.plugins.utils.security.SESecurityManager
+64:	SESecurityManagerImpl(
+96:			SESecurityManager.installAuthenticator();
+132:		SESecurityManager.addPasswordListener( sepl );
+143:			SESecurityManager.removePasswordListener( sepl );
+165:		SESecurityManager.addCertificateListener( sepl );
+176:			SESecurityManager.removeCertificateListener( sepl );
+184:		return( SESecurityManager.installServerCertificates( url ));
+192:		return( SESecurityManager.getKeyStore());
+200:		return( SESecurityManager.getTrustStore());
+212:		return( SESecurityManager.createSelfSignedCertificate(alias, cert_dn, strength ));		
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/security/SESTSConnectionImpl.java
+55:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+629:			if ( block_crypto == SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+781:			if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+820:			}else if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/PluginInitializer.java
+39:import org.gudy.azureus2.core3.security.SESecurityManager;
+2393:		Class<?>[] stack = SESecurityManager.getClassContext();
+2454:			Class[] context = SESecurityManager.getClassContext();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/webplugin/WebPlugin.java
+1349:									hash = plugin_interface.getUtilities().getSecurityManager().calculateSHA1( 
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionSecurity.java
+40:import org.gudy.azureus2.core3.security.SESecurityManager;
+203:			        	SESecurityManager.clearPasswords();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/auth/CertificateCreatorWindow.java
+38:import org.gudy.azureus2.core3.security.SESecurityManager;
+127:			alias_field.setText( SESecurityManager.DEFAULT_ALIAS );
+233:						SESecurityManager.createSelfSignedCertificate( alias, dn, strength );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/auth/CertificateTrustWindow.java
+38:import org.gudy.azureus2.core3.security.SESecurityManager;
+56:		SESecurityManager.addCertificateListener( this );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/auth/AuthenticatorWindow.java
+64:		SESecurityManager.addPasswordListener( this );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/UIExitUtilsSWT.java
+34:import org.gudy.azureus2.core3.security.SESecurityManager;
+136:					SESecurityManager.exitVM(1);
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/cl/Main.java
+24:import org.gudy.azureus2.core3.security.SESecurityManager;
+139:    SESecurityManager.exitVM(0);
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/config/impl/ConfigurationChecker.java
+270:	  	SESecurityManager.initialise();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/torrentdownloader/impl/TorrentDownloaderImpl.java
+45:import org.gudy.azureus2.core3.security.SESecurityManager;
+270:    				if ( SESecurityManager.installServerCertificates( url ) != null ){
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/tracker/server/impl/tcp/blocking/TRBlockingServer.java
+34:import org.gudy.azureus2.core3.security.SESecurityManager;
+99:					SSLServerSocketFactory factory = SESecurityManager.getSSLServerSocketFactory();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/tracker/client/impl/bt/TrackerStatus.java
+42:import org.gudy.azureus2.core3.security.SESecurityManager;
+1203:					if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+1274:			auth = SESecurityManager.getPasswordAuthentication( "UDP Tracker", reqUrl );
+1432:			SESecurityManager.setPasswordAuthenticationOutcome( TRTrackerBTAnnouncerImpl.UDP_REALM, reqUrl, auth_ok );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/tracker/client/impl/bt/TRTrackerBTAnnouncerImpl.java
+45:import org.gudy.azureus2.core3.security.SESecurityManager;
+1257:						if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+1576: 				 auth = SESecurityManager.getPasswordAuthentication( UDP_REALM, reqUrl );
+1718:			 						SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, true );
+1813:			SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, false );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/util/ED2KHasher.java
+138:		SESecurityManager.initialise();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/util/jar/AEJarBuilder.java
+36:import org.gudy.azureus2.core3.security.SESecurityManager;
+111:				SEKeyDetails	kd = SESecurityManager.getKeyDetails( sign_alias );
+126:							SESecurityManager.getKeystoreName(),
+127:							SESecurityManager.getKeystorePassword());
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/util/TimeLimitedTask.java
+24:import org.gudy.azureus2.core3.security.SESecurityManager;
+87:							SESecurityManager.stopThread( thread );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/SESecurityManager.java
+2: * File    : SESecurityManager.java
+39:SESecurityManager
+52:		SESecurityManagerImpl.getSingleton().initialise();
+59:		SESecurityManagerImpl.getSingleton().exitVM(status);
+66:		SESecurityManagerImpl.getSingleton().stopThread(t);
+71:		SESecurityManagerImpl.getSingleton().installAuthenticator();
+77:		return(	SESecurityManagerImpl.getSingleton().getKeystoreName());
+83:		return(	SESecurityManagerImpl.getSingleton().getKeystorePassword());
+91:		return( SESecurityManagerImpl.getSingleton().getSSLServerSocketFactory());
+97:		return( SESecurityManagerImpl.getSingleton().getSSLSocketFactory());
+104:		return( SESecurityManagerImpl.getSingleton().installServerCertificates(https_url));
+113:		return( SESecurityManagerImpl.getSingleton().installServerCertificates( alias, ip, port ));
+124:		return( SESecurityManagerImpl.getSingleton().createSelfSignedCertificate( alias, cert_dn, strength ));
+133:		return( SESecurityManagerImpl.getSingleton().getKeyDetails( alias ));
+141:		return( SESecurityManagerImpl.getSingleton().getKeyStore());
+149:		return( SESecurityManagerImpl.getSingleton().getTrustStore());
+157:		return( SESecurityManagerImpl.getSingleton().getPasswordAuthentication(realm, tracker));	
+166:		SESecurityManagerImpl.getSingleton().setPasswordAuthenticationOutcome(realm, tracker, success);	
+173:		SESecurityManagerImpl.getSingleton().addPasswordListener(l);	
+180:		SESecurityManagerImpl.getSingleton().removePasswordListener(l);	
+186:		SESecurityManagerImpl.getSingleton().clearPasswords();
+193:		SESecurityManagerImpl.getSingleton().setThreadPasswordHandler(l);
+199:		SESecurityManagerImpl.getSingleton().unsetThreadPasswordHandler();
+208:		SESecurityManagerImpl.getSingleton().setPasswordHandler( url, l );
+215:		SESecurityManagerImpl.getSingleton().addCertificateListener(l);
+223:		SESecurityManagerImpl.getSingleton().setCertificateHandler(url,l);
+230:		SESecurityManagerImpl.getSingleton().removeCertificateListener(l);
+236:		return( SESecurityManagerImpl.getSingleton().getClassContext());
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerImpl.java
+52:import org.gudy.azureus2.core3.security.SESecurityManager;
+61:SESecurityManagerImpl 
+65:	protected static SESecurityManagerImpl	singleton = new SESecurityManagerImpl();
+132:	private	AzureusSecurityManager	my_sec_man;
+134:	protected AEMonitor	this_mon	= new AEMonitor( "SESecurityManager" );
+136:	public static SESecurityManagerImpl
+164:		keystore_name 		= FileUtil.getUserFile(SESecurityManager.SSL_KEYS).getAbsolutePath();
+165:		truststore_name 	= FileUtil.getUserFile(SESecurityManager.SSL_CERTS).getAbsolutePath();
+169:		System.setProperty( "javax.net.ssl.trustStorePassword", SESecurityManager.SSL_PASSWORD );
+198:			SESecurityManagerBC.initialise();
+206:		installSecurityManager();
+289:		return(	SESecurityManager.SSL_PASSWORD );	
+293:	installSecurityManager()
+305:			final SecurityManager	old_sec_man	= System.getSecurityManager();
+307:			my_sec_man = new AzureusSecurityManager( old_sec_man );
+309:			System.setSecurityManager( my_sec_man );
+365:					protected AEMonitor	auth_mon = new AEMonitor( "SESecurityManager:auth");
+503:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+557:				keystore.load(in, SESecurityManager.SSL_PASSWORD.toCharArray());
+600:				key_store.load(kis, SESecurityManager.SSL_PASSWORD.toCharArray());
+611:		keyManagerFactory.init(key_store, SESecurityManager.SSL_PASSWORD.toCharArray());
+656:		final Key key = key_store.getKey( alias, SESecurityManager.SSL_PASSWORD.toCharArray());
+701:		return( SESecurityManagerBC.createSelfSignedCertificate( this, alias, cert_dn, strength ));
+1007:			key_store.setKeyEntry( alias, public_key, SESecurityManager.SSL_PASSWORD.toCharArray(), certChain );
+1014:				key_store.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+1060:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+1304:	AzureusSecurityManager
+1305:		extends SecurityManager
+1307:		private SecurityManager	old_sec_man;
+1310:		AzureusSecurityManager(
+1311:			SecurityManager		_old_sec_man )
+1378:				}else if ( name.equals( "setSecurityManager" )){
+1420:		SESecurityManagerImpl man = SESecurityManagerImpl.getSingleton();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerBC.java
+45:SESecurityManagerBC 
+55:		SESecurityManagerImpl	manager,
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/util/http/HTTPAuthHelper.java
+37:import org.gudy.azureus2.core3.security.SESecurityManager;
+478:						factory = SESecurityManager.installServerCertificates( "AZ-sniffer:" + delegate_to_host + ":" + port, delegate_to_host, delegate_to_port );
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/networkmanager/admin/impl/NetworkAdminSpeedTesterBTImpl.java
+40:import org.gudy.azureus2.core3.security.SESecurityManager;
+199:            	SESecurityManager.setCertificateHandler( 
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/security/CryptoManagerPasswordHandler.java
+45:		 * @param handler_type	from AESecurityManager.HANDLER_x enum
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/security/impl/CryptoManagerImpl.java
+39:import org.gudy.azureus2.core3.security.SESecurityManager;
+89:		SESecurityManager.initialise();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/impl/AzureusCoreImpl.java
+47:import org.gudy.azureus2.core3.security.SESecurityManager;
+1326:						SESecurityManager.exitVM(0);
+1548:								SESecurityManager.exitVM(0);
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/extseed/util/ExternalSeedHTTPDownloaderLinear.java
+35:import org.gudy.azureus2.core3.security.SESecurityManager;
+213:					SESecurityManager.setThreadPasswordHandler( this );
+397:					SESecurityManager.unsetThreadPasswordHandler();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/extseed/util/ExternalSeedHTTPDownloaderRange.java
+44:import org.gudy.azureus2.core3.security.SESecurityManager;
+124:			SESecurityManager.setThreadPasswordHandler( this );
+240:							if ( SESecurityManager.installServerCertificates( target ) != null ){
+423:			SESecurityManager.unsetThreadPasswordHandler();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/net/buddy/BuddyPluginBuddy.java
+51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+2258:			SESecurityManager sec_man = plugin.getSecurityManager();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/net/buddy/BuddyPlugin.java
+65:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+164:	public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_AES;
+167:	//public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_NONE;
+202:	private SESecurityManager	sec_man;
+263:		sec_man = plugin_interface.getUtilities().getSecurityManager();
+3078:	protected SESecurityManager
+3079:	getSecurityManager()
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/upnp/UPnPPlugin.java
+611:										plugin_interface.getUtilities().getSecurityManager().calculateSHA1(
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/ui/swt/shells/main/MainWindowImpl.java
+1366:		//SESecurityManagerImpl.getSingleton().exitVM(0);
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/ui/console/MakeTorrent.java
+129:      SESecurityManager.exitVM(0);
+134:      if(!ok) SESecurityManager.exitVM(-1);
+139:      SESecurityManager.exitVM(-1);
+146:      SESecurityManager.exitVM(-1);
+
+
+
+./SecurityManager.java
+1:./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/security/SESecurityManager.java
+2:40:SESecurityManager 
+7:36:		 * import via SESecurityManager.decodePublicKey
+12:202:	public SESecurityManager
+13:203:	getSecurityManager();
+18:35:import org.gudy.azureus2.core3.security.SESecurityManager;
+19:144:						SESecurityManager.setPasswordHandler( url, this );
+20:224:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+21:258:						SESecurityManager.setPasswordHandler( url, null );
+26:51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+27:504:	public SESecurityManager
+28:505:	getSecurityManager()
+29:507:		return( new SESecurityManagerImpl( core ));
+34:252:						SESecurityManager.setPasswordHandler( url, this );
+35:313:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+36:347:						SESecurityManager.setPasswordHandler( url, null );
+37:529:						SESecurityManager.setPasswordHandler( url, this );
+38:928:									if ( SESecurityManager.installServerCertificates( url ) != null ){
+39:992:						SESecurityManager.setPasswordHandler( url, null );
+43:./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/security/SESecurityManagerImpl.java
+44:55:SESecurityManagerImpl 
+45:56:	implements org.gudy.azureus2.plugins.utils.security.SESecurityManager
+46:64:	SESecurityManagerImpl(
+47:96:			SESecurityManager.installAuthenticator();
+48:132:		SESecurityManager.addPasswordListener( sepl );
+49:143:			SESecurityManager.removePasswordListener( sepl );
+50:165:		SESecurityManager.addCertificateListener( sepl );
+51:176:			SESecurityManager.removeCertificateListener( sepl );
+52:184:		return( SESecurityManager.installServerCertificates( url ));
+53:192:		return( SESecurityManager.getKeyStore());
+54:200:		return( SESecurityManager.getTrustStore());
+55:212:		return( SESecurityManager.createSelfSignedCertificate(alias, cert_dn, strength ));		
+60:55:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+61:629:			if ( block_crypto == SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+62:781:			if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+63:820:			}else if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+68:39:import org.gudy.azureus2.core3.security.SESecurityManager;
+69:2393:		Class<?>[] stack = SESecurityManager.getClassContext();
+70:2454:			Class[] context = SESecurityManager.getClassContext();
+75:1349:									hash = plugin_interface.getUtilities().getSecurityManager().calculateSHA1( 
+80:40:import org.gudy.azureus2.core3.security.SESecurityManager;
+81:203:			        	SESecurityManager.clearPasswords();
+86:38:import org.gudy.azureus2.core3.security.SESecurityManager;
+87:127:			alias_field.setText( SESecurityManager.DEFAULT_ALIAS );
+88:233:						SESecurityManager.createSelfSignedCertificate( alias, dn, strength );
+93:38:import org.gudy.azureus2.core3.security.SESecurityManager;
+94:56:		SESecurityManager.addCertificateListener( this );
+99:64:		SESecurityManager.addPasswordListener( this );
+104:34:import org.gudy.azureus2.core3.security.SESecurityManager;
+105:136:					SESecurityManager.exitVM(1);
+110:24:import org.gudy.azureus2.core3.security.SESecurityManager;
+111:139:    SESecurityManager.exitVM(0);
+116:270:	  	SESecurityManager.initialise();
+121:45:import org.gudy.azureus2.core3.security.SESecurityManager;
+122:270:    				if ( SESecurityManager.installServerCertificates( url ) != null ){
+127:34:import org.gudy.azureus2.core3.security.SESecurityManager;
+128:99:					SSLServerSocketFactory factory = SESecurityManager.getSSLServerSocketFactory();
+133:42:import org.gudy.azureus2.core3.security.SESecurityManager;
+134:1203:					if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+135:1274:			auth = SESecurityManager.getPasswordAuthentication( "UDP Tracker", reqUrl );
+136:1432:			SESecurityManager.setPasswordAuthenticationOutcome( TRTrackerBTAnnouncerImpl.UDP_REALM, reqUrl, auth_ok );
+141:45:import org.gudy.azureus2.core3.security.SESecurityManager;
+142:1257:						if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+143:1576: 				 auth = SESecurityManager.getPasswordAuthentication( UDP_REALM, reqUrl );
+144:1718:			 						SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, true );
+145:1813:			SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, false );
+150:138:		SESecurityManager.initialise();
+155:36:import org.gudy.azureus2.core3.security.SESecurityManager;
+156:111:				SEKeyDetails	kd = SESecurityManager.getKeyDetails( sign_alias );
+157:126:							SESecurityManager.getKeystoreName(),
+158:127:							SESecurityManager.getKeystorePassword());
+163:24:import org.gudy.azureus2.core3.security.SESecurityManager;
+164:87:							SESecurityManager.stopThread( thread );
+168:./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/SESecurityManager.java
+169:2: * File    : SESecurityManager.java
+170:39:SESecurityManager
+171:52:		SESecurityManagerImpl.getSingleton().initialise();
+172:59:		SESecurityManagerImpl.getSingleton().exitVM(status);
+173:66:		SESecurityManagerImpl.getSingleton().stopThread(t);
+174:71:		SESecurityManagerImpl.getSingleton().installAuthenticator();
+175:77:		return(	SESecurityManagerImpl.getSingleton().getKeystoreName());
+176:83:		return(	SESecurityManagerImpl.getSingleton().getKeystorePassword());
+177:91:		return( SESecurityManagerImpl.getSingleton().getSSLServerSocketFactory());
+178:97:		return( SESecurityManagerImpl.getSingleton().getSSLSocketFactory());
+179:104:		return( SESecurityManagerImpl.getSingleton().installServerCertificates(https_url));
+180:113:		return( SESecurityManagerImpl.getSingleton().installServerCertificates( alias, ip, port ));
+181:124:		return( SESecurityManagerImpl.getSingleton().createSelfSignedCertificate( alias, cert_dn, strength ));
+182:133:		return( SESecurityManagerImpl.getSingleton().getKeyDetails( alias ));
+183:141:		return( SESecurityManagerImpl.getSingleton().getKeyStore());
+184:149:		return( SESecurityManagerImpl.getSingleton().getTrustStore());
+185:157:		return( SESecurityManagerImpl.getSingleton().getPasswordAuthentication(realm, tracker));	
+186:166:		SESecurityManagerImpl.getSingleton().setPasswordAuthenticationOutcome(realm, tracker, success);	
+187:173:		SESecurityManagerImpl.getSingleton().addPasswordListener(l);	
+188:180:		SESecurityManagerImpl.getSingleton().removePasswordListener(l);	
+189:186:		SESecurityManagerImpl.getSingleton().clearPasswords();
+190:193:		SESecurityManagerImpl.getSingleton().setThreadPasswordHandler(l);
+191:199:		SESecurityManagerImpl.getSingleton().unsetThreadPasswordHandler();
+192:208:		SESecurityManagerImpl.getSingleton().setPasswordHandler( url, l );
+193:215:		SESecurityManagerImpl.getSingleton().addCertificateListener(l);
+194:223:		SESecurityManagerImpl.getSingleton().setCertificateHandler(url,l);
+195:230:		SESecurityManagerImpl.getSingleton().removeCertificateListener(l);
+196:236:		return( SESecurityManagerImpl.getSingleton().getClassContext());
+200:./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerImpl.java
+201:52:import org.gudy.azureus2.core3.security.SESecurityManager;
+202:61:SESecurityManagerImpl 
+203:65:	protected static SESecurityManagerImpl	singleton = new SESecurityManagerImpl();
+204:132:	private	AzureusSecurityManager	my_sec_man;
+205:134:	protected AEMonitor	this_mon	= new AEMonitor( "SESecurityManager" );
+206:136:	public static SESecurityManagerImpl
+207:164:		keystore_name 		= FileUtil.getUserFile(SESecurityManager.SSL_KEYS).getAbsolutePath();
+208:165:		truststore_name 	= FileUtil.getUserFile(SESecurityManager.SSL_CERTS).getAbsolutePath();
+209:169:		System.setProperty( "javax.net.ssl.trustStorePassword", SESecurityManager.SSL_PASSWORD );
+210:198:			SESecurityManagerBC.initialise();
+211:206:		installSecurityManager();
+212:289:		return(	SESecurityManager.SSL_PASSWORD );	
+213:293:	installSecurityManager()
+214:305:			final SecurityManager	old_sec_man	= System.getSecurityManager();
+215:307:			my_sec_man = new AzureusSecurityManager( old_sec_man );
+216:309:			System.setSecurityManager( my_sec_man );
+217:365:					protected AEMonitor	auth_mon = new AEMonitor( "SESecurityManager:auth");
+218:503:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+219:557:				keystore.load(in, SESecurityManager.SSL_PASSWORD.toCharArray());
+220:600:				key_store.load(kis, SESecurityManager.SSL_PASSWORD.toCharArray());
+221:611:		keyManagerFactory.init(key_store, SESecurityManager.SSL_PASSWORD.toCharArray());
+222:656:		final Key key = key_store.getKey( alias, SESecurityManager.SSL_PASSWORD.toCharArray());
+223:701:		return( SESecurityManagerBC.createSelfSignedCertificate( this, alias, cert_dn, strength ));
+224:1007:			key_store.setKeyEntry( alias, public_key, SESecurityManager.SSL_PASSWORD.toCharArray(), certChain );
+225:1014:				key_store.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+226:1060:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+227:1304:	AzureusSecurityManager
+228:1305:		extends SecurityManager
+229:1307:		private SecurityManager	old_sec_man;
+230:1310:		AzureusSecurityManager(
+231:1311:			SecurityManager		_old_sec_man )
+232:1378:				}else if ( name.equals( "setSecurityManager" )){
+233:1420:		SESecurityManagerImpl man = SESecurityManagerImpl.getSingleton();
+237:./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerBC.java
+238:45:SESecurityManagerBC 
+239:55:		SESecurityManagerImpl	manager,
+244:37:import org.gudy.azureus2.core3.security.SESecurityManager;
+245:478:						factory = SESecurityManager.installServerCertificates( "AZ-sniffer:" + delegate_to_host + ":" + port, delegate_to_host, delegate_to_port );
+250:40:import org.gudy.azureus2.core3.security.SESecurityManager;
+251:199:            	SESecurityManager.setCertificateHandler( 
+256:45:		 * @param handler_type	from AESecurityManager.HANDLER_x enum
+261:39:import org.gudy.azureus2.core3.security.SESecurityManager;
+262:89:		SESecurityManager.initialise();
+267:47:import org.gudy.azureus2.core3.security.SESecurityManager;
+268:1326:						SESecurityManager.exitVM(0);
+269:1548:								SESecurityManager.exitVM(0);
+274:35:import org.gudy.azureus2.core3.security.SESecurityManager;
+275:213:					SESecurityManager.setThreadPasswordHandler( this );
+276:397:					SESecurityManager.unsetThreadPasswordHandler();
+281:44:import org.gudy.azureus2.core3.security.SESecurityManager;
+282:124:			SESecurityManager.setThreadPasswordHandler( this );
+283:240:							if ( SESecurityManager.installServerCertificates( target ) != null ){
+284:423:			SESecurityManager.unsetThreadPasswordHandler();
+289:51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+290:2258:			SESecurityManager sec_man = plugin.getSecurityManager();
+295:65:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+296:164:	public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_AES;
+297:167:	//public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_NONE;
+298:202:	private SESecurityManager	sec_man;
+299:263:		sec_man = plugin_interface.getUtilities().getSecurityManager();
+300:3078:	protected SESecurityManager
+301:3079:	getSecurityManager()
+306:611:										plugin_interface.getUtilities().getSecurityManager().calculateSHA1(
+311:1366:		//SESecurityManagerImpl.getSingleton().exitVM(0);
+316:129:      SESecurityManager.exitVM(0);
+317:134:      if(!ok) SESecurityManager.exitVM(-1);
+318:139:      SESecurityManager.exitVM(-1);
+319:146:      SESecurityManager.exitVM(-1);
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/security/SESecurityManager.java
+40:SESecurityManager 
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/security/SEPublicKey.java
+36:		 * import via SESecurityManager.decodePublicKey
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/Utilities.java
+202:	public SESecurityManager
+203:	getSecurityManager();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/resourceuploader/ResourceUploaderURLImpl.java
+35:import org.gudy.azureus2.core3.security.SESecurityManager;
+144:						SESecurityManager.setPasswordHandler( url, this );
+224:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+258:						SESecurityManager.setPasswordHandler( url, null );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/UtilitiesImpl.java
+51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+504:	public SESecurityManager
+505:	getSecurityManager()
+507:		return( new SESecurityManagerImpl( core ));
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/resourcedownloader/ResourceDownloaderURLImpl.java
+252:						SESecurityManager.setPasswordHandler( url, this );
+313:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+347:						SESecurityManager.setPasswordHandler( url, null );
+529:						SESecurityManager.setPasswordHandler( url, this );
+928:									if ( SESecurityManager.installServerCertificates( url ) != null ){
+992:						SESecurityManager.setPasswordHandler( url, null );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/security/SESecurityManagerImpl.java
+55:SESecurityManagerImpl 
+56:	implements org.gudy.azureus2.plugins.utils.security.SESecurityManager
+64:	SESecurityManagerImpl(
+96:			SESecurityManager.installAuthenticator();
+132:		SESecurityManager.addPasswordListener( sepl );
+143:			SESecurityManager.removePasswordListener( sepl );
+165:		SESecurityManager.addCertificateListener( sepl );
+176:			SESecurityManager.removeCertificateListener( sepl );
+184:		return( SESecurityManager.installServerCertificates( url ));
+192:		return( SESecurityManager.getKeyStore());
+200:		return( SESecurityManager.getTrustStore());
+212:		return( SESecurityManager.createSelfSignedCertificate(alias, cert_dn, strength ));		
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/security/SESTSConnectionImpl.java
+55:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+629:			if ( block_crypto == SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+781:			if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+820:			}else if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/PluginInitializer.java
+39:import org.gudy.azureus2.core3.security.SESecurityManager;
+2393:		Class<?>[] stack = SESecurityManager.getClassContext();
+2454:			Class[] context = SESecurityManager.getClassContext();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/webplugin/WebPlugin.java
+1349:									hash = plugin_interface.getUtilities().getSecurityManager().calculateSHA1( 
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionSecurity.java
+40:import org.gudy.azureus2.core3.security.SESecurityManager;
+203:			        	SESecurityManager.clearPasswords();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/auth/CertificateCreatorWindow.java
+38:import org.gudy.azureus2.core3.security.SESecurityManager;
+127:			alias_field.setText( SESecurityManager.DEFAULT_ALIAS );
+233:						SESecurityManager.createSelfSignedCertificate( alias, dn, strength );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/auth/CertificateTrustWindow.java
+38:import org.gudy.azureus2.core3.security.SESecurityManager;
+56:		SESecurityManager.addCertificateListener( this );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/auth/AuthenticatorWindow.java
+64:		SESecurityManager.addPasswordListener( this );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/ui/swt/UIExitUtilsSWT.java
+34:import org.gudy.azureus2.core3.security.SESecurityManager;
+136:					SESecurityManager.exitVM(1);
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/cl/Main.java
+24:import org.gudy.azureus2.core3.security.SESecurityManager;
+139:    SESecurityManager.exitVM(0);
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/config/impl/ConfigurationChecker.java
+270:	  	SESecurityManager.initialise();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/torrentdownloader/impl/TorrentDownloaderImpl.java
+45:import org.gudy.azureus2.core3.security.SESecurityManager;
+270:    				if ( SESecurityManager.installServerCertificates( url ) != null ){
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/tracker/server/impl/tcp/blocking/TRBlockingServer.java
+34:import org.gudy.azureus2.core3.security.SESecurityManager;
+99:					SSLServerSocketFactory factory = SESecurityManager.getSSLServerSocketFactory();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/tracker/client/impl/bt/TrackerStatus.java
+42:import org.gudy.azureus2.core3.security.SESecurityManager;
+1203:					if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+1274:			auth = SESecurityManager.getPasswordAuthentication( "UDP Tracker", reqUrl );
+1432:			SESecurityManager.setPasswordAuthenticationOutcome( TRTrackerBTAnnouncerImpl.UDP_REALM, reqUrl, auth_ok );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/tracker/client/impl/bt/TRTrackerBTAnnouncerImpl.java
+45:import org.gudy.azureus2.core3.security.SESecurityManager;
+1257:						if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+1576: 				 auth = SESecurityManager.getPasswordAuthentication( UDP_REALM, reqUrl );
+1718:			 						SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, true );
+1813:			SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, false );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/util/ED2KHasher.java
+138:		SESecurityManager.initialise();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/util/jar/AEJarBuilder.java
+36:import org.gudy.azureus2.core3.security.SESecurityManager;
+111:				SEKeyDetails	kd = SESecurityManager.getKeyDetails( sign_alias );
+126:							SESecurityManager.getKeystoreName(),
+127:							SESecurityManager.getKeystorePassword());
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/util/TimeLimitedTask.java
+24:import org.gudy.azureus2.core3.security.SESecurityManager;
+87:							SESecurityManager.stopThread( thread );
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/SESecurityManager.java
+2: * File    : SESecurityManager.java
+39:SESecurityManager
+52:		SESecurityManagerImpl.getSingleton().initialise();
+59:		SESecurityManagerImpl.getSingleton().exitVM(status);
+66:		SESecurityManagerImpl.getSingleton().stopThread(t);
+71:		SESecurityManagerImpl.getSingleton().installAuthenticator();
+77:		return(	SESecurityManagerImpl.getSingleton().getKeystoreName());
+83:		return(	SESecurityManagerImpl.getSingleton().getKeystorePassword());
+91:		return( SESecurityManagerImpl.getSingleton().getSSLServerSocketFactory());
+97:		return( SESecurityManagerImpl.getSingleton().getSSLSocketFactory());
+104:		return( SESecurityManagerImpl.getSingleton().installServerCertificates(https_url));
+113:		return( SESecurityManagerImpl.getSingleton().installServerCertificates( alias, ip, port ));
+124:		return( SESecurityManagerImpl.getSingleton().createSelfSignedCertificate( alias, cert_dn, strength ));
+133:		return( SESecurityManagerImpl.getSingleton().getKeyDetails( alias ));
+141:		return( SESecurityManagerImpl.getSingleton().getKeyStore());
+149:		return( SESecurityManagerImpl.getSingleton().getTrustStore());
+157:		return( SESecurityManagerImpl.getSingleton().getPasswordAuthentication(realm, tracker));	
+166:		SESecurityManagerImpl.getSingleton().setPasswordAuthenticationOutcome(realm, tracker, success);	
+173:		SESecurityManagerImpl.getSingleton().addPasswordListener(l);	
+180:		SESecurityManagerImpl.getSingleton().removePasswordListener(l);	
+186:		SESecurityManagerImpl.getSingleton().clearPasswords();
+193:		SESecurityManagerImpl.getSingleton().setThreadPasswordHandler(l);
+199:		SESecurityManagerImpl.getSingleton().unsetThreadPasswordHandler();
+208:		SESecurityManagerImpl.getSingleton().setPasswordHandler( url, l );
+215:		SESecurityManagerImpl.getSingleton().addCertificateListener(l);
+223:		SESecurityManagerImpl.getSingleton().setCertificateHandler(url,l);
+230:		SESecurityManagerImpl.getSingleton().removeCertificateListener(l);
+236:		return( SESecurityManagerImpl.getSingleton().getClassContext());
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerImpl.java
+52:import org.gudy.azureus2.core3.security.SESecurityManager;
+61:SESecurityManagerImpl 
+65:	protected static SESecurityManagerImpl	singleton = new SESecurityManagerImpl();
+132:	private	AzureusSecurityManager	my_sec_man;
+134:	protected AEMonitor	this_mon	= new AEMonitor( "SESecurityManager" );
+136:	public static SESecurityManagerImpl
+164:		keystore_name 		= FileUtil.getUserFile(SESecurityManager.SSL_KEYS).getAbsolutePath();
+165:		truststore_name 	= FileUtil.getUserFile(SESecurityManager.SSL_CERTS).getAbsolutePath();
+169:		System.setProperty( "javax.net.ssl.trustStorePassword", SESecurityManager.SSL_PASSWORD );
+198:			SESecurityManagerBC.initialise();
+206:		installSecurityManager();
+289:		return(	SESecurityManager.SSL_PASSWORD );	
+293:	installSecurityManager()
+305:			final SecurityManager	old_sec_man	= System.getSecurityManager();
+307:			my_sec_man = new AzureusSecurityManager( old_sec_man );
+309:			System.setSecurityManager( my_sec_man );
+365:					protected AEMonitor	auth_mon = new AEMonitor( "SESecurityManager:auth");
+503:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+557:				keystore.load(in, SESecurityManager.SSL_PASSWORD.toCharArray());
+600:				key_store.load(kis, SESecurityManager.SSL_PASSWORD.toCharArray());
+611:		keyManagerFactory.init(key_store, SESecurityManager.SSL_PASSWORD.toCharArray());
+656:		final Key key = key_store.getKey( alias, SESecurityManager.SSL_PASSWORD.toCharArray());
+701:		return( SESecurityManagerBC.createSelfSignedCertificate( this, alias, cert_dn, strength ));
+1007:			key_store.setKeyEntry( alias, public_key, SESecurityManager.SSL_PASSWORD.toCharArray(), certChain );
+1014:				key_store.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+1060:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+1304:	AzureusSecurityManager
+1305:		extends SecurityManager
+1307:		private SecurityManager	old_sec_man;
+1310:		AzureusSecurityManager(
+1311:			SecurityManager		_old_sec_man )
+1378:				}else if ( name.equals( "setSecurityManager" )){
+1420:		SESecurityManagerImpl man = SESecurityManagerImpl.getSingleton();
+
+
+
+./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerBC.java
+45:SESecurityManagerBC 
+55:		SESecurityManagerImpl	manager,
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/util/http/HTTPAuthHelper.java
+37:import org.gudy.azureus2.core3.security.SESecurityManager;
+478:						factory = SESecurityManager.installServerCertificates( "AZ-sniffer:" + delegate_to_host + ":" + port, delegate_to_host, delegate_to_port );
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/networkmanager/admin/impl/NetworkAdminSpeedTesterBTImpl.java
+40:import org.gudy.azureus2.core3.security.SESecurityManager;
+199:            	SESecurityManager.setCertificateHandler( 
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/security/CryptoManagerPasswordHandler.java
+45:		 * @param handler_type	from AESecurityManager.HANDLER_x enum
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/security/impl/CryptoManagerImpl.java
+39:import org.gudy.azureus2.core3.security.SESecurityManager;
+89:		SESecurityManager.initialise();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/core/impl/AzureusCoreImpl.java
+47:import org.gudy.azureus2.core3.security.SESecurityManager;
+1326:						SESecurityManager.exitVM(0);
+1548:								SESecurityManager.exitVM(0);
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/extseed/util/ExternalSeedHTTPDownloaderLinear.java
+35:import org.gudy.azureus2.core3.security.SESecurityManager;
+213:					SESecurityManager.setThreadPasswordHandler( this );
+397:					SESecurityManager.unsetThreadPasswordHandler();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/extseed/util/ExternalSeedHTTPDownloaderRange.java
+44:import org.gudy.azureus2.core3.security.SESecurityManager;
+124:			SESecurityManager.setThreadPasswordHandler( this );
+240:							if ( SESecurityManager.installServerCertificates( target ) != null ){
+423:			SESecurityManager.unsetThreadPasswordHandler();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/net/buddy/BuddyPluginBuddy.java
+51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+2258:			SESecurityManager sec_man = plugin.getSecurityManager();
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/net/buddy/BuddyPlugin.java
+65:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+164:	public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_AES;
+167:	//public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_NONE;
+202:	private SESecurityManager	sec_man;
+263:		sec_man = plugin_interface.getUtilities().getSecurityManager();
+3078:	protected SESecurityManager
+3079:	getSecurityManager()
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/plugins/upnp/UPnPPlugin.java
+611:										plugin_interface.getUtilities().getSecurityManager().calculateSHA1(
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/ui/swt/shells/main/MainWindowImpl.java
+1366:		//SESecurityManagerImpl.getSingleton().exitVM(0);
+
+
+
+./azureus-4.8.1.2/src/com/aelitis/azureus/ui/console/MakeTorrent.java
+129:      SESecurityManager.exitVM(0);
+134:      if(!ok) SESecurityManager.exitVM(-1);
+139:      SESecurityManager.exitVM(-1);
+146:      SESecurityManager.exitVM(-1);
+
+
+
+./SecurityManager.java
+1:./azureus-4.8.1.2/src/org/gudy/azureus2/plugins/utils/security/SESecurityManager.java
+2:40:SESecurityManager 
+7:36:		 * import via SESecurityManager.decodePublicKey
+12:202:	public SESecurityManager
+13:203:	getSecurityManager();
+18:35:import org.gudy.azureus2.core3.security.SESecurityManager;
+19:144:						SESecurityManager.setPasswordHandler( url, this );
+20:224:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+21:258:						SESecurityManager.setPasswordHandler( url, null );
+26:51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+27:504:	public SESecurityManager
+28:505:	getSecurityManager()
+29:507:		return( new SESecurityManagerImpl( core ));
+34:252:						SESecurityManager.setPasswordHandler( url, this );
+35:313:								if ( SESecurityManager.installServerCertificates( url ) != null ){
+36:347:						SESecurityManager.setPasswordHandler( url, null );
+37:529:						SESecurityManager.setPasswordHandler( url, this );
+38:928:									if ( SESecurityManager.installServerCertificates( url ) != null ){
+39:992:						SESecurityManager.setPasswordHandler( url, null );
+43:./azureus-4.8.1.2/src/org/gudy/azureus2/pluginsimpl/local/utils/security/SESecurityManagerImpl.java
+44:55:SESecurityManagerImpl 
+45:56:	implements org.gudy.azureus2.plugins.utils.security.SESecurityManager
+46:64:	SESecurityManagerImpl(
+47:96:			SESecurityManager.installAuthenticator();
+48:132:		SESecurityManager.addPasswordListener( sepl );
+49:143:			SESecurityManager.removePasswordListener( sepl );
+50:165:		SESecurityManager.addCertificateListener( sepl );
+51:176:			SESecurityManager.removeCertificateListener( sepl );
+52:184:		return( SESecurityManager.installServerCertificates( url ));
+53:192:		return( SESecurityManager.getKeyStore());
+54:200:		return( SESecurityManager.getTrustStore());
+55:212:		return( SESecurityManager.createSelfSignedCertificate(alias, cert_dn, strength ));		
+60:55:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+61:629:			if ( block_crypto == SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+62:781:			if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+63:820:			}else if ( block_crypto != SESecurityManager.BLOCK_ENCRYPTION_NONE ){
+68:39:import org.gudy.azureus2.core3.security.SESecurityManager;
+69:2393:		Class<?>[] stack = SESecurityManager.getClassContext();
+70:2454:			Class[] context = SESecurityManager.getClassContext();
+75:1349:									hash = plugin_interface.getUtilities().getSecurityManager().calculateSHA1( 
+80:40:import org.gudy.azureus2.core3.security.SESecurityManager;
+81:203:			        	SESecurityManager.clearPasswords();
+86:38:import org.gudy.azureus2.core3.security.SESecurityManager;
+87:127:			alias_field.setText( SESecurityManager.DEFAULT_ALIAS );
+88:233:						SESecurityManager.createSelfSignedCertificate( alias, dn, strength );
+93:38:import org.gudy.azureus2.core3.security.SESecurityManager;
+94:56:		SESecurityManager.addCertificateListener( this );
+99:64:		SESecurityManager.addPasswordListener( this );
+104:34:import org.gudy.azureus2.core3.security.SESecurityManager;
+105:136:					SESecurityManager.exitVM(1);
+110:24:import org.gudy.azureus2.core3.security.SESecurityManager;
+111:139:    SESecurityManager.exitVM(0);
+116:270:	  	SESecurityManager.initialise();
+121:45:import org.gudy.azureus2.core3.security.SESecurityManager;
+122:270:    				if ( SESecurityManager.installServerCertificates( url ) != null ){
+127:34:import org.gudy.azureus2.core3.security.SESecurityManager;
+128:99:					SSLServerSocketFactory factory = SESecurityManager.getSSLServerSocketFactory();
+133:42:import org.gudy.azureus2.core3.security.SESecurityManager;
+134:1203:					if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+135:1274:			auth = SESecurityManager.getPasswordAuthentication( "UDP Tracker", reqUrl );
+136:1432:			SESecurityManager.setPasswordAuthenticationOutcome( TRTrackerBTAnnouncerImpl.UDP_REALM, reqUrl, auth_ok );
+141:45:import org.gudy.azureus2.core3.security.SESecurityManager;
+142:1257:						if ( SESecurityManager.installServerCertificates( reqUrl ) != null ){
+143:1576: 				 auth = SESecurityManager.getPasswordAuthentication( UDP_REALM, reqUrl );
+144:1718:			 						SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, true );
+145:1813:			SESecurityManager.setPasswordAuthenticationOutcome( UDP_REALM, reqUrl, false );
+150:138:		SESecurityManager.initialise();
+155:36:import org.gudy.azureus2.core3.security.SESecurityManager;
+156:111:				SEKeyDetails	kd = SESecurityManager.getKeyDetails( sign_alias );
+157:126:							SESecurityManager.getKeystoreName(),
+158:127:							SESecurityManager.getKeystorePassword());
+163:24:import org.gudy.azureus2.core3.security.SESecurityManager;
+164:87:							SESecurityManager.stopThread( thread );
+168:./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/SESecurityManager.java
+169:2: * File    : SESecurityManager.java
+170:39:SESecurityManager
+171:52:		SESecurityManagerImpl.getSingleton().initialise();
+172:59:		SESecurityManagerImpl.getSingleton().exitVM(status);
+173:66:		SESecurityManagerImpl.getSingleton().stopThread(t);
+174:71:		SESecurityManagerImpl.getSingleton().installAuthenticator();
+175:77:		return(	SESecurityManagerImpl.getSingleton().getKeystoreName());
+176:83:		return(	SESecurityManagerImpl.getSingleton().getKeystorePassword());
+177:91:		return( SESecurityManagerImpl.getSingleton().getSSLServerSocketFactory());
+178:97:		return( SESecurityManagerImpl.getSingleton().getSSLSocketFactory());
+179:104:		return( SESecurityManagerImpl.getSingleton().installServerCertificates(https_url));
+180:113:		return( SESecurityManagerImpl.getSingleton().installServerCertificates( alias, ip, port ));
+181:124:		return( SESecurityManagerImpl.getSingleton().createSelfSignedCertificate( alias, cert_dn, strength ));
+182:133:		return( SESecurityManagerImpl.getSingleton().getKeyDetails( alias ));
+183:141:		return( SESecurityManagerImpl.getSingleton().getKeyStore());
+184:149:		return( SESecurityManagerImpl.getSingleton().getTrustStore());
+185:157:		return( SESecurityManagerImpl.getSingleton().getPasswordAuthentication(realm, tracker));	
+186:166:		SESecurityManagerImpl.getSingleton().setPasswordAuthenticationOutcome(realm, tracker, success);	
+187:173:		SESecurityManagerImpl.getSingleton().addPasswordListener(l);	
+188:180:		SESecurityManagerImpl.getSingleton().removePasswordListener(l);	
+189:186:		SESecurityManagerImpl.getSingleton().clearPasswords();
+190:193:		SESecurityManagerImpl.getSingleton().setThreadPasswordHandler(l);
+191:199:		SESecurityManagerImpl.getSingleton().unsetThreadPasswordHandler();
+192:208:		SESecurityManagerImpl.getSingleton().setPasswordHandler( url, l );
+193:215:		SESecurityManagerImpl.getSingleton().addCertificateListener(l);
+194:223:		SESecurityManagerImpl.getSingleton().setCertificateHandler(url,l);
+195:230:		SESecurityManagerImpl.getSingleton().removeCertificateListener(l);
+196:236:		return( SESecurityManagerImpl.getSingleton().getClassContext());
+200:./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerImpl.java
+201:52:import org.gudy.azureus2.core3.security.SESecurityManager;
+202:61:SESecurityManagerImpl 
+203:65:	protected static SESecurityManagerImpl	singleton = new SESecurityManagerImpl();
+204:132:	private	AzureusSecurityManager	my_sec_man;
+205:134:	protected AEMonitor	this_mon	= new AEMonitor( "SESecurityManager" );
+206:136:	public static SESecurityManagerImpl
+207:164:		keystore_name 		= FileUtil.getUserFile(SESecurityManager.SSL_KEYS).getAbsolutePath();
+208:165:		truststore_name 	= FileUtil.getUserFile(SESecurityManager.SSL_CERTS).getAbsolutePath();
+209:169:		System.setProperty( "javax.net.ssl.trustStorePassword", SESecurityManager.SSL_PASSWORD );
+210:198:			SESecurityManagerBC.initialise();
+211:206:		installSecurityManager();
+212:289:		return(	SESecurityManager.SSL_PASSWORD );	
+213:293:	installSecurityManager()
+214:305:			final SecurityManager	old_sec_man	= System.getSecurityManager();
+215:307:			my_sec_man = new AzureusSecurityManager( old_sec_man );
+216:309:			System.setSecurityManager( my_sec_man );
+217:365:					protected AEMonitor	auth_mon = new AEMonitor( "SESecurityManager:auth");
+218:503:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+219:557:				keystore.load(in, SESecurityManager.SSL_PASSWORD.toCharArray());
+220:600:				key_store.load(kis, SESecurityManager.SSL_PASSWORD.toCharArray());
+221:611:		keyManagerFactory.init(key_store, SESecurityManager.SSL_PASSWORD.toCharArray());
+222:656:		final Key key = key_store.getKey( alias, SESecurityManager.SSL_PASSWORD.toCharArray());
+223:701:		return( SESecurityManagerBC.createSelfSignedCertificate( this, alias, cert_dn, strength ));
+224:1007:			key_store.setKeyEntry( alias, public_key, SESecurityManager.SSL_PASSWORD.toCharArray(), certChain );
+225:1014:				key_store.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+226:1060:					keystore.store(out, SESecurityManager.SSL_PASSWORD.toCharArray());
+227:1304:	AzureusSecurityManager
+228:1305:		extends SecurityManager
+229:1307:		private SecurityManager	old_sec_man;
+230:1310:		AzureusSecurityManager(
+231:1311:			SecurityManager		_old_sec_man )
+232:1378:				}else if ( name.equals( "setSecurityManager" )){
+233:1420:		SESecurityManagerImpl man = SESecurityManagerImpl.getSingleton();
+237:./azureus-4.8.1.2/src/org/gudy/azureus2/core3/security/impl/SESecurityManagerBC.java
+238:45:SESecurityManagerBC 
+239:55:		SESecurityManagerImpl	manager,
+244:37:import org.gudy.azureus2.core3.security.SESecurityManager;
+245:478:						factory = SESecurityManager.installServerCertificates( "AZ-sniffer:" + delegate_to_host + ":" + port, delegate_to_host, delegate_to_port );
+250:40:import org.gudy.azureus2.core3.security.SESecurityManager;
+251:199:            	SESecurityManager.setCertificateHandler( 
+256:45:		 * @param handler_type	from AESecurityManager.HANDLER_x enum
+261:39:import org.gudy.azureus2.core3.security.SESecurityManager;
+262:89:		SESecurityManager.initialise();
+267:47:import org.gudy.azureus2.core3.security.SESecurityManager;
+268:1326:						SESecurityManager.exitVM(0);
+269:1548:								SESecurityManager.exitVM(0);
+274:35:import org.gudy.azureus2.core3.security.SESecurityManager;
+275:213:					SESecurityManager.setThreadPasswordHandler( this );
+276:397:					SESecurityManager.unsetThreadPasswordHandler();
+281:44:import org.gudy.azureus2.core3.security.SESecurityManager;
+282:124:			SESecurityManager.setThreadPasswordHandler( this );
+283:240:							if ( SESecurityManager.installServerCertificates( target ) != null ){
+284:423:			SESecurityManager.unsetThreadPasswordHandler();
+289:51:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+290:2258:			SESecurityManager sec_man = plugin.getSecurityManager();
+295:65:import org.gudy.azureus2.plugins.utils.security.SESecurityManager;
+296:164:	public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_AES;
+297:167:	//public static final int BLOCK_CRYPTO	= SESecurityManager.BLOCK_ENCRYPTION_NONE;
+298:202:	private SESecurityManager	sec_man;
+299:263:		sec_man = plugin_interface.getUtilities().getSecurityManager();
+300:3078:	protected SESecurityManager
+301:3079:	getSecurityManager()
+306:611:										plugin_interface.getUtilities().getSecurityManager().calculateSHA1(
+311:1366:		//SESecurityManagerImpl.getSingleton().exitVM(0);
+316:129:      SESecurityManager.exitVM(0);
+317:134:      if(!ok) SESecurityManager.exitVM(-1);
+318:139:      SESecurityManager.exitVM(-1);
+319:146:      SESecurityManager.exitVM(-1);
+
+
+

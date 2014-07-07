@@ -1,0 +1,855 @@
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/SecurityManagerSetup.java
+3: * Derby - Class org.apache.derbyTesting.functionTests.util.SecurityManagerSetup
+35: * Setup for running Derby JUnit tests with the SecurityManager
+39:public final class SecurityManagerSetup extends TestSetup {
+63:	private static final boolean externalSecurityManagerInstalled;
+68:		externalSecurityManagerInstalled = determineClasspath();
+73:	public SecurityManagerSetup(Test test, String policyResource)
+94:	public static Test noSecurityManager(Test test)
+96:		if (externalSecurityManagerInstalled)
+99:		return new SecurityManagerSetup(test, "<NONE>");
+106:	static void noSecurityManager()
+108:		installSecurityManager("<NONE>");
+116:		installSecurityManager(decoratorPolicyResource);
+123:        else if ( !externalSecurityManagerInstalled )
+125:            uninstallSecurityManager();
+138:	 * Install a SecurityManager with the default test policy
+143:	static void installSecurityManager()
+145:		installSecurityManager( getDefaultPolicy() );
+148:	private static void installSecurityManager(String policyFile)
+151:		if (externalSecurityManagerInstalled)
+157:		SecurityManager sm = System.getSecurityManager();
+159:			// SecurityManager installed, see if it has the same settings.
+171:			uninstallSecurityManager();
+189:                    SecurityManager sm = new SecurityManager();
+190:                    System.setSecurityManager(sm);
+260:		if (System.getSecurityManager() != null) {		
+293:		URL testing = getURL(SecurityManagerSetup.class);
+395:    private static void uninstallSecurityManager()
+403:                      System.setSecurityManager(null);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/Derby.java
+45:        if (!SecurityManagerSetup.isJars)
+57:        if (!SecurityManagerSetup.isJars)
+69:        if (!SecurityManagerSetup.isJars)
+81:        if (!SecurityManagerSetup.isJars)
+97:        URL url = SecurityManagerSetup.getURL(className);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/BaseTestCase.java
+80:     * the decorators obtained from SecurityManagerSetup.
+100:        if ( System.getSecurityManager() == null )
+102:            if (config.defaultSecurityManagerSetup())
+104:                assertSecurityManager();
+339:    public static void assertSecurityManager()
+341:    	assertNotNull("No SecurityManager installed",
+342:    			System.getSecurityManager());
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/BaseTestSetup.java
+49:        if ( System.getSecurityManager() == null )
+51:            if (TestConfiguration.getCurrent().defaultSecurityManagerSetup())
+53:                BaseTestCase.assertSecurityManager();
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/NetworkServerTestSetup.java
+148:     * the server up with no security manager using -noSecurityManager,
+264:            boolean setNoSecurityManager = true;
+269:                    setNoSecurityManager = false;
+275:                if (startupArgs[i].equals("-noSecurityManager"))
+277:                    setNoSecurityManager = false;
+281:            if (setNoSecurityManager)
+285:                newArgs[newArgs.length - 1] = "-noSecurityManager";
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/JAXPFinder.java
+88:             *   SecurityManagerSetup.getURL(DocumentBuilderFactory.class)
+103:            URL jaxpURL = SecurityManagerSetup.getURL(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/TestConfiguration.java
+1601:        return SecurityManagerSetup.isJars;
+1707:     * SecurityManager related configuration.
+1715:    boolean defaultSecurityManagerSetup() {
+1721:    		SecurityManagerSetup.noSecurityManager();
+1730:    		SecurityManagerSetup.installSecurityManager();
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/harness/jvm.java
+32:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+385:            SecurityManagerSetup.getPolicyFilePropertiesForOldHarness();
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/harness/RunTest.java
+185:    static boolean runWithoutSecurityManager;
+1750:	        		|| "true".equalsIgnoreCase(ap.getProperty("noSecurityManager")))
+1751:	        	runWithoutSecurityManager = true;
+2358:        if (!runWithoutSecurityManager)
+2361:        	System.out.println("-- SecurityManager not installed --");
+2481:            // properties (setSecurityManager, setIO)
+2662:    	boolean installedSecurityManager = installSecurityManager();
+2867:         if (installedSecurityManager)
+2869:        	System.setSecurityManager(null);
+2934:    private static boolean installSecurityManager() throws ClassNotFoundException, IOException
+2936:    	// SecurityManager not currently work with older j9 and useProcess=false
+2941:    	boolean installedSecurityManager = false;
+2942:    	// Set up the SecurityManager in this JVM for this test.
+2943:    	boolean haveSecurityManagerAlready = System.getSecurityManager() != null;
+2944:        if (runWithoutSecurityManager)
+2946:        	// Test doesn't run with a SecurityManager,
+2948:        	if (haveSecurityManagerAlready)
+2950:        				"noSecurityManager=true,useProcess=false but SecurityManager installed by previous test");
+2952:        	    System.out.println("-- SecurityManager not installed --");
+2954:        else if (!haveSecurityManagerAlready)
+2972:		    System.setSecurityManager(new SecurityManager());
+2973:		    installedSecurityManager = true;
+2976:        return installedSecurityManager;
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/lang/AggregateClassLoadingTest.java
+38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+81:		return SecurityManagerSetup.noSecurityManager(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/lang/DBInJarTest.java
+40:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+114:        return new CleanDatabaseTestSetup(SecurityManagerSetup.noSecurityManager(suite)) 
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/lang/SecurityPolicyReloadingTest.java
+38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+155:        test = new SecurityManagerSetup( test, undecoratedTest.makeServerPolicyName() );
+181:        test = SecurityManagerSetup.noSecurityManager(test);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java
+27:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+63:        return SecurityManagerSetup.noSecurityManager(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/lang/DatabaseClassLoadingTest.java
+56:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+118:           suite.addTest(SecurityManagerSetup.noSecurityManager(
+121:           suite.addTest(SecurityManagerSetup.noSecurityManager(
+127:           suite.addTest(SecurityManagerSetup.noSecurityManager(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_StateTest_part1_1.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+58:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_1Indexing.java
+30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+58:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_3_p3.java
+27:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+60:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/SimplePerfTest.java
+34:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+74:        return SecurityManagerSetup.noSecurityManager(t);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_StateTest_part1_3.java
+28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+57:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_3_p4.java
+28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+55:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_3_p2.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+63:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_Encrypted_1.java
+28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+65:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Full.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+44:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun.java
+567:                    // + " -Djava.security.policy=\"<NONE>\"" // Now using noSecurityManager decorator
+656:                    // + " -Djava.security.policy=\"<NONE>\""  // Now using noSecurityManager decorator
+743:                    // + " -Djava.security.policy=\"<NONE>\""  // Now using noSecurityManager decorator
+818:                    // + " -Djava.security.policy=\"<NONE>\""  // Now using noSecurityManager decorator
+942:         *       -noSecurityManager
+951:                + " -noSecurityManager"
+1194:                + " -noSecurityManager"
+2185:        securityOption = "-noSecurityManager";
+2323:        sp.setProperty("noSecurityManager", 
+2324:                securityOption.equalsIgnoreCase("-noSecurityManager")?"true":"false");
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Distributed.java
+29:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+59:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_StateTest_part1_2.java
+28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+65:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_3_p6.java
+32:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+64:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/SimplePerfTest_Verify.java
+33:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+69:        return SecurityManagerSetup.noSecurityManager(t);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_CleanUp.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+54:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_3_p1.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+59:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_showStateChange.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+64:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_3_p5.java
+30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+62:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_StateTest_part2.java
+30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+58:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_StateTest_part1.java
+29:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+66:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local.java
+27:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+55:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/replicationTests/ReplicationRun_Local_1.java
+25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+53:        return SecurityManagerSetup.noSecurityManager(suite);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/AutoloadTest.java
+37:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+105:                suite.addTest(SecurityManagerSetup.noSecurityManager(
+134:        suite.addTest(SecurityManagerSetup.noSecurityManager(new AutoloadTest("testEmbeddedNotStarted")));
+162:            suite.addTest(SecurityManagerSetup.noSecurityManager(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/InvalidLDAPServerAuthenticationTest.java
+38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+65:        suite.addTest(SecurityManagerSetup.noSecurityManager(baseSuite(
+68:                SecurityManagerSetup.noSecurityManager(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LDAPAuthenticationTest.java
+43:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+149:        test = new SecurityManagerSetup(test,ldapPolicyName );
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/ServerPropertiesTest.java
+40:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+208:        test = new SecurityManagerSetup(test,serverPolicyName );
+455:            "-noSecurityManager", "start"};
+468:                "-noSecurityManager", "shutdown"};
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/NetworkServerControlApiTest.java
+31:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+281:        test = new SecurityManagerSetup( test,serverPolicyName );
+372:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+422:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+511:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+558:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/NetworkServerControlClientCommandTest.java
+33:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+133:        test = SecurityManagerSetup.noSecurityManager(test);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/NetHarnessJavaTest.java
+30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+86:        //		         SecurityManagerSetup.noSecurityManager(
+91:            suite.addTest(SecurityManagerSetup.noSecurityManager(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/GetCurrentPropertiesTest.java
+32:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+92:        test = new SecurityManagerSetup(test,serverPolicyName );
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/SecureServerTest.java
+43:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+247:            SecurityManagerSetup.noSecurityManager(networkServerTestSetup);
+282:            list.add( "-noSecurityManager" );
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/_Suite.java
+72:        //suite.addTest(CheckSecurityManager.suite());
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/RuntimeInfoTest.java
+38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+248:	 * Decorate a test with SecurityManagerSetup, clientServersuite, and
+266:        test = new SecurityManagerSetup(test, policyName);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/SSLTest.java
+34:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+101:            SecurityManagerSetup.noSecurityManager(networkServerTestSetup);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/CheckSecurityManager.java
+45:public class CheckSecurityManager extends BaseJDBCTestCase
+52:	    return TestConfiguration.defaultSuite(CheckSecurityManager.class);
+55:	public CheckSecurityManager(String name)
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/SysinfoTest.java
+36:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+171:     * Decorate a test with SecurityManagerSetup, clientServersuite, and
+182:                new SecurityManagerSetup(test, policyName));
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/tools/_Suite.java
+57:        suite.addTest(IjSecurityManagerTest.suite());
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/tools/IjSecurityManagerTest.java
+4:   org.apache.derbyTesting.functionTests.tests.tools.IjSecurityManager
+38:public class IjSecurityManagerTest extends BaseTestCase {
+40:	public IjSecurityManagerTest(String name) {
+58:	        ij.main(new String[]{"extinout/IjSecurityManagerTest.sql"});
+73:	    Test test = TestConfiguration.embeddedSuite(IjSecurityManagerTest.class);
+78:          new String[] { "functionTests/tests/tools/IjSecurityManagerTest.sql"  },
+80:          new String[] { "IjSecurityManagerTest.sql"}
+85:		TestSuite suite = new TestSuite("IjSecurityManagerTest");
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/tools/SysinfoAPITest.java
+33:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/tools/SysinfoLocaleTest.java
+35:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+131:        return SecurityManagerSetup.noSecurityManager(suite);
+161:        URL sysinfoURL = SecurityManagerSetup.getURL(className);
+162:        URL emmaURL = SecurityManagerSetup.getURL("com.vladium.emma.EMMAException");
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/upgradeTests/UpgradeTrajectoryTest.java
+47:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+253:        return SecurityManagerSetup.noSecurityManager( sfs );
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/upgradeTests/UpgradeRun.java
+39:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+142:        return SecurityManagerSetup.noSecurityManager(setup);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/CompatibilityCombinations.java
+50: * The compatibility tests are (currently) run without a SecurityManager.
+52: * how to <b>not</b> use a SecurityManager. --> <br><br>
+128: * test.securityOption=noSecurityManager
+179:     * The option string used to turn off running Derby server with a SecurityManager.
+180:   * Read as e.g <code>test.securityOption=noSecurityManager</code> from the file given by
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/store/ClassLoaderBootTest.java
+46:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+106:        return SecurityManagerSetup.noSecurityManager(setup);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/management/MBeanTest.java
+46:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+112:         * Will run without SecurityManager for now, but could probably add a 
+120:                SecurityManagerSetup.noSecurityManager(networkServerTestSetup);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/management/NetworkServerMBeanTest.java
+310:        // assumes noSecurityManager or that the required SocketPermission has
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/util/TestRoutines.java
+71:		s.execute("CREATE FUNCTION TESTROUTINE.HAS_SECURITY_MANAGER() RETURNS INT NO SQL EXTERNAL NAME 'org.apache.derbyTesting.functionTests.util.TestRoutines.hasSecurityManager' language java parameter style java");
+109:	public static int hasSecurityManager()
+111:		return System.getSecurityManager() == null ? 0 : 1;
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/util/SecurityCheck.java
+153:	 * SecurityManager.inspect(conn);
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/unitTests/junit/SystemPrivilegesPermissionTest.java
+28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+173:        suite.addTest(new SecurityManagerSetup(
+180:        if (SecurityManagerSetup.JVM_HAS_SUBJECT_AUTHORIZATION) {
+181:            suite.addTest(new SecurityManagerSetup(
+184:            suite.addTest(new SecurityManagerSetup(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/unitTests/junit/AssertFailureTest.java
+29:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+64:            suite.addTest(new SecurityManagerSetup(new AssertFailureTest(
+68:            suite.addTest(new SecurityManagerSetup(new AssertFailureTest(
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/catalog/SystemProcedures.java
+1668:        // without a SecurityManager seems to lock in a policy with
+1670:        // when later installing a SecurityManager.
+1671:        if (System.getSecurityManager() == null)
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/iapi/services/info/Version.java
+62:            if (System.getSecurityManager() != null)
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/iapi/services/cache/ClassSize.java
+266:     * Note that this method will throw a SecurityException if the SecurityManager does not
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/iapi/security/SecurityUtil.java
+104:     * Checks that a Subject has a Permission under the SecurityManager.
+143:     * Checks that a User has a Permission under the SecurityManager.
+159:        if (System.getSecurityManager() == null) {
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/authentication/SystemPrincipal.java
+66:     * permission checking by the SecurityManager.
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/impl/services/reflect/JarLoader.java
+523:     * Provide a SecurityManager with information about the class name
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/impl/services/bytecode/d_BCValidate.java
+91:				// methods. Default SecurityManager behaviour is to grant access to public members
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/impl/services/jmx/JMXManagementService.java
+410:            if (System.getSecurityManager() != null)
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java
+2560:        if (System.getSecurityManager() == null) {
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/engine/org/apache/derby/jdbc/InternalDriver.java
+299:        if (System.getSecurityManager() == null) {
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/drda/org/apache/derby/drda/NetworkServerControl.java
+309:            if ( needsSecurityManager( server, command ) )
+312:                installSecurityManager( server );
+580:     * <li>The VM isn't already running a SecurityManager.</li>
+582:     * <li>The customer didn't specify the -noSecurityManager flag on the startup command
+586:    private static  boolean needsSecurityManager( NetworkServerControlImpl server, int command )
+591:             (System.getSecurityManager() == null) &&
+613:     * Install a SecurityManager governed by the Basic startup policy. See DERBY-2196.
+615:    private static  void installSecurityManager( NetworkServerControlImpl server )
+651:        // Now install a SecurityManager, using the Basic policy file.
+657:        SecurityManager     securityManager = new SecurityManager();
+659:        System.setSecurityManager( securityManager );
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java
+119:		 "noSecurityManager", "ssl"};
+376:     * default SecurityManager.
+1125:        if (System.getSecurityManager() == null) {
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/drda/org/apache/derby/impl/drda/NetworkServerMBeanImpl.java
+83:            if (System.getSecurityManager() != null)
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/stubs/jdbc3/java/sql/DriverManager.java
+279:        SecurityManager securityManager = System.getSecurityManager();
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/client/org/apache/derby/client/am/Version.java
+96:            java.lang.SecurityManager security = java.lang.System.getSecurityManager();
+103:            detectLocalHost(java.lang.System.getSecurityManager(), printWriter);
+137:    private static void printSystemProperty(java.lang.SecurityManager security,
+159:    private static void detectLocalHost(java.lang.SecurityManager security, java.io.PrintWriter printWriter) {
+
+
+
+./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/client/org/apache/derby/client/am/EncryptionManager.java
+137:    // rewritten into a DRDASecurityManager and have some of the
+
+
+
+./SecurityManager.java
+1:./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/junit/SecurityManagerSetup.java
+2:3: * Derby - Class org.apache.derbyTesting.functionTests.util.SecurityManagerSetup
+3:35: * Setup for running Derby JUnit tests with the SecurityManager
+4:39:public final class SecurityManagerSetup extends TestSetup {
+5:63:	private static final boolean externalSecurityManagerInstalled;
+6:68:		externalSecurityManagerInstalled = determineClasspath();
+7:73:	public SecurityManagerSetup(Test test, String policyResource)
+8:94:	public static Test noSecurityManager(Test test)
+9:96:		if (externalSecurityManagerInstalled)
+10:99:		return new SecurityManagerSetup(test, "<NONE>");
+11:106:	static void noSecurityManager()
+12:108:		installSecurityManager("<NONE>");
+13:116:		installSecurityManager(decoratorPolicyResource);
+14:123:        else if ( !externalSecurityManagerInstalled )
+15:125:            uninstallSecurityManager();
+16:138:	 * Install a SecurityManager with the default test policy
+17:143:	static void installSecurityManager()
+18:145:		installSecurityManager( getDefaultPolicy() );
+19:148:	private static void installSecurityManager(String policyFile)
+20:151:		if (externalSecurityManagerInstalled)
+21:157:		SecurityManager sm = System.getSecurityManager();
+22:159:			// SecurityManager installed, see if it has the same settings.
+23:171:			uninstallSecurityManager();
+24:189:                    SecurityManager sm = new SecurityManager();
+25:190:                    System.setSecurityManager(sm);
+26:260:		if (System.getSecurityManager() != null) {		
+27:293:		URL testing = getURL(SecurityManagerSetup.class);
+28:395:    private static void uninstallSecurityManager()
+29:403:                      System.setSecurityManager(null);
+34:45:        if (!SecurityManagerSetup.isJars)
+35:57:        if (!SecurityManagerSetup.isJars)
+36:69:        if (!SecurityManagerSetup.isJars)
+37:81:        if (!SecurityManagerSetup.isJars)
+38:97:        URL url = SecurityManagerSetup.getURL(className);
+43:80:     * the decorators obtained from SecurityManagerSetup.
+44:100:        if ( System.getSecurityManager() == null )
+45:102:            if (config.defaultSecurityManagerSetup())
+46:104:                assertSecurityManager();
+47:339:    public static void assertSecurityManager()
+48:341:    	assertNotNull("No SecurityManager installed",
+49:342:    			System.getSecurityManager());
+54:49:        if ( System.getSecurityManager() == null )
+55:51:            if (TestConfiguration.getCurrent().defaultSecurityManagerSetup())
+56:53:                BaseTestCase.assertSecurityManager();
+61:148:     * the server up with no security manager using -noSecurityManager,
+62:264:            boolean setNoSecurityManager = true;
+63:269:                    setNoSecurityManager = false;
+64:275:                if (startupArgs[i].equals("-noSecurityManager"))
+65:277:                    setNoSecurityManager = false;
+66:281:            if (setNoSecurityManager)
+67:285:                newArgs[newArgs.length - 1] = "-noSecurityManager";
+72:88:             *   SecurityManagerSetup.getURL(DocumentBuilderFactory.class)
+73:103:            URL jaxpURL = SecurityManagerSetup.getURL(
+78:1601:        return SecurityManagerSetup.isJars;
+79:1707:     * SecurityManager related configuration.
+80:1715:    boolean defaultSecurityManagerSetup() {
+81:1721:    		SecurityManagerSetup.noSecurityManager();
+82:1730:    		SecurityManagerSetup.installSecurityManager();
+87:32:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+88:385:            SecurityManagerSetup.getPolicyFilePropertiesForOldHarness();
+93:185:    static boolean runWithoutSecurityManager;
+94:1750:	        		|| "true".equalsIgnoreCase(ap.getProperty("noSecurityManager")))
+95:1751:	        	runWithoutSecurityManager = true;
+96:2358:        if (!runWithoutSecurityManager)
+97:2361:        	System.out.println("-- SecurityManager not installed --");
+98:2481:            // properties (setSecurityManager, setIO)
+99:2662:    	boolean installedSecurityManager = installSecurityManager();
+100:2867:         if (installedSecurityManager)
+101:2869:        	System.setSecurityManager(null);
+102:2934:    private static boolean installSecurityManager() throws ClassNotFoundException, IOException
+103:2936:    	// SecurityManager not currently work with older j9 and useProcess=false
+104:2941:    	boolean installedSecurityManager = false;
+105:2942:    	// Set up the SecurityManager in this JVM for this test.
+106:2943:    	boolean haveSecurityManagerAlready = System.getSecurityManager() != null;
+107:2944:        if (runWithoutSecurityManager)
+108:2946:        	// Test doesn't run with a SecurityManager,
+109:2948:        	if (haveSecurityManagerAlready)
+110:2950:        				"noSecurityManager=true,useProcess=false but SecurityManager installed by previous test");
+111:2952:        	    System.out.println("-- SecurityManager not installed --");
+112:2954:        else if (!haveSecurityManagerAlready)
+113:2972:		    System.setSecurityManager(new SecurityManager());
+114:2973:		    installedSecurityManager = true;
+115:2976:        return installedSecurityManager;
+120:38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+121:81:		return SecurityManagerSetup.noSecurityManager(
+126:40:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+127:114:        return new CleanDatabaseTestSetup(SecurityManagerSetup.noSecurityManager(suite)) 
+132:38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+133:155:        test = new SecurityManagerSetup( test, undecoratedTest.makeServerPolicyName() );
+134:181:        test = SecurityManagerSetup.noSecurityManager(test);
+139:27:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+140:63:        return SecurityManagerSetup.noSecurityManager(
+145:56:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+146:118:           suite.addTest(SecurityManagerSetup.noSecurityManager(
+147:121:           suite.addTest(SecurityManagerSetup.noSecurityManager(
+148:127:           suite.addTest(SecurityManagerSetup.noSecurityManager(
+153:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+154:58:        return SecurityManagerSetup.noSecurityManager(suite);
+159:30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+160:58:        return SecurityManagerSetup.noSecurityManager(suite);
+165:27:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+166:60:        return SecurityManagerSetup.noSecurityManager(suite);
+171:34:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+172:74:        return SecurityManagerSetup.noSecurityManager(t);
+177:28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+178:57:        return SecurityManagerSetup.noSecurityManager(suite);
+183:28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+184:55:        return SecurityManagerSetup.noSecurityManager(suite);
+189:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+190:63:        return SecurityManagerSetup.noSecurityManager(suite);
+195:28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+196:65:        return SecurityManagerSetup.noSecurityManager(suite);
+201:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+202:44:        return SecurityManagerSetup.noSecurityManager(suite);
+207:567:                    // + " -Djava.security.policy=\"<NONE>\"" // Now using noSecurityManager decorator
+208:656:                    // + " -Djava.security.policy=\"<NONE>\""  // Now using noSecurityManager decorator
+209:743:                    // + " -Djava.security.policy=\"<NONE>\""  // Now using noSecurityManager decorator
+210:818:                    // + " -Djava.security.policy=\"<NONE>\""  // Now using noSecurityManager decorator
+211:942:         *       -noSecurityManager
+212:951:                + " -noSecurityManager"
+213:1194:                + " -noSecurityManager"
+214:2185:        securityOption = "-noSecurityManager";
+215:2323:        sp.setProperty("noSecurityManager", 
+216:2324:                securityOption.equalsIgnoreCase("-noSecurityManager")?"true":"false");
+221:29:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+222:59:        return SecurityManagerSetup.noSecurityManager(suite);
+227:28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+228:65:        return SecurityManagerSetup.noSecurityManager(suite);
+233:32:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+234:64:        return SecurityManagerSetup.noSecurityManager(suite);
+239:33:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+240:69:        return SecurityManagerSetup.noSecurityManager(t);
+245:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+246:54:        return SecurityManagerSetup.noSecurityManager(suite);
+251:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+252:59:        return SecurityManagerSetup.noSecurityManager(suite);
+257:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+258:64:        return SecurityManagerSetup.noSecurityManager(suite);
+263:30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+264:62:        return SecurityManagerSetup.noSecurityManager(suite);
+269:30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+270:58:        return SecurityManagerSetup.noSecurityManager(suite);
+275:29:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+276:66:        return SecurityManagerSetup.noSecurityManager(suite);
+281:27:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+282:55:        return SecurityManagerSetup.noSecurityManager(suite);
+287:25:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+288:53:        return SecurityManagerSetup.noSecurityManager(suite);
+293:37:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+294:105:                suite.addTest(SecurityManagerSetup.noSecurityManager(
+295:134:        suite.addTest(SecurityManagerSetup.noSecurityManager(new AutoloadTest("testEmbeddedNotStarted")));
+296:162:            suite.addTest(SecurityManagerSetup.noSecurityManager(
+301:38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+302:65:        suite.addTest(SecurityManagerSetup.noSecurityManager(baseSuite(
+303:68:                SecurityManagerSetup.noSecurityManager(
+308:43:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+309:149:        test = new SecurityManagerSetup(test,ldapPolicyName );
+314:40:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+315:208:        test = new SecurityManagerSetup(test,serverPolicyName );
+316:455:            "-noSecurityManager", "start"};
+317:468:                "-noSecurityManager", "shutdown"};
+322:31:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+323:281:        test = new SecurityManagerSetup( test,serverPolicyName );
+324:372:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+325:422:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+326:511:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+327:558:                "start [-h <host>] [-p <portnumber>] [-noSecurityManager] [-ssl <sslmode>]",
+332:33:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+333:133:        test = SecurityManagerSetup.noSecurityManager(test);
+338:30:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+339:86:        //		         SecurityManagerSetup.noSecurityManager(
+340:91:            suite.addTest(SecurityManagerSetup.noSecurityManager(
+345:32:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+346:92:        test = new SecurityManagerSetup(test,serverPolicyName );
+351:43:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+352:247:            SecurityManagerSetup.noSecurityManager(networkServerTestSetup);
+353:282:            list.add( "-noSecurityManager" );
+358:72:        //suite.addTest(CheckSecurityManager.suite());
+363:38:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+364:248:	 * Decorate a test with SecurityManagerSetup, clientServersuite, and
+365:266:        test = new SecurityManagerSetup(test, policyName);
+370:34:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+371:101:            SecurityManagerSetup.noSecurityManager(networkServerTestSetup);
+375:./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/CheckSecurityManager.java
+376:45:public class CheckSecurityManager extends BaseJDBCTestCase
+377:52:	    return TestConfiguration.defaultSuite(CheckSecurityManager.class);
+378:55:	public CheckSecurityManager(String name)
+383:36:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+384:171:     * Decorate a test with SecurityManagerSetup, clientServersuite, and
+385:182:                new SecurityManagerSetup(test, policyName));
+390:57:        suite.addTest(IjSecurityManagerTest.suite());
+394:./derby-10.6.1.0/src/db-derby-10.6.1.0-src/java/testing/org/apache/derbyTesting/functionTests/tests/tools/IjSecurityManagerTest.java
+395:4:   org.apache.derbyTesting.functionTests.tests.tools.IjSecurityManager
+396:38:public class IjSecurityManagerTest extends BaseTestCase {
+397:40:	public IjSecurityManagerTest(String name) {
+398:58:	        ij.main(new String[]{"extinout/IjSecurityManagerTest.sql"});
+399:73:	    Test test = TestConfiguration.embeddedSuite(IjSecurityManagerTest.class);
+400:78:          new String[] { "functionTests/tests/tools/IjSecurityManagerTest.sql"  },
+401:80:          new String[] { "IjSecurityManagerTest.sql"}
+402:85:		TestSuite suite = new TestSuite("IjSecurityManagerTest");
+407:33:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+412:35:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+413:131:        return SecurityManagerSetup.noSecurityManager(suite);
+414:161:        URL sysinfoURL = SecurityManagerSetup.getURL(className);
+415:162:        URL emmaURL = SecurityManagerSetup.getURL("com.vladium.emma.EMMAException");
+420:47:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+421:253:        return SecurityManagerSetup.noSecurityManager( sfs );
+426:39:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+427:142:        return SecurityManagerSetup.noSecurityManager(setup);
+432:50: * The compatibility tests are (currently) run without a SecurityManager.
+433:52: * how to <b>not</b> use a SecurityManager. --> <br><br>
+434:128: * test.securityOption=noSecurityManager
+435:179:     * The option string used to turn off running Derby server with a SecurityManager.
+436:180:   * Read as e.g <code>test.securityOption=noSecurityManager</code> from the file given by
+441:46:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+442:106:        return SecurityManagerSetup.noSecurityManager(setup);
+447:46:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+448:112:         * Will run without SecurityManager for now, but could probably add a 
+449:120:                SecurityManagerSetup.noSecurityManager(networkServerTestSetup);
+454:310:        // assumes noSecurityManager or that the required SocketPermission has
+459:71:		s.execute("CREATE FUNCTION TESTROUTINE.HAS_SECURITY_MANAGER() RETURNS INT NO SQL EXTERNAL NAME 'org.apache.derbyTesting.functionTests.util.TestRoutines.hasSecurityManager' language java parameter style java");
+460:109:	public static int hasSecurityManager()
+461:111:		return System.getSecurityManager() == null ? 0 : 1;
+466:153:	 * SecurityManager.inspect(conn);
+471:28:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+472:173:        suite.addTest(new SecurityManagerSetup(
+473:180:        if (SecurityManagerSetup.JVM_HAS_SUBJECT_AUTHORIZATION) {
+474:181:            suite.addTest(new SecurityManagerSetup(
+475:184:            suite.addTest(new SecurityManagerSetup(
+480:29:import org.apache.derbyTesting.junit.SecurityManagerSetup;
+481:64:            suite.addTest(new SecurityManagerSetup(new AssertFailureTest(
+482:68:            suite.addTest(new SecurityManagerSetup(new AssertFailureTest(
+487:1668:        // without a SecurityManager seems to lock in a policy with
+488:1670:        // when later installing a SecurityManager.
+489:1671:        if (System.getSecurityManager() == null)
+494:62:            if (System.getSecurityManager() != null)
+499:266:     * Note that this method will throw a SecurityException if the SecurityManager does not
+504:104:     * Checks that a Subject has a Permission under the SecurityManager.
+505:143:     * Checks that a User has a Permission under the SecurityManager.
+506:159:        if (System.getSecurityManager() == null) {
+511:66:     * permission checking by the SecurityManager.
+516:523:     * Provide a SecurityManager with information about the class name
+521:91:				// methods. Default SecurityManager behaviour is to grant access to public members
+526:410:            if (System.getSecurityManager() != null)
+531:2560:        if (System.getSecurityManager() == null) {
+536:299:        if (System.getSecurityManager() == null) {
+541:309:            if ( needsSecurityManager( server, command ) )
+542:312:                installSecurityManager( server );
+543:580:     * <li>The VM isn't already running a SecurityManager.</li>
+544:582:     * <li>The customer didn't specify the -noSecurityManager flag on the startup command
+545:586:    private static  boolean needsSecurityManager( NetworkServerControlImpl server, int command )
+546:591:             (System.getSecurityManager() == null) &&
+547:613:     * Install a SecurityManager governed by the Basic startup policy. See DERBY-2196.
+548:615:    private static  void installSecurityManager( NetworkServerControlImpl server )
+549:651:        // Now install a SecurityManager, using the Basic policy file.
+550:657:        SecurityManager     securityManager = new SecurityManager();
+551:659:        System.setSecurityManager( securityManager );
+556:119:		 "noSecurityManager", "ssl"};
+557:376:     * default SecurityManager.
+558:1125:        if (System.getSecurityManager() == null) {
+563:83:            if (System.getSecurityManager() != null)
+568:279:        SecurityManager securityManager = System.getSecurityManager();
+573:96:            java.lang.SecurityManager security = java.lang.System.getSecurityManager();
+574:103:            detectLocalHost(java.lang.System.getSecurityManager(), printWriter);
+575:137:    private static void printSystemProperty(java.lang.SecurityManager security,
+576:159:    private static void detectLocalHost(java.lang.SecurityManager security, java.io.PrintWriter printWriter) {
+581:137:    // rewritten into a DRDASecurityManager and have some of the
+
+
+

@@ -1,0 +1,2 @@
+Apache ant system has a self-defined security manager within Permissions.java that only allows reading. During the running of the software based on ant VM, the security manager disallows the program to call System.exit() by itself. Security manager also appears in test cases (such as creating a very basic manager, nullifing the manager), but their purposes are not explicitly shown.
+I think this one is worth deep analyzating

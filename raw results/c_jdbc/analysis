@@ -1,0 +1,1 @@
+ControllerSecurityManager is defined to control trusted client socket via lists of ip addresses or host names

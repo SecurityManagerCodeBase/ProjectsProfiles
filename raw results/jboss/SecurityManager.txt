@@ -1,0 +1,730 @@
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/bankiiop/test/BankStressTestCase.java
+489:      if (System.getSecurityManager() == null) 
+490:         System.setSecurityManager(new java.rmi.RMISecurityManager());
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/jmx/test/DeployXMBeanUnitTestCase.java
+201:         ObjectName defaultSecMgr = new ObjectName("jboss.security:service=JaasSecurityManager");
+204:         assertTrue("SecMgr == jboss.security:service=JaasSecurityManager", secMgr.equals(defaultSecMgr));
+298:         ObjectName defaultSecMgr = new ObjectName("jboss.security:service=JaasSecurityManager");
+301:         assertTrue("SecMgr == jboss.security:service=JaasSecurityManager", secMgr.equals(defaultSecMgr));
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/jmx/interceptors/JNDISecurity.java
+36:import org.jboss.security.SubjectSecurityManager;
+56:   private SubjectSecurityManager authMgr;
+69:      this.authMgr = (SubjectSecurityManager) ctx.lookup(securityDomain);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/securitymgr/ejb/IOStatelessSessionBean.java
+26:import java.lang.SecurityManager;
+131:      SecurityManager secmgr = new SecurityManager()
+137:      System.setSecurityManager(secmgr);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/txtimer/test/EntityBeanTestCase.java
+113:      String defaultPrincipal = (String) server.getAttribute(new ObjectName("jboss.security:service=JaasSecurityManager"), "DefaultUnauthenticatedPrincipal");
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/web/test/WebIntegrationUnitTestCase.java
+217:      hdr = request.getResponseHeader("X-SubjectFilter-SubjectSecurityManager");
+218:      log.info("X-SubjectFilter-SubjectSecurityManager: "+hdr);
+219:      assertTrue("X-SubjectFilter-SubjectSecurityManager("+hdr+") is NOT null", hdr != null);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/web/test/CustomErrorsUnitTestCase.java
+42:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/web/test/FormAuthUnitTestCase.java
+39:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+235:      ObjectName name = new ObjectName("jboss.security:service=JaasSecurityManager");
+236:      JaasSecurityManagerServiceMBean secMgrService = (JaasSecurityManagerServiceMBean)
+237:         MBeanServerInvocationHandler.newProxyInstance(conn, name, JaasSecurityManagerServiceMBean.class, false);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/web/servlets/SubjectFilter.java
+36:import org.jboss.security.SubjectSecurityManager;
+75:      SubjectSecurityManager mgr = (SubjectSecurityManager) ctx.lookup("java:comp/env/security/securityMgr");
+77:      httpResponse.addHeader("X-SubjectFilter-SubjectSecurityManager", s0.toString());
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/web/security/JASPISecurityFilter.java
+113:         //with the JASPISecurityManager Service
+115:         ObjectName oname = new ObjectName("jboss.security:service=JASPISecurityManager");
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/classloader/leak/clstore/ClassLoaderTracker.java
+28:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+35:   private JaasSecurityManagerServiceMBean securityManagerService;
+67:   public JaasSecurityManagerServiceMBean getSecurityManagerService()
+72:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean securityManagerService)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/classloader/leak/clstore/ClassLoaderTrackerMBean.java
+26:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+41:   public JaasSecurityManagerServiceMBean getSecurityManagerService();
+43:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean svc);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/deployment/test/DeploymentServiceUnitTestCase.java
+572:    * the SecurityManager mbean for the messaging service. The mbean property
+595:      String name = "jboss.mq:service=SecurityManager";
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/test/SecurityMgrStressTestCase.java
+48:import org.jboss.security.plugins.JaasSecurityManager;
+51:/** Stress testing of the JaasSecurityManager
+85:      JaasSecurityManager secMgr = new JaasSecurityManager("testIdentity", new SecurityAssociationHandler());
+177:      JaasSecurityManager secMgr;
+186:      AuthTester(JaasSecurityManager secMgr, AuthorizationManager am, int iterations, int id)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/test/JaasSecurityManagerUnitTestCase.java
+31:import org.jboss.security.plugins.JaasSecurityManager;
+39:/** Tests of the JaasSecurityManager implementation.
+44:public class JaasSecurityManagerUnitTestCase
+47:   static Logger log = Logger.getLogger(JaasSecurityManagerUnitTestCase.class);
+49:   public JaasSecurityManagerUnitTestCase(String name)
+72:      JaasSecurityManager sm = new JaasSecurityManager("testStringCharArrayCredential", handler);
+93:      JaasSecurityManager sm = new JaasSecurityManager("testStringCharArrayCredential", handler);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/test/DeepCopySubjectUnitTestCase.java
+179:    * Test the Deep Copy of Subjects by the JaasSecurityManager
+197:    * Turn the deep copy of subjects on the JaasSecurityManagerService
+205:      this.getServer().invoke(new ObjectName("jboss.security:service=JaasSecurityManager"),
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/test/EJBSpecUnitTestCase.java
+47:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+101:      ObjectName secMgrName = new ObjectName("jboss.security:service=JaasSecurityManager");
+102:      JaasSecurityManagerServiceMBean secMgr = (JaasSecurityManagerServiceMBean) MBeanServerInvocationHandler
+103:            .newProxyInstance(conn, secMgrName, JaasSecurityManagerServiceMBean.class, false);
+874:      ObjectName secMgrName = new ObjectName("jboss.security:service=JaasSecurityManager");
+875:      JaasSecurityManagerServiceMBean secMgr = (JaasSecurityManagerServiceMBean) MBeanServerInvocationHandler
+876:            .newProxyInstance(conn, secMgrName, JaasSecurityManagerServiceMBean.class, false);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/ejb/Cmp2Bean.java
+100:         log.debug("Found SecurityManager: " + securityMgr);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/ejb/EntityBeanImpl.java
+109:           log.debug("Found SecurityManager: "+securityMgr);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/testsuite/src/main/org/jboss/test/security/servlets/DeepCopySubjectServlet.java
+48:import org.jboss.security.SubjectSecurityManager;
+88:         SubjectSecurityManager manager = (SubjectSecurityManager)context.lookup("java:comp/env/security/securityMgr");
+108:   private Subject getAuthenticatedSubject(SubjectSecurityManager mgr) 
+199:      ObjectName on = new ObjectName("jboss.security:service=JaasSecurityManager");
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/mbeans/src/main/org/jboss/mx/server/TCLAction.java
+37:         return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/jmx/src/main/org/jboss/mx/server/MBeanServerImpl.java
+463:      SecurityManager sm = System.getSecurityManager();
+514:      SecurityManager sm = System.getSecurityManager();
+581:      SecurityManager sm = System.getSecurityManager();
+634:      SecurityManager sm = System.getSecurityManager();
+705:      SecurityManager sm = System.getSecurityManager();
+1389:      if( System.getSecurityManager() != null )
+1730:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/jmx/src/main/org/jboss/mx/loading/LoadMgr3.java
+63:   private static SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/jmx/connector/invoker/SecurityActions.java
+173:      if(System.getSecurityManager() == null)
+184:      if(System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/jmx/connector/invoker/AuthenticationInterceptor.java
+34:import org.jboss.security.SubjectSecurityManager;
+49:   private SubjectSecurityManager securityMgr;
+119:         securityMgr = (SubjectSecurityManager) ctx.lookup(securityDomain);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/logging/SysPropertyActions.java
+85:      if( System.getSecurityManager() == null )
+95:      if( System.getSecurityManager() == null )
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/SecurityProxyInterceptor.java
+80:         securityManager = container.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/local/BaseLocalProxyFactory.java
+485:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+527:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+614:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/StatefulSessionInstanceInterceptor.java
+237:            AuthenticationManager am = container.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/SecurityActions.java
+218:      if(System.getSecurityManager() == null)
+230:      if(System.getSecurityManager() == null)
+242:      if(System.getSecurityManager() == null)
+256:      if(System.getSecurityManager() == null)
+272:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc2/bridge/JDBCCMRFieldBridge2.java
+1736:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/TCLAction.java
+37:         return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCAbstractCreateCommand.java
+79:      securityManager = manager.getContainer().getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/CascadeDeleteStrategy.java
+351:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/bridge/SecurityActions.java
+210:      if(System.getSecurityManager() == null)
+222:      if(System.getSecurityManager() == null)
+234:      if(System.getSecurityManager() == null)
+248:      if(System.getSecurityManager() == null)
+264:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/bridge/JDBCCMRFieldBridge.java
+2338:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/RunAsSecurityInterceptor.java
+84:         securityManager = container.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/security/PreSecurityInterceptor.java
+60:         AuthenticationManager am = container.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/plugins/SecurityInterceptor.java
+160:         securityManager = container.getSecurityManager();
+193:         securityManager = container.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/EjbModule.java
+627:         con.setSecurityManager(null);
+866:            Object securityMgr = sdc.getSecurityManager();
+871:            container.setSecurityManager(ejbS);
+1051:      boolean hasSecurityDomain = con.getSecurityManager() != null;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/EnterpriseContext.java
+213:      if( con.getSecurityManager() != null )
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/Container.java
+197:   /** This is the SecurityManager */
+325:   public void setSecurityManager(AuthenticationManager sm)
+330:   public AuthenticationManager getSecurityManager()
+1621:         SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/txtimer/SecurityActions.java
+200:      if(System.getSecurityManager() == null)
+212:      if(System.getSecurityManager() == null)
+228:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/ejb/SecurityActions.java
+134:      if( System.getSecurityManager() == null )
+183:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+233:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+391:      if(System.getSecurityManager() == null) 
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/invocation/MarshalledInvocation.java
+137:      if( System.getSecurityManager() != null )
+192:      if( System.getSecurityManager() != null )
+241:      if( System.getSecurityManager() != null )
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/invocation/local/LocalInvoker.java
+164:         SecurityManager sm = System.getSecurityManager();
+195:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/invocation/pooled/server/PooledInvoker.java
+891:         SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/invocation/SecurityActions.java
+41:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/invocation/jrmp/server/JRMPInvoker.java
+711:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+850:         SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/web/deployers/AbstractWarDeployment.java
+806:    * NullSecurityManager instance which simply allows all access.
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/proxy/ejb/handle/StatefulHandleImpl.java
+274:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/proxy/ejb/ProxyFactory.java
+393:         if(container.getSecurityManager() != null)
+395:            String secDomain = container.getSecurityManager().getSecurityDomain();
+437:            if(container.getSecurityManager() != null)
+439:               String secDomain = container.getSecurityManager().getSecurityDomain();
+579:      if(container.getSecurityManager() != null)
+581:         String secDomain = container.getSecurityManager().getSecurityDomain();
+637:         if(container.getSecurityManager() != null)
+639:            String secDomain = container.getSecurityManager().getSecurityDomain();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/server/src/main/org/jboss/proxy/SecurityActions.java
+46:         return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/aspects/src/main/org/jboss/aspects/library/SecurityActions.java
+115:      if (System.getSecurityManager() == null)
+127:      if (System.getSecurityManager() == null)
+139:      if (System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/messaging/src/main/org/jboss/jms/server/jbosssx/JBossASSecurityMetadataStore.java
+47: * authorization to a JaasSecurityManager.
+93:   // SecurityManager implementation --------------------------------
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/messaging/src/main/org/jboss/jms/server/jbosssx/SecurityActions.java
+115:     if(System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/messaging/src/main/org/jboss/mq/server/jmx/Queue.java
+278:	public void setSecurityManager(ObjectName arg0) {
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/messaging/src/main/org/jboss/mq/server/jmx/Topic.java
+248:    * @see org.jboss.mq.server.jmx.TopicMBean#setSecurityManager(javax.management.ObjectName)
+250:   public void setSecurityManager(ObjectName arg0)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/messaging/src/main/org/jboss/mq/server/jmx/TopicMBean.java
+82:   public abstract void setSecurityManager(ObjectName arg0);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/messaging/src/main/org/jboss/mq/server/jmx/QueueMBean.java
+67:   public void setSecurityManager(ObjectName arg0);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/cluster/src/main/org/jboss/ha/jndi/DetachedHANamingService.java
+672:            if (System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/varia/src/main/org/jboss/services/binding/SystemPropertyBinder.java
+58:         if (System.getSecurityManager() == null)
+84:         if (System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/varia/src/main/org/jboss/security/srp/SRPServerSession.java
+233:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/varia/src/main/org/jboss/security/srp/SRPClientSession.java
+281:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system-jmx/src/main/org/jboss/system/metadata/ServiceMetaDataParser.java
+757:         SecurityManager manager = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system-jmx/src/main/org/jboss/system/deployers/managed/SecurityActions.java
+41:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system-jmx/src/main/org/jboss/system/SecurityActions.java
+46:      if (System.getSecurityManager() == null)
+64:      if (System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system-jmx/src/tests/org/jboss/test/system/deployers/test/ServiceUnitNameTestCase.java
+80:      SecurityManager sm = suspendSecurity();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/service/deployers/TomcatDeployerMBean.java
+24:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+129:    * Set the SecurityManagerService binding. This is used to flush any associated authentication cache on session
+132:    * @param mgr the JaasSecurityManagerServiceMBean
+134:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean mgr);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/service/deployers/TomcatDeployment.java
+374:      SecurityAssociationValve valve = new SecurityAssociationValve(metaData, config.getSecurityManagerService());
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/service/deployers/TomcatService.java
+52:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+584:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean mgr)
+587:         tomcatDeployer.setSecurityManagerService(mgr);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/service/deployers/TomcatDeployer.java
+38:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+132:   private JaasSecurityManagerServiceMBean secMgrService;
+310:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean mgr)
+439:      config.setSecurityManagerService(secMgrService);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/service/deployers/DeployerConfig.java
+27:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+118:   private JaasSecurityManagerServiceMBean secMgrService;
+275:   public JaasSecurityManagerServiceMBean getSecurityManagerService()
+280:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean mgr)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/service/DeployerConfig.java
+26:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+128:   private JaasSecurityManagerServiceMBean secMgrService;  
+335:   public JaasSecurityManagerServiceMBean getSecurityManagerService()
+339:   public void setSecurityManagerService(JaasSecurityManagerServiceMBean mgr)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/security/JBossExtendedSecurityMgrRealm.java
+78:         this.authenticationManagerService = new ObjectName("jboss.security:service=JASPISecurityManager");
+270:            "getSecurityManager", 
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/security/SecurityAssociationValve.java
+44:import org.jboss.security.plugins.JaasSecurityManagerServiceMBean;
+72:   private JaasSecurityManagerServiceMBean secMgrService;
+76:      JaasSecurityManagerServiceMBean secMgrService)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/security/SecurityFlushSessionListener.java
+41:import org.jboss.security.SubjectSecurityManager;
+103:      ObjectName on = new ObjectName("jboss.security:service=JaasSecurityManager");
+157:      SubjectSecurityManager mgr = null;
+160:         mgr = getSecurityManagerService(); 
+163:         log.debug("Obtaining SecurityManagerService failed::",e);
+189:   private SubjectSecurityManager getSecurityManagerService() throws Exception
+191:      //Get the SecurityManagerService from JNDI
+193:      return (SubjectSecurityManager) ctx.lookup("java:comp/env/security/securityMgr");
+200:    * @param on ObjectName of the JaasSecurityManagerService
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/security/JBossWebRealm.java
+62:import org.jboss.security.SubjectSecurityManager;
+198:         SubjectSecurityManager securityMgr = getSubjectSecurityManager("authenticate(X509Certificate[] certs)");
+289:         SubjectSecurityManager securityMgr = getSubjectSecurityManager("authenticate( digest related)");
+378:         SubjectSecurityManager securityMgr = getSubjectSecurityManager("authenticate(username,cred)");
+838:    * Get the JBoss SubjectSecurityManager (AuthenticationManager)
+842:   private SubjectSecurityManager getSubjectSecurityManager(String wherefrom)
+844:      SubjectSecurityManager subjectSecurityManager = null;
+856:           subjectSecurityManager = (SubjectSecurityManager) securityCtx.lookup("securityMgr");
+861:      if(subjectSecurityManager == null && securityManagerFallback)
+867:            subjectSecurityManager = (SubjectSecurityManager)ic.lookup(str);
+873:      return subjectSecurityManager;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/tomcat/src/main/org/jboss/web/tomcat/security/JBossSecurityMgrRealm.java
+43: * @see org.jboss.security.SubjectSecurityManager
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system/src/main/org/jboss/deployers/plugins/managed/SecurityActions.java
+41:            return System.getSecurityManager() == null ? NON_PRIVILEGED : PRIVILEGED;
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system/src/main/org/jboss/system/server/profileservice/repository/AbstractProfileLifeCycleAction.java
+82:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system/src/main/org/jboss/system/server/profileservice/persistence/ManagedObjectRecreationHelper.java
+114:         if (System.getSecurityManager() == null)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/system/src/main/org/jboss/system/server/security/SecurityPolicy.java
+38:   private SecurityManager securityManager;
+48:   public SecurityManager getSecurityManager()
+58:   public void setSecurityManager(SecurityManager securityManager)
+91:         System.setSecurityManager(securityManager);
+97:         System.setSecurityManager(null);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/plugins/JaasSecurityManagerService.java
+73: * This is a JMX service which manages JAAS based SecurityManagers.
+74: * JAAS SecurityManagers are responsible for validating credentials
+76: * org.jboss.security.plugins.JaasSecurityManager implementation but
+79: * @see JaasSecurityManager
+80: * @see org.jboss.security.SubjectSecurityManager
+88:public class JaasSecurityManagerService
+90:   implements JaasSecurityManagerServiceMBean
+97:   private static String securityMgrClassName = "org.jboss.security.plugins.JaasSecurityManager";
+99:   private static Class securityMgrClass = JaasSecurityManager.class;
+131:      log = Logger.getLogger(JaasSecurityManagerService.class);
+139:   public JaasSecurityManagerService()
+152:   public String getSecurityManagerClassName()
+156:   public void setSecurityManagerClassName(String className)
+183:      return JaasSecurityManagerService.callbackHandlerClassName;
+241:    * @see JaasSecurityManagerServiceMBean#getDeepCopySubjectMode()
+249:    * @see JaasSecurityManagerServiceMBean#getDeepCopySubjectMode() 
+353:// Begin SecurityManagerMBean interface methods
+360:         isValid = sdc.getSecurityManager().isValid(principal, credential, null);
+393:          boolean isValid = sdc.getSecurityManager().isValid(principal, credential, subject);
+398:                   sdc.getSecurityManager().getSecurityDomain());
+418:          boolean isValid = sdc.getSecurityManager().isValid(principal, credential, subject);
+423:                  sdc.getSecurityManager().getSecurityDomain() );
+434:// End SecurityManagerMBean interface methods
+484:      log.debug("SecurityMgrClass="+JaasSecurityManagerService.securityMgrClass);
+485:      log.debug("CallbackHandlerClass="+JaasSecurityManagerService.callbackHandlerClass);
+661:    * @see JaasSecurityManagerServiceMBean#getJCAInformation()
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/plugins/JaasSecurityManager.java
+36:import org.jboss.security.SubjectSecurityManager;
+38:import org.jboss.security.plugins.auth.JaasSecurityManagerBase;
+42:/** The JaasSecurityManager is responsible both for authenticating credentials
+57:public class JaasSecurityManager extends ServiceMBeanSupport
+58:   implements SubjectSecurityManager, RealmMapping
+60:   private JaasSecurityManagerBase delegate = null;
+62:   /** Creates a default JaasSecurityManager for with a securityDomain
+65:   public JaasSecurityManager()
+69:   /** Creates a JaasSecurityManager for with a securityDomain
+76:   public JaasSecurityManager(String securityDomain, CallbackHandler handler)
+78:      delegate = new JaasSecurityManagerBase(securityDomain,handler); 
+119:    property shared across all JaasSecurityManager instances.
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/plugins/JaasSecurityDomain.java
+63: * The JaasSecurityDomain is an extension of JaasSecurityManager that addes the notion of a KeyStore, and JSSE
+109:public class JaasSecurityDomain extends JaasSecurityManager implements SecurityDomain, JaasSecurityDomainMBean
+149:   private ObjectName managerServiceName = JaasSecurityManagerServiceMBean.OBJECT_NAME;
+491:      SecurityManager sm = System.getSecurityManager();
+515:      SecurityManager sm = System.getSecurityManager();
+581:      // Only register with the JaasSecurityManagerService if its defined
+585:          * Register with the JaasSecurityManagerServiceMBean. This allows this JaasSecurityDomain to function as the
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/plugins/JaasSecurityManagerServiceMBean.java
+33: * The management interface for the JaasSecurityManagerService mbean.
+38:public interface JaasSecurityManagerServiceMBean
+39:   extends ServiceMBean, SecurityManagerMBean
+41:   ObjectName OBJECT_NAME = ObjectNameFactory.create("jboss.security:service=JaasSecurityManager");
+71:   String getSecurityManagerClassName();
+81:   void setSecurityManagerClassName(String className)
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/plugins/SecurityManagerMBean.java
+35:public interface SecurityManagerMBean
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/plugins/SecurityDomainContext.java
+31:import org.jboss.security.SubjectSecurityManager;
+101:      if( securityMgr instanceof SubjectSecurityManager )
+103:         subject = ((SubjectSecurityManager)securityMgr).getActiveSubject();
+107:   public AuthenticationManager getSecurityManager()
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/integration/SecurityDomainObjectFactory.java
+47: *  to return an instance of SubjectSecurityManager
+116:      Object binding = securityDomainCtx.getSecurityManager(); 
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/integration/JNDIBasedSecurityManagement.java
+75:   protected String authenticationMgrClass = "org.jboss.security.plugins.JaasSecurityManager";
+413:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/integration/SecurityConstantsBridge.java
+27: *  Bridge between the legacy JaasSecurityManagerService
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/integration/JNDIContextEstablishment.java
+37: *  to provide the SubjectSecurityManager implementation
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/auth/login/DynamicLoginConfigMBean.java
+73:   /** Get the SecurityManagerService used to flush the registered security
+75:    * @return the SecurityManagerService service name.
+77:   public ObjectName getSecurityManagerService();
+79:   /** Set the SecurityManagerService used to flush the registered security
+84:    * @param serviceName - the SecurityManagerService service name.
+86:   public void setSecurityManagerService(ObjectName serviceName);
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/auth/login/DynamicLoginConfig.java
+56:      <depends optional-attribute-name="SecurityManagerService">
+57:         jboss.security:service=JaasSecurityManager
+113:   public ObjectName getSecurityManagerService()
+117:   /** Set the SecurityManagerService used to flush the registered security
+122:    * @param serviceName - the SecurityManagerService service name.
+124:   public void setSecurityManagerService(ObjectName serviceName)
+145:    * caches if there is a registered SecurityManagerService.
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/SecurityActions.java
+69:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/Util.java
+180:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/security/src/main/org/jboss/security/SubjectSecurityProxy.java
+31:import org.jboss.security.SubjectSecurityManager;
+36: to the init() method, which must be an instance of SubjectSecurityManager.
+43:  @see org.jboss.security.SubjectSecurityManager
+50:   private SubjectSecurityManager subjectSecurityManager;
+67:      if ((securityMgr instanceof SubjectSecurityManager) == false)
+69:         String msg = "SubjectSecurityProxy requires a SubjectSecurityManager"
+73:      subjectSecurityManager = (SubjectSecurityManager) securityMgr;
+80:      final Subject subject = subjectSecurityManager.getActiveSubject();
+118:      final Subject subject = subjectSecurityManager.getActiveSubject();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/connector/src/main/org/jboss/resource/connectionmanager/BaseConnectionManager2MBean.java
+99:    * Get the JaasSecurityManagerService value.
+101:    * @return the JaasSecurityManagerService value.
+104:   ObjectName getJaasSecurityManagerService();
+107:    * Set the JaasSecurityManagerService value.
+109:    * @param jaasSecurityManagerService The new JaasSecurityManagerService value.
+112:   void setJaasSecurityManagerService(ObjectName jaasSecurityManagerService); 
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/connector/src/main/org/jboss/resource/connectionmanager/IdleRemover.java
+138:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/connector/src/main/org/jboss/resource/connectionmanager/BaseConnectionManager2.java
+93:    * JaasSecurityManagerService.
+109:   protected ObjectName jaasSecurityManagerService;
+222:   public ObjectName getJaasSecurityManagerService()
+224:      return this.jaasSecurityManagerService; 
+230:   public void setJaasSecurityManagerService(final ObjectName jaasSecurityManagerService)
+232:      this.jaasSecurityManagerService = jaasSecurityManagerService;
+360:       * if (jaasSecurityManagerService != null && securityDomainJndiName != null)
+361:         server.invoke(jaasSecurityManagerService, "flushAuthenticationCache", new Object[] { securityDomainJndiName }, new String[] { String.class.getName() });
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/connector/src/main/org/jboss/resource/connectionmanager/ConnectionValidator.java
+122:      SecurityManager sm = System.getSecurityManager();
+
+
+
+./jboss-5.1.0/src/jboss-5.1.0.GA-src/connector/src/main/org/jboss/resource/deployers/builder/ConnectionManagerBuilder.java
+48:   private static final String JAAS_JMX = "jboss.security:service=JaasSecurityManager";
+152:      attribute = buildDependencyAttribute("JaasSecurityManagerService", jaasJMXName);
+
+
+

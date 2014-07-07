@@ -1,0 +1,46 @@
+./struts-2.2.1/src/struts-2.2.1/src/plugins/embeddedjsp/src/main/java/org/apache/struts2/jasper/compiler/JspRuntimeContext.java
+76:        if( System.getSecurityManager() != null ) {
+212:     * Get the SecurityManager Policy CodeSource for this web
+231:     * Get the SecurityManager PermissionCollection for this
+359:     * Method used to initialize SecurityManager data.
+
+
+
+./struts-2.2.1/src/struts-2.2.1/src/plugins/embeddedjsp/src/main/java/org/apache/struts2/jasper/Constants.java
+198:        (System.getSecurityManager() != null);
+
+
+
+./struts-2.2.1/src/struts-2.2.1/src/plugins/embeddedjsp/src/main/java/org/apache/struts2/jasper/servlet/JasperLoader.java
+43:    private SecurityManager securityManager;
+52:	this.securityManager = System.getSecurityManager();
+107:        // (.5) Permission to access this class when using a SecurityManager
+
+
+
+./struts-2.2.1/src/struts-2.2.1/src/plugins/embeddedjsp/src/main/java/org/apache/struts2/jasper/security/SecurityUtil.java
+33:     * Return the <code>SecurityManager</code> only if Security is enabled AND
+
+
+
+./struts-2.2.1/src/struts-2.2.1/src/plugins/embeddedjsp/src/main/java/org/apache/struts2/jasper/security/SecurityClassLoad.java
+23: * Java SecurityManager so that the defineClassInPackage
+36:        if( System.getSecurityManager() == null ){
+
+
+
+./struts-2.2.1/src/struts-2.2.1/src/xwork-core/src/test/java/com/opensymphony/xwork2/inject/ContainerImplTest.java
+58:     * Inject values into field under SecurityManager
+62:        System.setSecurityManager(new SecurityManager());
+76:     * Inject values into method under SecurityManager
+81:        //System.setSecurityManager(new SecurityManager());
+
+
+
+./struts-2.2.1/src/struts-2.2.1/src/xwork-core/src/main/java/com/opensymphony/xwork2/inject/ContainerImpl.java
+171:            SecurityManager sm = System.getSecurityManager();
+272:            SecurityManager sm = System.getSecurityManager();
+321:            SecurityManager sm = System.getSecurityManager();
+
+
+

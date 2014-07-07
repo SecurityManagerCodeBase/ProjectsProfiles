@@ -1,0 +1,108 @@
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.context/src/test/java/org/springframework/context/expression/ApplicationContextExpressionTests.java
+248:	public void systemPropertiesSecurityManager() {
+257:		SecurityManager oldSecurityManager = System.getSecurityManager();
+261:			SecurityManager securityManager = new SecurityManager() {
+271:			System.setSecurityManager(securityManager);
+279:			System.setSecurityManager(oldSecurityManager);
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.context/src/test/java/org/springframework/aop/aspectj/BeforeAdviceBindingTests.java
+120:class SecurityManager {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.context/src/main/java/org/springframework/remoting/rmi/CodebaseAwareObjectInputStream.java
+34: * Note that RMIClassLoader requires a SecurityManager to be set, like when
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.context/src/main/java/org/springframework/context/support/ReadOnlySystemAttributesMap.java
+27: * <p>Used by {@link AbstractApplicationContext} when a {@link SecurityManager} prohibits access to {@link
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.context/src/main/java/org/springframework/context/support/ApplicationContextAwareProcessor.java
+70:		if (System.getSecurityManager() != null &&
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.core/src/main/java/org/springframework/util/ReflectionUtils.java
+379:	 * SecurityManager (if active).
+394:	 * SecurityManager (if active).
+409:	 * SecurityManager (if active).
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.web/src/main/java/org/springframework/remoting/httpinvoker/HttpInvokerClientInterceptor.java
+53: * RMIClassLoader requires a SecurityManager to be set, analogous to
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/test/java/org/springframework/beans/factory/support/security/CallbacksSecurityTests.java
+261:		if (System.getSecurityManager() == null) {
+270:			System.setSecurityManager(new SecurityManager());
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/FactoryBeanRegistrySupport.java
+57:			if (System.getSecurityManager() != null) {
+128:			if (System.getSecurityManager() != null) {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/AbstractBeanFactory.java
+155:	/** Security context used when running with a SecurityManager */
+431:				if (System.getSecurityManager() != null) {
+1234:			if (System.getSecurityManager() != null) {
+1473:		AccessControlContext acc = (System.getSecurityManager() != null ? getAccessControlContext() : null);
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/DefaultListableBeanFactory.java
+207:			if (System.getSecurityManager() != null) {
+565:						if (System.getSecurityManager() != null && factory instanceof SmartFactoryBean) {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java
+345:			if (System.getSecurityManager() != null) {
+950:			if (System.getSecurityManager() != null) {
+1284:		if (System.getSecurityManager()!= null) {
+1399:		if (System.getSecurityManager() != null) {
+1463:			if (System.getSecurityManager() != null) {
+1521:		if (System.getSecurityManager() != null) {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/DisposableBeanAdapter.java
+175:				if (System.getSecurityManager() != null) {
+212:			if (System.getSecurityManager() != null) {
+252:			if (System.getSecurityManager() != null) {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/SimpleInstantiationStrategy.java
+57:						if (System.getSecurityManager() != null) {
+99:			if (System.getSecurityManager() != null) {
+132:			if (System.getSecurityManager() != null) {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/factory/support/ConstructorResolver.java
+269:			if (System.getSecurityManager() != null) {
+403:			if (System.getSecurityManager() != null) {
+558:			if (System.getSecurityManager() != null) {
+
+
+
+./springframework-3.0.5/src/spring-framework-3.0.5.RELEASE/projects/org.springframework.beans/src/main/java/org/springframework/beans/BeanWrapperImpl.java
+712:				if (System.getSecurityManager() != null) {
+726:			if (System.getSecurityManager() != null) {
+1045:								if (System.getSecurityManager()!= null) {
+1058:								if (System.getSecurityManager() != null) {
+1087:					if (System.getSecurityManager()!= null) {
+1100:				if (System.getSecurityManager() != null) {
+
+
+

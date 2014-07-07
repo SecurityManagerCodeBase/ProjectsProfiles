@@ -1,0 +1,58 @@
+./tapestry-5.1.0.5/src/tapestry-core/src/test/java/org/apache/tapestry5/internal/test/InternalBaseTestCase.java
+592:    protected final RequestSecurityManager mockRequestSecurityManager()
+594:        return newMock(RequestSecurityManager.class);
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/test/java/org/apache/tapestry5/internal/services/ComponentEventLinkEncoderImplTest.java
+43:        RequestSecurityManager manager = mockRequestSecurityManager();
+73:        RequestSecurityManager manager = mockRequestSecurityManager();
+105:        RequestSecurityManager manager = mockRequestSecurityManager();
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/test/java/org/apache/tapestry5/internal/services/RequestSecurityManagerImplTest.java
+27:public class RequestSecurityManagerImplTest extends InternalBaseTestCase
+44:        RequestSecurityManager manager
+45:                = new RequestSecurityManagerImpl(request, response, linkSource, locator, source, true);
+67:        RequestSecurityManager manager
+68:                = new RequestSecurityManagerImpl(request, response, linkSource, locator, source, true);
+95:        RequestSecurityManager manager
+96:                = new RequestSecurityManagerImpl(request, response, linkSource, locator, source, true);
+137:        RequestSecurityManager manager
+138:                = new RequestSecurityManagerImpl(request, response, linkSource, locator, source, true);
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/main/java/org/apache/tapestry5/services/TapestryModule.java
+1933:                                                   final RequestSecurityManager securityManager)
+2153:                                                       final RequestSecurityManager requestSecurityManager,
+2162:                if (requestSecurityManager.checkForInsecureRequest(parameters.getActivePageName())) return;
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/main/java/org/apache/tapestry5/internal/services/ComponentEventLinkEncoderImpl.java
+42:    private final RequestSecurityManager requestSecurityManager;
+84:                                         RequestSecurityManager requestSecurityManager,
+96:        this.requestSecurityManager = requestSecurityManager;
+110:        String baseURL = requestSecurityManager.getBaseURL(activePageName);
+168:        String baseURL = requestSecurityManager.getBaseURL(activePageName);
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/main/java/org/apache/tapestry5/internal/services/RequestSecurityManagerImpl.java
+28:public class RequestSecurityManagerImpl implements RequestSecurityManager
+42:    public RequestSecurityManagerImpl(Request request, Response response, LinkSource linkSource,
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/main/java/org/apache/tapestry5/internal/services/RequestSecurityManager.java
+25:public interface RequestSecurityManager
+
+
+
+./tapestry-5.1.0.5/src/tapestry-core/src/main/java/org/apache/tapestry5/internal/services/InternalModule.java
+79:        binder.bind(RequestSecurityManager.class, RequestSecurityManagerImpl.class);
+
+
+

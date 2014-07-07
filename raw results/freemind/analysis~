@@ -1,0 +1,3 @@
+ScriptingSecurityManager class defines a se that has three types of restrictions: file, network and executive. Loaded it when ScriptingEngine is set up. 
+FreeMindSecurityManager is another yet important definition that allows everything. User-defined se is welcome. Detailed description is in FreeMindSecurityManager.java file comments.
+

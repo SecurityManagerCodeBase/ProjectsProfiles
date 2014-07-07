@@ -1,0 +1,11 @@
+in CompiereBorders.java: 
+protected static final Insets editorBorderInsets = new Insets(2, 2, 2, 0);
+        private static final Insets SAFE_EDITOR_BORDER_INSETS = new Insets(2, 2, 2, 0);
+        		@Override
+		public Insets getBorderInsets(Component c)
+		{
+			if (System.getSecurityManager() != null)
+				return SAFE_EDITOR_BORDER_INSETS;
+			else
+				return editorBorderInsets;
+		}	//	getBorderInsets

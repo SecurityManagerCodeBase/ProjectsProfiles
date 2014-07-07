@@ -1,0 +1,7 @@
+./weka-3.7.9/src/src/main/java/weka/experiment/RemoteEngine.java
+29:import java.rmi.RMISecurityManager;
+328:    if (System.getSecurityManager() == null) {
+329:      System.setSecurityManager(new RMISecurityManager());
+
+
+
