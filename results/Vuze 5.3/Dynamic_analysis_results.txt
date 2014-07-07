@@ -1,0 +1,1 @@
+We can see that Vuze defines it's own Security Manager called AzureusSecurityManager and changes it via installSecurityManager method in SESecurityManagerImpl.java line 373. 
