@@ -1,0 +1,156 @@
+./src/org/apache/xerces/jaxp/validation/XMLSchemaValidatorComponentManager.java
+37:import org.apache.xerces.util.SecurityManager;
+197:    private final SecurityManager fInitSecurityManager;
+264:            fInitSecurityManager = new SecurityManager();
+267:            fInitSecurityManager = null;
+269:        fComponents.put(SECURITY_MANAGER, fInitSecurityManager);
+330:            setProperty(SECURITY_MANAGER, value ? new SecurityManager() : null);
+478:        fComponents.put(SECURITY_MANAGER, fInitSecurityManager);
+
+
+
+
+./src/org/apache/xerces/jaxp/validation/XMLSchemaFactory.java
+41:import org.apache.xerces.util.SecurityManager;
+86:    /** Property identifier: SecurityManager. */
+109:    /** The SecurityManager. */
+110:    private SecurityManager fSecurityManager;
+315:            return (fSecurityManager != null);
+345:            return fSecurityManager;
+387:            fSecurityManager = value ? new SecurityManager() : null;
+388:            fXMLSchemaLoader.setProperty(SECURITY_MANAGER, fSecurityManager);
+420:            fSecurityManager = (SecurityManager) object;
+421:            fXMLSchemaLoader.setProperty(SECURITY_MANAGER, fSecurityManager);
+448:        schema.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, fSecurityManager != null);
+
+
+
+
+./src/org/apache/xerces/jaxp/SAXParserImpl.java
+34:import org.apache.xerces.util.SecurityManager;
+144:            xmlReader.setProperty0(SECURITY_MANAGER, new SecurityManager());
+390:                    setProperty(SECURITY_MANAGER, value ? new SecurityManager() : null);
+
+
+
+
+./src/org/apache/xerces/jaxp/DocumentBuilderImpl.java
+35:import org.apache.xerces.util.SecurityManager;
+154:            domParser.setProperty(SECURITY_MANAGER, new SecurityManager());
+
+
+
+
+./src/org/apache/xerces/parsers/SecurityConfiguration.java
+21:import org.apache.xerces.util.SecurityManager;
+107:        // create the SecurityManager property:
+108:        setProperty(SECURITY_MANAGER_PROPERTY, new SecurityManager());
+
+
+
+
+./src/org/apache/xerces/parsers/ObjectFactory.java
+366:        SecurityManager security = System.getSecurityManager();
+
+
+
+
+./src/org/apache/xerces/dom/DOMConfigurationImpl.java
+846:                if (value instanceof org.apache.xerces.util.SecurityManager || value == null) {
+1035:            return (value instanceof org.apache.xerces.util.SecurityManager) ? true : false;
+
+
+
+
+./src/org/apache/xerces/dom/ObjectFactory.java
+368:        SecurityManager security = System.getSecurityManager();
+
+
+
+
+./src/org/apache/xerces/util/SecurityManager.java
+36: * @version $Id: SecurityManager.java 447241 2006-09-18 05:12:57Z mrglavas $
+38:public final class SecurityManager {
+64:    public SecurityManager() {
+117:} // class SecurityManager
+
+
+
+
+./src/org/apache/xerces/xinclude/ObjectFactory.java
+366:        SecurityManager security = System.getSecurityManager();
+
+
+
+
+./src/org/apache/xerces/xinclude/XIncludeHandler.java
+37:import org.apache.xerces.util.SecurityManager;
+288:    protected SecurityManager fSecurityManager;
+519:            SecurityManager value =
+520:                (SecurityManager)componentManager.getProperty(
+524:                fSecurityManager = value;
+531:            fSecurityManager = null;
+675:            fSecurityManager = (SecurityManager)value;
+1604:                fChildConfig.setProperty(SECURITY_MANAGER, fSecurityManager);
+
+
+
+
+./src/org/apache/xerces/impl/xs/models/CMNodeFactory.java
+25:import org.apache.xerces.util.SecurityManager;
+68:    private SecurityManager fSecurityManager = null;
+77:            fSecurityManager = (SecurityManager)componentManager.getProperty(SECURITY_MANAGER);
+81:            fSecurityManager = null;
+88:        if (fSecurityManager != null) {
+89:            maxNodeLimit = fSecurityManager.getMaxOccurNodeLimit() * MULTIPLICITY;
+115:        if( fSecurityManager != null && nodeCount++ > maxNodeLimit){
+156:                fSecurityManager = (SecurityManager)value;                
+157:                maxNodeLimit = (fSecurityManager != null) ? fSecurityManager.getMaxOccurNodeLimit() * MULTIPLICITY : 0 ;
+
+
+
+
+./src/org/apache/xerces/impl/xs/XMLSchemaValidator.java
+1387:            // the node limit on the SecurityManager may have changed so need to refresh.
+
+
+
+
+./src/org/apache/xerces/impl/XMLEntityManager.java
+50:import org.apache.xerces.util.SecurityManager;
+303:    protected SecurityManager fSecurityManager = null;
+337:    // fSecurityManager is non-null)
+909:        if( fSecurityManager != null && fEntityExpansionCount++ > fEntityExpansionLimit ){
+1333:            fSecurityManager = (SecurityManager)componentManager.getProperty(SECURITY_MANAGER);
+1336:            fSecurityManager = null;
+1348:        fEntityExpansionLimit = (fSecurityManager != null)?fSecurityManager.getEntityExpansionLimit():0;
+1500:                fSecurityManager = (SecurityManager)value; 
+1501:                fEntityExpansionLimit = (fSecurityManager != null)?fSecurityManager.getEntityExpansionLimit():0;
+
+
+
+
+./src/org/apache/xerces/impl/dv/ObjectFactory.java
+368:        SecurityManager security = System.getSecurityManager();
+
+
+
+
+./src/org/apache/html/dom/ObjectFactory.java
+368:        SecurityManager security = System.getSecurityManager();
+
+
+
+
+./src/org/apache/xml/serialize/ObjectFactory.java
+366:        SecurityManager security = System.getSecurityManager();
+
+
+
+
+./samples/xni/ObjectFactory.java
+369:        SecurityManager security = System.getSecurityManager();
+
+
+
+

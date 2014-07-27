@@ -1,0 +1,113 @@
+Location 1:
+At Felix.java:[line 599] 
+In method org.apache.felix.framework.Felix.init() 
+Value Not null: java.lang.SecurityManager 
+Value new 
+Value new[187](3) 988 
+Value Variable is set at:
+ 
+location 2:
+At Felix.java:[line 605] 
+In method org.apache.felix.framework.Felix.init() 
+Value Not null: java.lang.SecurityManager 
+Value invokevirtual 
+Value invokevirtual[182](3) 1821 
+Value Variable is set at:
+  
+location 3:
+At Felix.java:[line 4729] 
+In method org.apache.felix.framework.Felix$SystemBundleActivator.stop(BundleContext) 
+Value Set to null:   
+Value aconst_null 
+Value aconst_null[1](1) 
+Value Variable is set at:
+   
+location 4:
+At Policy
+Interceptor.java:[line 106] 
+In method org.apache.tomcat.context.Policy
+Interceptor.engine
+Init(ContextManager) 
+Value Not null: java.lang.SecurityManager 
+Value invokevirtual 
+Value invokevirtual[182](3) 186 
+Value Variable is set at: At Policy
+Interceptor.java:[line 105]
+    
+location 5:
+At Main.java:[line 856] 
+In method org.apache.tools.ant.Main.runBuild(ClassLoader) 
+Value Not null: java.lang.SecurityManager 
+Value invokestatic 
+Value invokestatic[184](3) 1006 
+Value Variable is set at: At Main.java:[line 779]
+ 
+location 6:
+At JUnitTestRunner.java:[line 345] 
+In method org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.setupIOStreams(ByteArrayOutputStream, ByteArrayOutputStream) 
+Value Not null: org.apache.tools.ant.types.Permissions 
+Value aload_0 
+Value aload_0[42](1) 
+Value Variable is set at: At JUnitTestRunner.java:[line 344]
+
+location 7:
+At Permissions.java:[line 101] 
+In method org.apache.tools.ant.types.Permissions.setSecurityManager() 
+Value Not null: org.apache.tools.ant.types.Permissions$MySM 
+Value new 
+Value new[187](3) 141 
+Value Variable is set at:
+ 
+location 8:
+At Permissions.java:[line 171] 
+In method org.apache.tools.ant.types.Permissions.restoreSecurityManager() 
+Value Could be null or other value: java.lang.SecurityManager
+ 
+location 9:
+At Framework.java:[line 625] 
+In method org.eclipse.osgi.framework.internal.core.Framework.close() 
+Value Set to null:   
+Value aconst_null 
+Value aconst_null[1](1) 
+Value Variable is set at:
+  
+location 10:
+At Framework.java:[line 1341] 
+In method org.eclipse.osgi.framework.internal.core.Framework.installSecurityManager() 
+Value Not null: java.lang.SecurityManager 
+Value new 
+Value new[187](3) 827 
+Value Variable is set at: At Framework.java:[line 1319] 
+Value invokestatic 
+Value invokestatic[184](3) 1644 
+Value Variable is set at: At Framework.java:[line 1316] 
+Value new 
+Value new[187](3) 902 
+Value Variable is set at: At Framework.java:[line 1321] 
+Value invokevirtual 
+Value invokevirtual[182](3) 1597 
+Value Variable is set at: At Framework.java:[line 1326]
+   
+location 11:
+At TopSecurityManager.java:[line 542] 
+In method org.netbeans.TopSecurityManager.install() 
+Value Not null: org.netbeans.TopSecurityManager 
+Value new 
+Value new[187](3) 398 
+Value Variable is set at:
+ 
+location 12:
+At TopSecurityManager.java:[line 549] 
+In method org.netbeans.TopSecurityManager.uninstall() 
+Value Set to null:   
+Value aconst_null 
+Value aconst_null[1](1) 
+Value Variable is set at:
+ 
+location 13:
+At Main.java:[line 104] 
+In method org.netbeans.modules.apisupport.jnlplauncher.Main.fixPolicy() 
+Value Not null: java.lang.SecurityManager 
+Value new 
+Value new[187](3) 51 
+Value Variable is set at:
